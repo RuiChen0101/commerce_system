@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ERP_system {
     class ItemInfo{
         private List<string> itemInfoMeta = new List<string> {"name","type","desc","price"};
-        private List<string> cpuItemIDList = new List<string> { "cpu_item001" };
+        private List<string> cpuItemIDList = new List<string> { };
         private List<string> mbItemIDList = new List<string> { };
         private List<string> memItemIDList = new List<string> { };
         private List<string> hddItemIDList = new List<string> { };
@@ -18,6 +18,7 @@ namespace ERP_system {
 
         public ItemInfo(IniFile ini){
             this.ini = ini;
+            this.initAllItemIDList();
         }
 
         public string getItemName(string ID){
@@ -58,6 +59,43 @@ namespace ERP_system {
 
         public List<string> getSetItemIDList(){
             return setItemIDList;
+        }
+
+        private void initAllItemIDList(){
+            this.clearAllIDList();
+            string[] allSections = ini.GetSectionNames();
+            foreach(String section in allSections){
+                String type = this.getItemType(section);
+                switch (type){
+                    case "cpu":
+                        cpuItemIDList.Add(section);
+                        break;
+                    case "mb":
+                        mbItemIDList.Add(section);
+                        break;
+                    case "mem":
+                        memItemIDList.Add(section);
+                        break;
+                    case "hdd":
+                        hddItemIDList.Add(section);
+                        break;
+                    case "gpu":
+                        gpuItemIDList.Add(section);
+                        break;
+                    case "set":
+                        setItemIDList.Add(section);
+                        break;
+                }
+            }
+        }
+
+        private void clearAllIDList(){
+            cpuItemIDList.Clear();
+            mbItemIDList.Clear();
+            memItemIDList.Clear();
+            hddItemIDList.Clear();
+            gpuItemIDList.Clear();
+            setItemIDList.Clear();
         }
     }
 }

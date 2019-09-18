@@ -48,7 +48,7 @@
   <ItemGroup>
     <Compile Include="Entry.cs" />
     <Compile Include="IniFile.cs" />
-    <Compile Include="itemInfo.cs" />
+    <Compile Include="ItemInfo.cs" />
     <Compile Include="ItemOrder.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
@@ -57,6 +57,7 @@
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MainViewLoader.cs" />
     <EmbeddedResource Include="mainwindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
