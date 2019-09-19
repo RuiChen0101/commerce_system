@@ -12,6 +12,7 @@ namespace ERP_system{
     public partial class MainWindow : Form{
         private Dictionary<string, List<Button>> btnDict = new Dictionary<string, List<Button>>();
         public event EventHandler onItemClick;
+        public event EventHandler onAddToCartClick;
         public MainWindow(){
             InitializeComponent();
             this.initBtnDict();
@@ -21,8 +22,16 @@ namespace ERP_system{
             this.description.Text = desc;
         }
 
-        public void setPrice(string price){
-            this.item_price.Text = "單價: "+price;
+        public void setItemPrice(string price){
+            this.item_price.Text = "單價: " + price;
+        }
+
+        public void setTotalPrice(string price){
+            this.total_price.Text = "總價: " + price;
+        }
+
+        public void addNewOrderTableRow(string [] row){
+            this.order_list.Rows.Add(row);
         }
 
         public void setTabBtn(string type, List<string> id){
@@ -39,6 +48,11 @@ namespace ERP_system{
 
         private void itemClick(object sender, EventArgs e){
             EventHandler handler = onItemClick;
+            handler?.Invoke(sender, e);
+        }
+
+        private void addToCartClick(object sender, EventArgs e){
+            EventHandler handler = onAddToCartClick;
             handler?.Invoke(sender, e);
         }
 

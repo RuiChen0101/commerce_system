@@ -71,11 +71,11 @@
             this.add_to_cart = new System.Windows.Forms.Button();
             this.item_info_group = new System.Windows.Forms.GroupBox();
             this.item_price = new System.Windows.Forms.Label();
-            this.cart_list = new System.Windows.Forms.DataGridView();
+            this.order_list = new System.Windows.Forms.DataGridView();
+            this.total_price = new System.Windows.Forms.Label();
             this.ordered_item_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ordered_item_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ordered_item_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total_price = new System.Windows.Forms.Label();
             this.item_tab.SuspendLayout();
             this.MB_tab_page.SuspendLayout();
             this.CPU_tab_page.SuspendLayout();
@@ -85,7 +85,7 @@
             this.set_tab_page.SuspendLayout();
             this.item_group.SuspendLayout();
             this.item_info_group.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cart_list)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.order_list)).BeginInit();
             this.SuspendLayout();
             // 
             // item_tab
@@ -498,7 +498,7 @@
             this.set_tab_page.Name = "set_tab_page";
             this.set_tab_page.Size = new System.Drawing.Size(651, 343);
             this.set_tab_page.TabIndex = 5;
-            this.set_tab_page.Text = "套裝機";
+            this.set_tab_page.Text = "套裝電腦";
             this.set_tab_page.UseVisualStyleBackColor = true;
             // 
             // set_item6
@@ -597,6 +597,7 @@
             this.add_to_cart.TabIndex = 2;
             this.add_to_cart.Text = "加到購物車";
             this.add_to_cart.UseVisualStyleBackColor = true;
+            this.add_to_cart.Click += new System.EventHandler(this.addToCartClick);
             // 
             // item_info_group
             // 
@@ -622,42 +623,24 @@
             this.item_price.TabIndex = 2;
             this.item_price.Text = "單價";
             // 
-            // cart_list
+            // order_list
             // 
-            this.cart_list.AllowUserToAddRows = false;
-            this.cart_list.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.cart_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.cart_list.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.order_list.AllowUserToAddRows = false;
+            this.order_list.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.order_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.order_list.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ordered_item_name,
             this.ordered_item_type,
             this.ordered_item_price});
-            this.cart_list.Location = new System.Drawing.Point(719, 40);
-            this.cart_list.Margin = new System.Windows.Forms.Padding(4);
-            this.cart_list.Name = "cart_list";
-            this.cart_list.ReadOnly = true;
-            this.cart_list.RowHeadersVisible = false;
-            this.cart_list.RowTemplate.Height = 24;
-            this.cart_list.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.cart_list.Size = new System.Drawing.Size(529, 552);
-            this.cart_list.TabIndex = 3;
-            // 
-            // ordered_item_name
-            // 
-            this.ordered_item_name.HeaderText = "商品名稱";
-            this.ordered_item_name.Name = "ordered_item_name";
-            this.ordered_item_name.ReadOnly = true;
-            // 
-            // ordered_item_type
-            // 
-            this.ordered_item_type.HeaderText = "商品類別";
-            this.ordered_item_type.Name = "ordered_item_type";
-            this.ordered_item_type.ReadOnly = true;
-            // 
-            // ordered_item_price
-            // 
-            this.ordered_item_price.HeaderText = "單價";
-            this.ordered_item_price.Name = "ordered_item_price";
-            this.ordered_item_price.ReadOnly = true;
+            this.order_list.Location = new System.Drawing.Point(719, 40);
+            this.order_list.Margin = new System.Windows.Forms.Padding(4);
+            this.order_list.Name = "order_list";
+            this.order_list.ReadOnly = true;
+            this.order_list.RowHeadersVisible = false;
+            this.order_list.RowTemplate.Height = 24;
+            this.order_list.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.order_list.Size = new System.Drawing.Size(529, 552);
+            this.order_list.TabIndex = 3;
             // 
             // total_price
             // 
@@ -670,13 +653,37 @@
             this.total_price.TabIndex = 3;
             this.total_price.Text = "總價";
             // 
+            // ordered_item_name
+            // 
+            this.ordered_item_name.FillWeight = 152.2843F;
+            this.ordered_item_name.HeaderText = "商品名稱";
+            this.ordered_item_name.Name = "ordered_item_name";
+            this.ordered_item_name.ReadOnly = true;
+            this.ordered_item_name.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // ordered_item_type
+            // 
+            this.ordered_item_type.FillWeight = 73.85786F;
+            this.ordered_item_type.HeaderText = "商品類別";
+            this.ordered_item_type.Name = "ordered_item_type";
+            this.ordered_item_type.ReadOnly = true;
+            this.ordered_item_type.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // ordered_item_price
+            // 
+            this.ordered_item_price.FillWeight = 73.85786F;
+            this.ordered_item_price.HeaderText = "單價";
+            this.ordered_item_price.Name = "ordered_item_price";
+            this.ordered_item_price.ReadOnly = true;
+            this.ordered_item_price.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1260, 669);
             this.Controls.Add(this.total_price);
-            this.Controls.Add(this.cart_list);
+            this.Controls.Add(this.order_list);
             this.Controls.Add(this.item_group);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximumSize = new System.Drawing.Size(1278, 716);
@@ -693,7 +700,7 @@
             this.item_group.ResumeLayout(false);
             this.item_info_group.ResumeLayout(false);
             this.item_info_group.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cart_list)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.order_list)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -709,11 +716,8 @@
         private System.Windows.Forms.GroupBox item_info_group;
         private System.Windows.Forms.Button add_to_cart;
         private System.Windows.Forms.Label item_price;
-        private System.Windows.Forms.DataGridView cart_list;
+        private System.Windows.Forms.DataGridView order_list;
         private System.Windows.Forms.Label total_price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ordered_item_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ordered_item_type;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ordered_item_price;
         private System.Windows.Forms.TabPage mem_tab_page;
         private System.Windows.Forms.TabPage hdd_tab_page;
         private System.Windows.Forms.TabPage gpu_tab_page;
@@ -754,6 +758,9 @@
         private System.Windows.Forms.Button set_item2;
         private System.Windows.Forms.Button set_item4;
         private System.Windows.Forms.Button set_item1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ordered_item_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ordered_item_type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ordered_item_price;
     }
 }
 
