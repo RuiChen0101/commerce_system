@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ERP_system {
     class ItemInfo{
         private List<string> typeList = new List<string> { "cpu", "mb", "mem", "hdd", "gpu", "set" };
-        private List<string> itemInfoMeta = new List<string> {"name","type","desc","price"};
+        private List<string> itemInfoMeta = new List<string> {"name","type","imgref","desc","price"};
         private List<string> cpuItemIDList = new List<string> { };
         private List<string> mbItemIDList = new List<string> { };
         private List<string> memItemIDList = new List<string> { };
@@ -30,12 +30,16 @@ namespace ERP_system {
             return ini.readIni(ID, itemInfoMeta[1]);
         }
 
-        public string getItemDesc(string ID){
+        public string getItemImgRef(string ID){
             return ini.readIni(ID, itemInfoMeta[2]);
         }
 
-        public string getItemPrice(string ID){
+        public string getItemDesc(string ID){
             return ini.readIni(ID, itemInfoMeta[3]);
+        }
+
+        public string getItemPrice(string ID){
+            return ini.readIni(ID, itemInfoMeta[4]);
         }
 
         public string getItemTypeName(string ID){

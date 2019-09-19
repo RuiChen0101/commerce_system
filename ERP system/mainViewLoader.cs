@@ -12,6 +12,7 @@ namespace ERP_system{
         private MainWindow mainWindow;
         private Dictionary<string,List<string>> idDict=new Dictionary<string, List<string>>();
         private string currentClickedItem=null;
+
         public MainViewLoader(ItemInfo ii, ItemOrder io, MainWindow mw){
             this.itemInfo = ii;
             this.itemOrder = io;
@@ -41,17 +42,26 @@ namespace ERP_system{
         }
 
         private void initItemData(){
-            idDict.Add("cpu", fillIDListLength(itemInfo.getCpuItemIDList().Take(6).ToList<string>()));
-            idDict.Add("mb", fillIDListLength(itemInfo.getMbItemIDList().Take(6).ToList<string>()));
-            idDict.Add("mem", fillIDListLength(itemInfo.getMemItemIDList().Take(6).ToList<string>()));
-            idDict.Add("hdd", fillIDListLength(itemInfo.getHddItemIDList().Take(6).ToList<string>()));
-            idDict.Add("gpu", fillIDListLength(itemInfo.getGpuItemIDList().Take(6).ToList<string>()));
-            idDict.Add("set", fillIDListLength(itemInfo.getSetItemIDList().Take(6).ToList<string>()));
+            idDict.Add(itemInfo.getTypeList()[0], fillIDListLength(itemInfo.getCpuItemIDList().Take(6).ToList<string>()));
+            idDict.Add(itemInfo.getTypeList()[1], fillIDListLength(itemInfo.getMbItemIDList().Take(6).ToList<string>()));
+            idDict.Add(itemInfo.getTypeList()[2], fillIDListLength(itemInfo.getMemItemIDList().Take(6).ToList<string>()));
+            idDict.Add(itemInfo.getTypeList()[3], fillIDListLength(itemInfo.getHddItemIDList().Take(6).ToList<string>()));
+            idDict.Add(itemInfo.getTypeList()[4], fillIDListLength(itemInfo.getGpuItemIDList().Take(6).ToList<string>()));
+            idDict.Add(itemInfo.getTypeList()[5], fillIDListLength(itemInfo.getSetItemIDList().Take(6).ToList<string>()));
         }
 
         private void initItemBtn(){
             foreach(string type in itemInfo.getTypeList()){
-                mainWindow.setTabBtn(type, idDict[type]);
+                List<string> imgRefList = new List<string>();
+                foreach(string id in idDict[type]){
+                    if (id.Equals("null")){
+                        imgRefList.Add("null");
+                    }
+                    else{
+                        imgRefList.Add(itemInfo.getItemImgRef(id));
+                    }
+                }
+                mainWindow.setTabBtn(type, imgRefList);
             }
         }
 

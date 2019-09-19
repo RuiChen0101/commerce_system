@@ -11,8 +11,11 @@ using System.Windows.Forms;
 namespace ERP_system{
     public partial class MainWindow : Form{
         private Dictionary<string, List<Button>> btnDict = new Dictionary<string, List<Button>>();
+        private const string imgFilePath = ".\\img\\";
+
         public event EventHandler onItemClick;
         public event EventHandler onAddToCartClick;
+
         public MainWindow(){
             InitializeComponent();
             this.initBtnDict();
@@ -34,14 +37,14 @@ namespace ERP_system{
             this.order_list.Rows.Add(row);
         }
 
-        public void setTabBtn(string type, List<string> id){
+        public void setTabBtn(string type, List<string> imgRef){
             for(int i = 0; i < 6; i++){
-                if (id[i].Equals("null")){
+                if (imgRef[i].Equals("null")){
                     btnDict[type][i].Enabled = false;
-                    btnDict[type][i].Text="";
+                    btnDict[type][i].BackgroundImage=null;
                 }else{
                     btnDict[type][i].Enabled = true;
-                    btnDict[type][i].Text = id[i];
+                    btnDict[type][i].BackgroundImage = new Bitmap(imgFilePath+ imgRef[i]);
                 }
             }
         }
