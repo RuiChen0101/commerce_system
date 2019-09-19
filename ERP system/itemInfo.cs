@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ERP_system {
     class ItemInfo{
+        private List<string> typeList = new List<string> { "cpu", "mb", "mem", "hdd", "gpu", "set" };
         private List<string> itemInfoMeta = new List<string> {"name","type","desc","price"};
         private List<string> cpuItemIDList = new List<string> { };
         private List<string> mbItemIDList = new List<string> { };
@@ -38,27 +39,31 @@ namespace ERP_system {
         }
 
         public List<string> getCpuItemIDList(){
-            return cpuItemIDList;
+            return this.cpuItemIDList;
         }
 
         public List<string> getMbItemIDList(){
-            return mbItemIDList;
+            return this.mbItemIDList;
         }
 
         public List<string> getMemItemIDList(){
-            return memItemIDList;
+            return this.memItemIDList;
         }
 
         public List<string> getHddItemIDList(){
-            return hddItemIDList;
+            return this.hddItemIDList;
         }
 
         public List<string> getGpuItemIDList(){
-            return gpuItemIDList;
+            return this.gpuItemIDList;
         }
 
         public List<string> getSetItemIDList(){
-            return setItemIDList;
+            return this.setItemIDList;
+        }
+
+        public List<string> getTypeList(){
+            return this.typeList;
         }
 
         private void initAllItemIDList(){

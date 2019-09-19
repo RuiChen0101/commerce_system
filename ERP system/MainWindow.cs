@@ -10,8 +10,87 @@ using System.Windows.Forms;
 
 namespace ERP_system{
     public partial class MainWindow : Form{
+        private Dictionary<string, List<Button>> btnDict = new Dictionary<string, List<Button>>();
+        public event EventHandler onItemClick;
         public MainWindow(){
             InitializeComponent();
+            this.initBtnDict();
+        }
+
+        public void setDesc(string desc){
+            this.description.Text = desc;
+        }
+
+        public void setPrice(string price){
+            this.item_price.Text = "單價: "+price;
+        }
+
+        public void setTabBtn(string type, List<string> id){
+            for(int i = 0; i < 6; i++){
+                if (id[i].Equals("null")){
+                    btnDict[type][i].Enabled = false;
+                    btnDict[type][i].Text="";
+                }else{
+                    btnDict[type][i].Enabled = true;
+                    btnDict[type][i].Text = id[i];
+                }
+            }
+        }
+
+        private void itemClick(object sender, EventArgs e){
+            EventHandler handler = onItemClick;
+            handler?.Invoke(sender, e);
+        }
+
+        private void initBtnDict(){
+            btnDict.Add("cpu", new List<Button> {
+                this.cpu_item1,
+                this.cpu_item2,
+                this.cpu_item3,
+                this.cpu_item4,
+                this.cpu_item5,
+                this.cpu_item6,
+            });
+            btnDict.Add("mb", new List<Button> {
+                this.mb_item1,
+                this.mb_item2,
+                this.mb_item3,
+                this.mb_item4,
+                this.mb_item5,
+                this.mb_item6,
+            });
+            btnDict.Add("mem", new List<Button> {
+                this.mem_item1,
+                this.mem_item2,
+                this.mem_item3,
+                this.mem_item4,
+                this.mem_item5,
+                this.mem_item6,
+            });
+            btnDict.Add("hdd", new List<Button> {
+                this.hdd_item1,
+                this.hdd_item2,
+                this.hdd_item3,
+                this.hdd_item4,
+                this.hdd_item5,
+                this.hdd_item6,
+            });
+            btnDict.Add("gpu", new List<Button> {
+                this.gpu_item1,
+                this.gpu_item2,
+                this.gpu_item3,
+                this.gpu_item4,
+                this.gpu_item5,
+                this.gpu_item6,
+            });
+            btnDict.Add("set", new List<Button> {
+                this.set_item1,
+                this.set_item2,
+                this.set_item3,
+                this.set_item4,
+                this.set_item5,
+                this.set_item6,
+            });
         }
     }
 }
