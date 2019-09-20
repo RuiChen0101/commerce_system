@@ -4,23 +4,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ERP_system{
-    class ItemOrder{
-        private List<string> orderIDList = new List<string> { };
-        private int totalPrice = 0;
-        private ItemInfo itemInfo;
+namespace ERP_system
+{
+    class ItemOrder
+    {
+        private List<string> _orderIDList = new List<string> { };
+        private int _totalPrice = 0;
+        private ItemInfo _itemInfo;
 
-        public ItemOrder(ItemInfo ii){
-            this.itemInfo = ii;
+        //default constructor
+        public ItemOrder(ItemInfo itemInfo)
+        {
+            this._itemInfo = itemInfo;
         }
 
-        public void addToOrder(string itemId){
-            orderIDList.Add(itemId);
-            totalPrice += int.Parse(itemInfo.getItemPrice(itemId));
+        //store ordered id and update total price
+        public void AddToOrder(string itemId)
+        {
+            _orderIDList.Add(itemId);
+            _totalPrice += int.Parse(_itemInfo.GetItemPrice(itemId));
         }
 
-        public int getTotalPrice(){
-            return totalPrice;
+        //return total price
+        public int GetTotalPrice()
+        {
+            return _totalPrice;
         }
     }
 }

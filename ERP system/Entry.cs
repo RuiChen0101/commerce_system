@@ -4,11 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ERP_system{
-    static class Entry{
+namespace ERP_system
+{
+    static class Entry
+    {
         /// 應用程式的主要進入點。
         [STAThread]
-        static void Main(){
+        static void Main()
+        {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             IniFile ini = new IniFile();

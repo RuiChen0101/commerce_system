@@ -5,69 +5,86 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ERP_system{
-    class MainViewLoader{
-        private ItemInfo itemInfo;
-        private ItemOrder itemOrder;
-        private MainWindow mainWindow;
-        private Dictionary<string,List<string>> idDict=new Dictionary<string, List<string>>();
-        private string currentClickedItem=null;
+namespace ERP_system
+{
+    class MainViewLoader
+    {
+        private ItemInfo _itemInfo;
+        private ItemOrder _itemOrder;
+        private MainWindow _mainWindow;
+        private Dictionary<string,List<string>> _idDict=new Dictionary<string, List<string>>();
+        private string _currentClickedItem=null;
 
-        public MainViewLoader(ItemInfo ii, ItemOrder io, MainWindow mw){
-            this.itemInfo = ii;
-            this.itemOrder = io;
-            this.mainWindow = mw;
-            this.initItemData();
-            this.initItemBtn();
-            mainWindow.onItemClick += this.onItemClick;
-            mainWindow.onAddToCartClick += this.onAddToCartClick;
+        //default constructor
+        public MainViewLoader(ItemInfo itemInfo, ItemOrder itemOrder, MainWindow mainWindow)
+        {
+            this._itemInfo = itemInfo;
+            this._itemOrder = itemOrder;
+            this._mainWindow = mainWindow;
+            this.InitItemDict();
+            this.InitItemBtn();
+            _mainWindow._onItemClick += this.OnItemClick;
+            _mainWindow._onAddToOrderClick += this.OnAddToOrderClick;
         }
 
-        public void onItemClick(object sender, EventArgs e){
-            string senderName = ((Button)sender).Name;
-            string[] idData = senderName.Split('_');
-            idData[1] = idData[1].Last().ToString();
-            currentClickedItem = idDict[idData[0]][int.Parse(idData[1])-1];
-            mainWindow.setDesc(itemInfo.getItemName(currentClickedItem)+"\n"+itemInfo.getItemDesc(currentClickedItem));
-            mainWindow.setItemPrice(itemInfo.getItemPrice(currentClickedItem));
+        //handel item button click event
+        public void OnItemClick(object sender, EventArgs e)
+        {
+            string senderTag = ((Button)sender).Tag.ToString();
+            string[] idData = senderTag.Split('_');
+            _currentClickedItem = _idDict[idData[0]][int.Parse(idData[1])-1];
+            _mainWindow.SetDesc(_itemInfo.GetItemName(_currentClickedItem)+"\n"+_itemInfo.GetItemDesc(_currentClickedItem));
+            _mainWindow.SetItemPrice(_itemInfo.GetItemPrice(_currentClickedItem));
         }
 
-        public void onAddToCartClick(object sender, EventArgs e){
-            if (currentClickedItem != null){
-                itemOrder.addToOrder(currentClickedItem);
-                mainWindow.setTotalPrice(itemOrder.getTotalPrice().ToString());
-                string[] orderRow = { itemInfo.getItemName(currentClickedItem), itemInfo.getItemTypeName(currentClickedItem), itemInfo.getItemPrice(currentClickedItem) };
-                mainWindow.addNewOrderTableRow(orderRow);
+        //handel add_to_cart button click event
+        public void OnAddToOrderClick(object sender, EventArgs e)
+        {
+            if (_currentClickedItem != null){
+                _itemOrder.AddToOrder(_currentClickedItem);
+                _mainWindow.SetTotalPrice(_itemOrder.GetTotalPrice().ToString());
+                string[] orderRow = { _itemInfo.GetItemName(_currentClickedItem), _itemInfo.GetItemTypeName(_currentClickedItem), _itemInfo.GetItemPrice(_currentClickedItem) };
+                _mainWindow.AddNewOrderTableRow(orderRow);
             }
         }
 
-        private void initItemData(){
-            idDict.Add(itemInfo.getTypeList()[0], fillIDListLength(itemInfo.getCpuItemIDList().Take(6).ToList<string>()));
-            idDict.Add(itemInfo.getTypeList()[1], fillIDListLength(itemInfo.getMbItemIDList().Take(6).ToList<string>()));
-            idDict.Add(itemInfo.getTypeList()[2], fillIDListLength(itemInfo.getMemItemIDList().Take(6).ToList<string>()));
-            idDict.Add(itemInfo.getTypeList()[3], fillIDListLength(itemInfo.getHddItemIDList().Take(6).ToList<string>()));
-            idDict.Add(itemInfo.getTypeList()[4], fillIDListLength(itemInfo.getGpuItemIDList().Take(6).ToList<string>()));
-            idDict.Add(itemInfo.getTypeList()[5], fillIDListLength(itemInfo.getSetItemIDList().Take(6).ToList<string>()));
+        //initialize item id dictionary
+        private void InitItemDict()
+        {
+            _idDict.Add(_itemInfo.GetTypeList()[0], FillIdListLength(_itemInfo.GetCpuItemIdList().Take(6).ToList<string>()));
+            _idDict.Add(_itemInfo.GetTypeList()[1], FillIdListLength(_itemInfo.GetMbItemIdList().Take(6).ToList<string>()));
+            _idDict.Add(_itemInfo.GetTypeList()[2], FillIdListLength(_itemInfo.GetMemItemIdList().Take(6).ToList<string>()));
+            _idDict.Add(_itemInfo.GetTypeList()[3], FillIdListLength(_itemInfo.GetHddItemIdList().Take(6).ToList<string>()));
+            _idDict.Add(_itemInfo.GetTypeList()[4], FillIdListLength(_itemInfo.GetGpuItemIdList().Take(6).ToList<string>()));
+            _idDict.Add(_itemInfo.GetTypeList()[5], FillIdListLength(_itemInfo.GetSetItemIdList().Take(6).ToList<string>()));
         }
 
-        private void initItemBtn(){
-            foreach(string type in itemInfo.getTypeList()){
+        //initialize all item button
+        private void InitItemBtn()
+        {
+            foreach( string type in _itemInfo.GetTypeList() )
+            {
                 List<string> imgRefList = new List<string>();
-                foreach(string id in idDict[type]){
-                    if (id.Equals("null")){
-                        imgRefList.Add("null");
+                foreach( string id in _idDict[type] )
+                {
+                    if (id.Equals(Constants.NULL_STRING))
+                    {
+                        imgRefList.Add(Constants.NULL_STRING);
                     }
                     else{
-                        imgRefList.Add(itemInfo.getItemImgRef(id));
+                        imgRefList.Add(_itemInfo.GetItemImgRef(id));
                     }
                 }
-                mainWindow.setTabBtn(type, imgRefList);
+                _mainWindow.SetTabBtn(type, imgRefList);
             }
         }
 
-        private List<string> fillIDListLength(List<string> l){
-            while (l.Count < 6){
-                l.Add("null");
+        //fill empty space of id List with "null"
+        private List<string> FillIdListLength(List<string> l)
+        {
+            while (l.Count < 6)
+            {
+                l.Add(Constants.NULL_STRING);
             }
             return l;
         }

@@ -8,105 +8,134 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ERP_system{
-    public partial class MainWindow : Form{
-        private Dictionary<string, List<Button>> btnDict = new Dictionary<string, List<Button>>();
-        private const string imgFilePath = ".\\img\\";
+namespace ERP_system
+{
+    public partial class MainWindow : Form
+    {
+        private Dictionary<string, List<Button>> _btnDict = new Dictionary<string, List<Button>>();
+        private const string IMAGE_FILE_PATH = ".\\img\\";
+        private const string ITEM_PRICE_STRING = "單價: ";
+        private const string TOTAL_PRICE_STRING = "總價: ";
 
-        public event EventHandler onItemClick;
-        public event EventHandler onAddToCartClick;
+        public event EventHandler _onItemClick;
+        public event EventHandler _onAddToOrderClick;
 
-        public MainWindow(){
+        //default constructor
+        public MainWindow()
+        {
             InitializeComponent();
-            this.initBtnDict();
+            this.InitBtnDict();
         }
 
-        public void setDesc(string desc){
-            this.description.Text = desc;
+        //show description
+        public void SetDesc(string desc)
+        {
+            this._descriptionBox.Text = desc;
         }
 
-        public void setItemPrice(string price){
-            this.item_price.Text = "單價: " + price;
+        //show item price
+        public void SetItemPrice(string price)
+        {
+            this._itemPrice.Text = ITEM_PRICE_STRING + price;
         }
 
-        public void setTotalPrice(string price){
-            this.total_price.Text = "總價: " + price;
+        //show total price
+        public void SetTotalPrice(string price)
+        {
+            this._totalPrice.Text = TOTAL_PRICE_STRING + price;
         }
 
-        public void addNewOrderTableRow(string [] row){
-            this.order_list.Rows.Add(row);
+        //add new row for order table
+        public void AddNewOrderTableRow(string [] row)
+        {
+            this._orderList.Rows.Add(row);
         }
 
-        public void setTabBtn(string type, List<string> imgRef){
+        //setting item button
+        public void SetTabBtn(string type, List<string> imgRef)
+        {
             for(int i = 0; i < 6; i++){
-                if (imgRef[i].Equals("null")){
-                    btnDict[type][i].Enabled = false;
-                    btnDict[type][i].BackgroundImage=null;
+                if (imgRef[i].Equals(Constants.NULL_STRING))
+                {
+                    _btnDict[type][i].Enabled = false;
+                    _btnDict[type][i].BackgroundImage=null;
                 }else{
-                    btnDict[type][i].Enabled = true;
-                    btnDict[type][i].BackgroundImage = new Bitmap(imgFilePath+ imgRef[i]);
+                    _btnDict[type][i].Enabled = true;
+                    _btnDict[type][i].BackgroundImage = new Bitmap(IMAGE_FILE_PATH+ imgRef[i]);
                 }
             }
         }
 
-        private void itemClick(object sender, EventArgs e){
-            EventHandler handler = onItemClick;
+        //bubbling item button click event
+        private void ItemClick(object sender, EventArgs e)
+        {
+            EventHandler handler = this._onItemClick;
             handler?.Invoke(sender, e);
         }
 
-        private void addToCartClick(object sender, EventArgs e){
-            EventHandler handler = onAddToCartClick;
+        //bubbling add_to_cart button click event
+        private void AddToOrderClick(object sender, EventArgs e)
+        {
+            EventHandler handler = this._onAddToOrderClick;
             handler?.Invoke(sender, e);
         }
 
-        private void initBtnDict(){
-            btnDict.Add("cpu", new List<Button> {
-                this.cpu_item1,
-                this.cpu_item2,
-                this.cpu_item3,
-                this.cpu_item4,
-                this.cpu_item5,
-                this.cpu_item6,
+        //initialize button dictionary
+        private void InitBtnDict()
+        {
+            _btnDict.Add("cpu", new List<Button>
+            {
+                this._cpuItem1,
+                this._cpuItem2,
+                this._cpuItem3,
+                this._cpuItem4,
+                this._cpuItem5,
+                this._cpuItem6,
             });
-            btnDict.Add("mb", new List<Button> {
-                this.mb_item1,
-                this.mb_item2,
-                this.mb_item3,
-                this.mb_item4,
-                this.mb_item5,
-                this.mb_item6,
+            _btnDict.Add("mb", new List<Button>
+            {
+                this._mbItem1,
+                this._mbItem2,
+                this._mbItem3,
+                this._mbItem4,
+                this._mbItem5,
+                this._mbItem6,
             });
-            btnDict.Add("mem", new List<Button> {
-                this.mem_item1,
-                this.mem_item2,
-                this.mem_item3,
-                this.mem_item4,
-                this.mem_item5,
-                this.mem_item6,
+            _btnDict.Add("mem", new List<Button>
+            {
+                this._memItem1,
+                this._memItem2,
+                this._memItem3,
+                this._memItem4,
+                this._memItem5,
+                this._memItem6,
             });
-            btnDict.Add("hdd", new List<Button> {
-                this.hdd_item1,
-                this.hdd_item2,
-                this.hdd_item3,
-                this.hdd_item4,
-                this.hdd_item5,
-                this.hdd_item6,
+            _btnDict.Add("hdd", new List<Button>
+            {
+                this._hddItem1,
+                this._hddItem2,
+                this._hddItem3,
+                this._hddItem4,
+                this._hddItem5,
+                this._hddItem6,
             });
-            btnDict.Add("gpu", new List<Button> {
-                this.gpu_item1,
-                this.gpu_item2,
-                this.gpu_item3,
-                this.gpu_item4,
-                this.gpu_item5,
-                this.gpu_item6,
+            _btnDict.Add("gpu", new List<Button>
+            {
+                this._gpuItem1,
+                this._gpuItem2,
+                this._gpuItem3,
+                this._gpuItem4,
+                this._gpuItem5,
+                this._gpuItem6,
             });
-            btnDict.Add("set", new List<Button> {
-                this.set_item1,
-                this.set_item2,
-                this.set_item3,
-                this.set_item4,
-                this.set_item5,
-                this.set_item6,
+            _btnDict.Add("set", new List<Button>
+            {
+                this._setItem1,
+                this._setItem2,
+                this._setItem3,
+                this._setItem4,
+                this._setItem5,
+                this._setItem6,
             });
         }
     }

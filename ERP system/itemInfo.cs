@@ -4,48 +4,78 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ERP_system {
-    class ItemInfo{
-        private List<string> typeList = new List<string> { "cpu", "mb", "mem", "hdd", "gpu", "set" };
-        private List<string> itemInfoMeta = new List<string> {"name","type","imgref","desc","price"};
-        private List<string> cpuItemIDList = new List<string> { };
-        private List<string> mbItemIDList = new List<string> { };
-        private List<string> memItemIDList = new List<string> { };
-        private List<string> hddItemIDList = new List<string> { };
-        private List<string> gpuItemIDList = new List<string> { };
-        private List<string> setItemIDList = new List<string> { };
+namespace ERP_system
+{
+    class ItemInfo
+    {
+        private readonly string[] _typeList = 
+        {   "cpu",
+            "mb",
+            "mem",
+            "hdd",
+            "gpu",
+            "set"
+        };
+        private readonly string[] _itemInfoMeta = 
+        {   "name",
+            "type",
+            "imgref",
+            "desc",
+            "price"
+        };
+        private List<string> _cpuItemIdList = new List<string> { };
+        private List<string> _mbItemIdList = new List<string> { };
+        private List<string> _memItemIdList = new List<string> { };
+        private List<string> _hddItemIdList = new List<string> { };
+        private List<string> _gpuItemIdList = new List<string> { };
+        private List<string> _setItemIDList = new List<string> { };
 
         private IniFile ini;
 
-        public ItemInfo(IniFile ini){
+        //deafult constructor
+        public ItemInfo(IniFile ini)
+        {
             this.ini = ini;
-            this.initAllItemIDList();
+            this.InitAllItemIdList();
         }
 
-        public string getItemName(string ID){
-            return ini.readIni(ID,itemInfoMeta[0]);
+        //get item name
+        public string GetItemName(string ID)
+        {
+            return ini.ReadIni(ID,_itemInfoMeta[0]);
         }
 
-        public string getItemType(string ID){
-            return ini.readIni(ID, itemInfoMeta[1]);
+        //get item type
+        public string GetItemType(string ID)
+        {
+            return ini.ReadIni(ID, _itemInfoMeta[1]);
         }
 
-        public string getItemImgRef(string ID){
-            return ini.readIni(ID, itemInfoMeta[2]);
+        //get item image reference
+        public string GetItemImgRef(string ID)
+        {
+            return ini.ReadIni(ID, _itemInfoMeta[2]);
         }
 
-        public string getItemDesc(string ID){
-            return ini.readIni(ID, itemInfoMeta[3]);
+        //get item description
+        public string GetItemDesc(string ID)
+        {
+            return ini.ReadIni(ID, _itemInfoMeta[3]);
         }
 
-        public string getItemPrice(string ID){
-            return ini.readIni(ID, itemInfoMeta[4]);
+        //get item price
+        public string GetItemPrice(string ID)
+        {
+            return ini.ReadIni(ID, _itemInfoMeta[4]);
         }
 
-        public string getItemTypeName(string ID){
-            string type = this.getItemType(ID);
-            string typeName="";
-            switch (type){
+        //get item type name by translate type string
+        public string GetItemTypeName(string ID)
+        {
+            string type = this.GetItemType(ID);
+            string typeName = "";
+            switch (type)
+            {
                 case "cpu":
                     typeName = "CPU";
                     break;
@@ -68,69 +98,89 @@ namespace ERP_system {
             return typeName;
         }
 
-        public List<string> getCpuItemIDList(){
-            return this.cpuItemIDList;
+        //get all cpu item id list
+        public List<string> GetCpuItemIdList()
+        {
+            return this._cpuItemIdList;
         }
 
-        public List<string> getMbItemIDList(){
-            return this.mbItemIDList;
+        //get all mother board item id list
+        public List<string> GetMbItemIdList()
+        {
+            return this._mbItemIdList;
         }
 
-        public List<string> getMemItemIDList(){
-            return this.memItemIDList;
+        //get all memory item id list
+        public List<string> GetMemItemIdList()
+        {
+            return this._memItemIdList;
         }
 
-        public List<string> getHddItemIDList(){
-            return this.hddItemIDList;
+        //get all hard drive item id list
+        public List<string> GetHddItemIdList()
+        {
+            return this._hddItemIdList;
         }
 
-        public List<string> getGpuItemIDList(){
-            return this.gpuItemIDList;
+        //get all gpu item id list
+        public List<string> GetGpuItemIdList()
+        {
+            return this._gpuItemIdList;
         }
 
-        public List<string> getSetItemIDList(){
-            return this.setItemIDList;
+        //get all set item id list
+        public List<string> GetSetItemIdList()
+        {
+            return this._setItemIDList;
         }
 
-        public List<string> getTypeList(){
-            return this.typeList;
+        //get all type
+        public string[] GetTypeList()
+        {
+            return this._typeList;
         }
 
-        private void initAllItemIDList(){
-            this.clearAllIDList();
+        //retrive and classify exist item from ini
+        private void InitAllItemIdList()
+        {
+            this.ClearAllIdList();
             string[] allSections = ini.GetSectionNames();
-            foreach(String section in allSections){
-                String type = this.getItemType(section);
-                switch (type){
+            foreach( String section in allSections )
+            {
+                String type = this.GetItemType(section);
+                switch (type)
+                {
                     case "cpu":
-                        cpuItemIDList.Add(section);
+                        _cpuItemIdList.Add(section);
                         break;
                     case "mb":
-                        mbItemIDList.Add(section);
+                        _mbItemIdList.Add(section);
                         break;
                     case "mem":
-                        memItemIDList.Add(section);
+                        _memItemIdList.Add(section);
                         break;
                     case "hdd":
-                        hddItemIDList.Add(section);
+                        _hddItemIdList.Add(section);
                         break;
                     case "gpu":
-                        gpuItemIDList.Add(section);
+                        _gpuItemIdList.Add(section);
                         break;
                     case "set":
-                        setItemIDList.Add(section);
+                        _setItemIDList.Add(section);
                         break;
                 }
             }
         }
 
-        private void clearAllIDList(){
-            cpuItemIDList.Clear();
-            mbItemIDList.Clear();
-            memItemIDList.Clear();
-            hddItemIDList.Clear();
-            gpuItemIDList.Clear();
-            setItemIDList.Clear();
+        //clear all id list
+        private void ClearAllIdList()
+        {
+            _cpuItemIdList.Clear();
+            _mbItemIdList.Clear();
+            _memItemIdList.Clear();
+            _hddItemIdList.Clear();
+            _gpuItemIdList.Clear();
+            _setItemIDList.Clear();
         }
     }
 }
