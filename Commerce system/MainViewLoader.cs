@@ -24,12 +24,12 @@ namespace Commerce_system
             this._mainWindow = mainWindow;
             this.InitialItemDictionary();
             this.InitialItemButton();
-            _mainWindow._onItemClick += this.OnItemClick;
-            _mainWindow._onAddToOrderClick += this.OnAddToOrderClick;
+            _mainWindow._onItemClick += this.HandleItemClick;
+            _mainWindow._onAddToOrderClick += this.HandleAddToOrderClick;
         }
 
         //handel item button click event
-        public void OnItemClick(object sender, EventArgs e)
+        public void HandleItemClick(object sender, EventArgs e)
         {
             const char BREAK_CHAR = '_';
             const string RETURN_CHAR = "\n";
@@ -41,7 +41,7 @@ namespace Commerce_system
         }
 
         //handel add_to_cart button click event
-        public void OnAddToOrderClick(object sender, EventArgs e)
+        public void HandleAddToOrderClick(object sender, EventArgs e)
         {
             if (_currentClickedItem != null)
             {

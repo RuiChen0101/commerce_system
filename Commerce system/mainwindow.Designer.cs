@@ -130,7 +130,7 @@
             this._boardItem6.TabIndex = 11;
             this._boardItem6.Tag = "mb_6";
             this._boardItem6.UseVisualStyleBackColor = true;
-            this._boardItem6.Click += new System.EventHandler(this.ItemClick);
+            this._boardItem6.Click += new System.EventHandler(this.ClickItem);
             // 
             // _boardItem3
             // 
@@ -142,7 +142,7 @@
             this._boardItem3.TabIndex = 10;
             this._boardItem3.Tag = "mb_3";
             this._boardItem3.UseVisualStyleBackColor = true;
-            this._boardItem3.Click += new System.EventHandler(this.ItemClick);
+            this._boardItem3.Click += new System.EventHandler(this.ClickItem);
             // 
             // _boardItem5
             // 
@@ -154,7 +154,7 @@
             this._boardItem5.TabIndex = 9;
             this._boardItem5.Tag = "mb_5";
             this._boardItem5.UseVisualStyleBackColor = true;
-            this._boardItem5.Click += new System.EventHandler(this.ItemClick);
+            this._boardItem5.Click += new System.EventHandler(this.ClickItem);
             // 
             // _boardItem2
             // 
@@ -166,7 +166,7 @@
             this._boardItem2.TabIndex = 8;
             this._boardItem2.Tag = "mb_2";
             this._boardItem2.UseVisualStyleBackColor = true;
-            this._boardItem2.Click += new System.EventHandler(this.ItemClick);
+            this._boardItem2.Click += new System.EventHandler(this.ClickItem);
             // 
             // _boardItem4
             // 
@@ -178,7 +178,7 @@
             this._boardItem4.TabIndex = 7;
             this._boardItem4.Tag = "mb_4";
             this._boardItem4.UseVisualStyleBackColor = true;
-            this._boardItem4.Click += new System.EventHandler(this.ItemClick);
+            this._boardItem4.Click += new System.EventHandler(this.ClickItem);
             // 
             // _boardItem1
             // 
@@ -190,7 +190,7 @@
             this._boardItem1.TabIndex = 6;
             this._boardItem1.Tag = "mb_1";
             this._boardItem1.UseVisualStyleBackColor = true;
-            this._boardItem1.Click += new System.EventHandler(this.ItemClick);
+            this._boardItem1.Click += new System.EventHandler(this.ClickItem);
             // 
             // _processorTabPage
             // 
@@ -219,7 +219,7 @@
             this._processorItem6.TabIndex = 5;
             this._processorItem6.Tag = "cpu_6";
             this._processorItem6.UseVisualStyleBackColor = true;
-            this._processorItem6.Click += new System.EventHandler(this.ItemClick);
+            this._processorItem6.Click += new System.EventHandler(this.ClickItem);
             // 
             // _processorItem3
             // 
@@ -231,7 +231,7 @@
             this._processorItem3.TabIndex = 4;
             this._processorItem3.Tag = "cpu_3";
             this._processorItem3.UseVisualStyleBackColor = true;
-            this._processorItem3.Click += new System.EventHandler(this.ItemClick);
+            this._processorItem3.Click += new System.EventHandler(this.ClickItem);
             // 
             // _processorItem5
             // 
@@ -243,7 +243,7 @@
             this._processorItem5.TabIndex = 3;
             this._processorItem5.Tag = "cpu_5";
             this._processorItem5.UseVisualStyleBackColor = true;
-            this._processorItem5.Click += new System.EventHandler(this.ItemClick);
+            this._processorItem5.Click += new System.EventHandler(this.ClickItem);
             // 
             // _processorItem2
             // 
@@ -255,7 +255,7 @@
             this._processorItem2.TabIndex = 2;
             this._processorItem2.Tag = "cpu_2";
             this._processorItem2.UseVisualStyleBackColor = true;
-            this._processorItem2.Click += new System.EventHandler(this.ItemClick);
+            this._processorItem2.Click += new System.EventHandler(this.ClickItem);
             // 
             // _processorItem4
             // 
@@ -267,7 +267,7 @@
             this._processorItem4.TabIndex = 1;
             this._processorItem4.Tag = "cpu_4";
             this._processorItem4.UseVisualStyleBackColor = true;
-            this._processorItem4.Click += new System.EventHandler(this.ItemClick);
+            this._processorItem4.Click += new System.EventHandler(this.ClickItem);
             // 
             // _processorItem1
             // 
@@ -279,7 +279,7 @@
             this._processorItem1.TabIndex = 0;
             this._processorItem1.Tag = "cpu_1";
             this._processorItem1.UseVisualStyleBackColor = true;
-            this._processorItem1.Click += new System.EventHandler(this.ItemClick);
+            this._processorItem1.Click += new System.EventHandler(this.ClickItem);
             // 
             // _memoryTabPage
             // 
@@ -307,7 +307,7 @@
             this._memoryItem6.TabIndex = 17;
             this._memoryItem6.Tag = "mem_6";
             this._memoryItem6.UseVisualStyleBackColor = true;
-            this._memoryItem6.Click += new System.EventHandler(this.ItemClick);
+            this._memoryItem6.Click += new System.EventHandler(this.ClickItem);
             // 
             // _memoryItem3
             // 
@@ -319,7 +319,7 @@
             this._memoryItem3.TabIndex = 16;
             this._memoryItem3.Tag = "mem_3";
             this._memoryItem3.UseVisualStyleBackColor = true;
-            this._memoryItem3.Click += new System.EventHandler(this.ItemClick);
+            this._memoryItem3.Click += new System.EventHandler(this.ClickItem);
             // 
             // _memoryItem5
             // 
@@ -331,7 +331,7 @@
             this._memoryItem5.TabIndex = 15;
             this._memoryItem5.Tag = "mem_5";
             this._memoryItem5.UseVisualStyleBackColor = true;
-            this._memoryItem5.Click += new System.EventHandler(this.ItemClick);
+            this._memoryItem5.Click += new System.EventHandler(this.ClickItem);
             // 
             // _memoryItem2
             // 
@@ -343,7 +343,7 @@
             this._memoryItem2.TabIndex = 14;
             this._memoryItem2.Tag = "mem_2";
             this._memoryItem2.UseVisualStyleBackColor = true;
-            this._memoryItem2.Click += new System.EventHandler(this.ItemClick);
+            this._memoryItem2.Click += new System.EventHandler(this.ClickItem);
             // 
             // _memoryItem4
             // 
@@ -355,7 +355,7 @@
             this._memoryItem4.TabIndex = 13;
             this._memoryItem4.Tag = "mem_4";
             this._memoryItem4.UseVisualStyleBackColor = true;
-            this._memoryItem4.Click += new System.EventHandler(this.ItemClick);
+            this._memoryItem4.Click += new System.EventHandler(this.ClickItem);
             // 
             // _memoryItem1
             // 
@@ -367,7 +367,7 @@
             this._memoryItem1.TabIndex = 12;
             this._memoryItem1.Tag = "mem_1";
             this._memoryItem1.UseVisualStyleBackColor = true;
-            this._memoryItem1.Click += new System.EventHandler(this.ItemClick);
+            this._memoryItem1.Click += new System.EventHandler(this.ClickItem);
             // 
             // _driveTabPage
             // 
@@ -395,7 +395,7 @@
             this._driveItem6.TabIndex = 17;
             this._driveItem6.Tag = "hdd_6";
             this._driveItem6.UseVisualStyleBackColor = true;
-            this._driveItem6.Click += new System.EventHandler(this.ItemClick);
+            this._driveItem6.Click += new System.EventHandler(this.ClickItem);
             // 
             // _driveItem3
             // 
@@ -407,7 +407,7 @@
             this._driveItem3.TabIndex = 16;
             this._driveItem3.Tag = "hdd_3";
             this._driveItem3.UseVisualStyleBackColor = true;
-            this._driveItem3.Click += new System.EventHandler(this.ItemClick);
+            this._driveItem3.Click += new System.EventHandler(this.ClickItem);
             // 
             // _driveItem5
             // 
@@ -419,7 +419,7 @@
             this._driveItem5.TabIndex = 15;
             this._driveItem5.Tag = "hdd_5";
             this._driveItem5.UseVisualStyleBackColor = true;
-            this._driveItem5.Click += new System.EventHandler(this.ItemClick);
+            this._driveItem5.Click += new System.EventHandler(this.ClickItem);
             // 
             // _driveItem2
             // 
@@ -431,7 +431,7 @@
             this._driveItem2.TabIndex = 14;
             this._driveItem2.Tag = "hdd_2";
             this._driveItem2.UseVisualStyleBackColor = true;
-            this._driveItem2.Click += new System.EventHandler(this.ItemClick);
+            this._driveItem2.Click += new System.EventHandler(this.ClickItem);
             // 
             // _driveItem4
             // 
@@ -443,7 +443,7 @@
             this._driveItem4.TabIndex = 13;
             this._driveItem4.Tag = "hdd_4";
             this._driveItem4.UseVisualStyleBackColor = true;
-            this._driveItem4.Click += new System.EventHandler(this.ItemClick);
+            this._driveItem4.Click += new System.EventHandler(this.ClickItem);
             // 
             // _driveItem1
             // 
@@ -455,7 +455,7 @@
             this._driveItem1.TabIndex = 12;
             this._driveItem1.Tag = "hdd_1";
             this._driveItem1.UseVisualStyleBackColor = true;
-            this._driveItem1.Click += new System.EventHandler(this.ItemClick);
+            this._driveItem1.Click += new System.EventHandler(this.ClickItem);
             // 
             // _cardTabPage
             // 
@@ -483,7 +483,7 @@
             this._cardItem6.TabIndex = 17;
             this._cardItem6.Tag = "gpu_6";
             this._cardItem6.UseVisualStyleBackColor = true;
-            this._cardItem6.Click += new System.EventHandler(this.ItemClick);
+            this._cardItem6.Click += new System.EventHandler(this.ClickItem);
             // 
             // _cardItem3
             // 
@@ -495,7 +495,7 @@
             this._cardItem3.TabIndex = 16;
             this._cardItem3.Tag = "gpu_3";
             this._cardItem3.UseVisualStyleBackColor = true;
-            this._cardItem3.Click += new System.EventHandler(this.ItemClick);
+            this._cardItem3.Click += new System.EventHandler(this.ClickItem);
             // 
             // _cardItem5
             // 
@@ -507,7 +507,7 @@
             this._cardItem5.TabIndex = 15;
             this._cardItem5.Tag = "gpu_5";
             this._cardItem5.UseVisualStyleBackColor = true;
-            this._cardItem5.Click += new System.EventHandler(this.ItemClick);
+            this._cardItem5.Click += new System.EventHandler(this.ClickItem);
             // 
             // _cardItem2
             // 
@@ -519,7 +519,7 @@
             this._cardItem2.TabIndex = 14;
             this._cardItem2.Tag = "gpu_2";
             this._cardItem2.UseVisualStyleBackColor = true;
-            this._cardItem2.Click += new System.EventHandler(this.ItemClick);
+            this._cardItem2.Click += new System.EventHandler(this.ClickItem);
             // 
             // _cardItem4
             // 
@@ -531,7 +531,7 @@
             this._cardItem4.TabIndex = 13;
             this._cardItem4.Tag = "gpu_4";
             this._cardItem4.UseVisualStyleBackColor = true;
-            this._cardItem4.Click += new System.EventHandler(this.ItemClick);
+            this._cardItem4.Click += new System.EventHandler(this.ClickItem);
             // 
             // _cardItem1
             // 
@@ -543,7 +543,7 @@
             this._cardItem1.TabIndex = 12;
             this._cardItem1.Tag = "gpu_1";
             this._cardItem1.UseVisualStyleBackColor = true;
-            this._cardItem1.Click += new System.EventHandler(this.ItemClick);
+            this._cardItem1.Click += new System.EventHandler(this.ClickItem);
             // 
             // _setTabPage
             // 
@@ -571,7 +571,7 @@
             this._setItem6.TabIndex = 17;
             this._setItem6.Tag = "set_6";
             this._setItem6.UseVisualStyleBackColor = true;
-            this._setItem6.Click += new System.EventHandler(this.ItemClick);
+            this._setItem6.Click += new System.EventHandler(this.ClickItem);
             // 
             // _setItem3
             // 
@@ -583,7 +583,7 @@
             this._setItem3.TabIndex = 16;
             this._setItem3.Tag = "set_3";
             this._setItem3.UseVisualStyleBackColor = true;
-            this._setItem3.Click += new System.EventHandler(this.ItemClick);
+            this._setItem3.Click += new System.EventHandler(this.ClickItem);
             // 
             // _setItem5
             // 
@@ -595,7 +595,7 @@
             this._setItem5.TabIndex = 15;
             this._setItem5.Tag = "set_5";
             this._setItem5.UseVisualStyleBackColor = true;
-            this._setItem5.Click += new System.EventHandler(this.ItemClick);
+            this._setItem5.Click += new System.EventHandler(this.ClickItem);
             // 
             // _setItem2
             // 
@@ -607,7 +607,7 @@
             this._setItem2.TabIndex = 14;
             this._setItem2.Tag = "set_2";
             this._setItem2.UseVisualStyleBackColor = true;
-            this._setItem2.Click += new System.EventHandler(this.ItemClick);
+            this._setItem2.Click += new System.EventHandler(this.ClickItem);
             // 
             // _setItem4
             // 
@@ -619,7 +619,7 @@
             this._setItem4.TabIndex = 13;
             this._setItem4.Tag = "set_4";
             this._setItem4.UseVisualStyleBackColor = true;
-            this._setItem4.Click += new System.EventHandler(this.ItemClick);
+            this._setItem4.Click += new System.EventHandler(this.ClickItem);
             // 
             // _setItem1
             // 
@@ -631,7 +631,7 @@
             this._setItem1.TabIndex = 12;
             this._setItem1.Tag = "set_1";
             this._setItem1.UseVisualStyleBackColor = true;
-            this._setItem1.Click += new System.EventHandler(this.ItemClick);
+            this._setItem1.Click += new System.EventHandler(this.ClickItem);
             // 
             // _descriptionBox
             // 

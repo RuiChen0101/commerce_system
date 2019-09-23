@@ -70,7 +70,7 @@ namespace Commerce_system
         }
 
         //bubbling item button click event
-        private void ItemClick(object sender, EventArgs e)
+        private void ClickItem(object sender, EventArgs e)
         {
             EventHandler handler = this._onItemClick;
             handler.Invoke(sender, e);

@@ -188,22 +188,6 @@
           <Reviews>
             <Smell>
               <Id>1</Id>
-              <SmellType>ICS(空白與空行-16)</SmellType>
-              <HashCode>SpacingAndNewLine16.InitialFiles.GetPrivateProfileSectionNames.0</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>Commerce system</Project>
-              <File>InitialFiles.cs</File>
-              <Line>18</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>ICS(空白與空行-16) 每個函式之間加一個空行</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>2</Id>
               <SmellType>ICS(縮排與換行-1)</SmellType>
               <HashCode>IndentAndNewLine1._typeList.        private readonly List&lt;string&gt; _typeList = new List&lt;string&gt;() { TYPE_PROCESSOR, TYPE_BOARD, TYPE_MEMORY, TYPE_DRIVE, TYPE_CARD, TYPE_SET };</HashCode>
               <Severity>Red</Severity>
@@ -219,7 +203,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>3</Id>
+              <Id>2</Id>
               <SmellType>ICS(縮排與換行-1)</SmellType>
               <HashCode>IndentAndNewLine1._typeNameList.        private readonly List&lt;string&gt; _typeNameList = new List&lt;string&gt;() { "CPU", "主機板", "記憶體", "硬碟", "顯示卡", "套裝電腦" };</HashCode>
               <Severity>Red</Severity>
@@ -235,7 +219,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>4</Id>
+              <Id>3</Id>
               <SmellType>ICS(縮排與換行-3)</SmellType>
               <HashCode>IndentAndNewLine3._typeList.        private readonly List&lt;string&gt; _typeList = new List&lt;string&gt;() { TYPE_PROCESSOR, TYPE_BOARD, TYPE_MEMORY, TYPE_DRIVE, TYPE_CARD, TYPE_SET };</HashCode>
               <Severity>Red</Severity>
@@ -251,7 +235,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>5</Id>
+              <Id>4</Id>
               <SmellType>ICS(縮排與換行-3)</SmellType>
               <HashCode>IndentAndNewLine3._typeNameList.        private readonly List&lt;string&gt; _typeNameList = new List&lt;string&gt;() { "CPU", "主機板", "記憶體", "硬碟", "顯示卡", "套裝電腦" };</HashCode>
               <Severity>Red</Severity>
@@ -267,7 +251,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>6</Id>
+              <Id>5</Id>
               <SmellType>Long method(過長函式)</SmellType>
               <HashCode>LongMethod.ItemInfo.InitialAllItemIdList.30</HashCode>
               <Severity>Warning</Severity>
@@ -283,55 +267,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>7</Id>
-              <SmellType>ICS(函式-2)</SmellType>
-              <HashCode>Method2.MainViewLoader.OnItemClick</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>Commerce system</Project>
-              <File>MainViewLoader.cs</File>
-              <Line>32</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>ICS(函式-2) 每個函式表示一種操作，因此一律使用動詞做為第一個單字</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>8</Id>
-              <SmellType>ICS(函式-2)</SmellType>
-              <HashCode>Method2.MainViewLoader.OnAddToOrderClick</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>Commerce system</Project>
-              <File>MainViewLoader.cs</File>
-              <Line>44</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>ICS(函式-2) 每個函式表示一種操作，因此一律使用動詞做為第一個單字</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>9</Id>
-              <SmellType>ICS(函式-2)</SmellType>
-              <HashCode>Method2.MainWindow.ItemClick</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>Commerce system</Project>
-              <File>MainWindow.cs</File>
-              <Line>73</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>ICS(函式-2) 每個函式表示一種操作，因此一律使用動詞做為第一個單字</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>10</Id>
+              <Id>6</Id>
               <SmellType>Long method(過長函式)</SmellType>
               <HashCode>LongMethod.MainWindow.InitialButtonDictionary.57</HashCode>
               <Severity>Red</Severity>
@@ -347,7 +283,39 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>11</Id>
+              <Id>7</Id>
+              <SmellType>Duplicated code(重複的程式碼)中度比對1</SmellType>
+              <HashCode>Commerce system.ItemInfo.cs.InitialAllItemIdList.133.141</HashCode>
+              <Severity>Red</Severity>
+              <Weight>9</Weight>
+              <Project>Commerce system</Project>
+              <File>ItemInfo.cs</File>
+              <Line>133</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>8</Id>
+              <SmellType>Duplicated code(重複的程式碼)中度比對1</SmellType>
+              <HashCode>Commerce system.ItemInfo.cs.InitialAllItemIdList.142.150</HashCode>
+              <Severity>Red</Severity>
+              <Weight>9</Weight>
+              <Project>Commerce system</Project>
+              <File>ItemInfo.cs</File>
+              <Line>142</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>9</Id>
               <SmellType>Feature Envy(依戀情節)</SmellType>
               <HashCode>39 目前物件 Commerce_system.MainViewLoader，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemInfo，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Commerce_system.ItemInfo.GetItemName(string) 以及 Commerce_system.ItemInfo.GetItemDescription(string)</HashCode>
               <Severity>Warning</Severity>
@@ -363,7 +331,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>12</Id>
+              <Id>10</Id>
               <SmellType>Feature Envy(依戀情節)</SmellType>
               <HashCode>49 目前物件 Commerce_system.MainViewLoader，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemInfo，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：Commerce_system.ItemInfo.GetItemName(string) 以及 Commerce_system.ItemInfo.GetItemTypeName(string) 以及 Commerce_system.ItemInfo.GetItemPrice(string)</HashCode>
               <Severity>Red</Severity>
@@ -380,7 +348,17 @@
             </Smell>
           </Reviews>
           <HashCodeIgnoreList />
-          <HashCodeRequestIgnoreList />
+          <HashCodeRequestIgnoreList>
+            <string>IndentAndNewLine1._typeList.        private readonly List&lt;string&gt; _typeList = new List&lt;string&gt;() { TYPE_PROCESSOR, TYPE_BOARD, TYPE_MEMORY, TYPE_DRIVE, TYPE_CARD, TYPE_SET };</string>
+            <string>IndentAndNewLine1._typeNameList.        private readonly List&lt;string&gt; _typeNameList = new List&lt;string&gt;() { "CPU", "主機板", "記憶體", "硬碟", "顯示卡", "套裝電腦" };</string>
+            <string>IndentAndNewLine3._typeList.        private readonly List&lt;string&gt; _typeList = new List&lt;string&gt;() { TYPE_PROCESSOR, TYPE_BOARD, TYPE_MEMORY, TYPE_DRIVE, TYPE_CARD, TYPE_SET };</string>
+            <string>IndentAndNewLine3._typeNameList.        private readonly List&lt;string&gt; _typeNameList = new List&lt;string&gt;() { "CPU", "主機板", "記憶體", "硬碟", "顯示卡", "套裝電腦" };</string>
+            <string>LongMethod.MainWindow.InitialButtonDictionary.57</string>
+            <string>Commerce system.ItemInfo.cs.InitialAllItemIdList.133.141</string>
+            <string>Commerce system.ItemInfo.cs.InitialAllItemIdList.142.150</string>
+            <string>39 目前物件 Commerce_system.MainViewLoader，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemInfo，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Commerce_system.ItemInfo.GetItemName(string) 以及 Commerce_system.ItemInfo.GetItemDescription(string)</string>
+            <string>49 目前物件 Commerce_system.MainViewLoader，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemInfo，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：Commerce_system.ItemInfo.GetItemName(string) 以及 Commerce_system.ItemInfo.GetItemTypeName(string) 以及 Commerce_system.ItemInfo.GetItemPrice(string)</string>
+          </HashCodeRequestIgnoreList>
           <AnalysisFileManager>
             <AnalysisFiles>
               <AnalysisFile>
@@ -440,7 +418,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>1400</ProductionLoc>
+          <ProductionLoc>1401</ProductionLoc>
           <TestLoc>0</TestLoc>
         </CodeReview>
       </Data>
