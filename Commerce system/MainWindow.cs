@@ -14,53 +14,28 @@ namespace Commerce_system
     {
         private ItemInfo _itemInfo;
         private ItemOrder _itemOrder;
-        private MainViewLoader _mainWindowLoader;
+        private MainViewModel _viewModel;
 
-        private const string IMAGE_FILE_PATH = ".\\img\\";
         private const string ITEM_PRICE_STRING = "單價: ";
         private const string TOTAL_PRICE_STRING = "總價: ";
 
         private Dictionary<string, List<Button>> _buttonDictionary = new Dictionary<string, List<Button>>();
 
         //default constructor
-        public MainWindow(ItemInfo itemInfo, ItemOrder itemOrder, MainViewLoader mainWindowLoader)
+        public MainWindow(ItemInfo itemInfo, ItemOrder itemOrder, MainViewModel viewModel)
         {
             InitializeComponent();
             this.InitialButtonDictionary();
             this._itemInfo = itemInfo;
             this._itemOrder = itemOrder;
-            this._mainWindowLoader= mainWindowLoader;
+            this._viewModel = viewModel;
             this.InitialAllItemButton();
         }
 
-        //show description
-        public void SetDescription(string description)
-        {
-            this._descriptionBox.Text = description;
-        }
-
-        //show item price
-        public void SetItemPrice(string price)
-        {
-            this._itemPrice.Text = ITEM_PRICE_STRING + price;
-        }
-
-        //show total price
-        public void SetTotalPrice(string price)
-        {
-            this._totalPrice.Text = TOTAL_PRICE_STRING + price;
-        }
-
-        //add new row for order table
-        public void AddNewOrderTableRow(string [] row)
-        {
-            this._orderList.Rows.Add(row);
-        }
-
         //setting item button
-        public void SetTabButton(string type, List<string> imageReference)
+        private void SetTabButton(string type, List<string> imageReference)
         {
-            for (int i = 0; i < MainViewLoader.DISPLAY_ITEM_COUNT; i++)
+            for (int i = 0; i < MainViewModel.DISPLAY_ITEM_COUNT; i++)
             {
                 if (imageReference[i].Equals(Constants.NULL_STRING))
                 {
@@ -69,30 +44,43 @@ namespace Commerce_system
                 }else
                 {
                     _buttonDictionary[type][i].Enabled = true;
-                    _buttonDictionary[type][i].BackgroundImage = new Bitmap(IMAGE_FILE_PATH + imageReference[i]);
+                    _buttonDictionary[type][i].BackgroundImage = new Bitmap(Constants.IMAGE_FILE_PATH + imageReference[i]);
                 }
             }
         }
 
         //bubbling item button click event
-        private void ItemClick(object sender, EventArgs e)
+        private void ClickItem(object sender, EventArgs e)
         {
+            const char BREAK_CHAR = '_';
+            const string RETURN_CHAR = "\n";
+            string senderTag = ((Button)sender).Tag.ToString();
+            string[] idData = senderTag.Split(BREAK_CHAR);
+            _viewModel.UpdateCurrentItem(idData[0], int.Parse(idData[1]) - 1);
+            string id = _viewModel.GetCurrentItem();
+            this._descriptionBox.Text = _itemInfo.GetItemName(id) + RETURN_CHAR + _itemInfo.GetItemDescription(id);
+            this._itemPrice.Text = ITEM_PRICE_STRING + _itemInfo.GetItemPrice(id).ToString(Constants.NUMBER_BREAK_KEY_WORD);
         }
 
         //bubbling add_to_cart button click event
         private void AddToOrderClick(object sender, EventArgs e)
         {
+            string id = _viewModel.GetCurrentItem();
+            _itemOrder.AddToOrder(id);
+            this._totalPrice.Text = TOTAL_PRICE_STRING + _itemOrder.GetTotalPrice().ToString(Constants.NUMBER_BREAK_KEY_WORD);
+            string[] orderRow = { _itemInfo.GetItemName(id), _itemInfo.GetItemTypeName(id), _itemInfo.GetItemPrice(id).ToString() };
+            this._orderList.Rows.Add(orderRow);
         }
 
         //initial all item button
         private void InitialAllItemButton()
         {
-            this.SetTabButton(ItemInfo.TYPE_PROCESSOR, _mainWindowLoader.GetItemImageByType(ItemInfo.TYPE_PROCESSOR));
-            this.SetTabButton(ItemInfo.TYPE_BOARD, _mainWindowLoader.GetItemImageByType(ItemInfo.TYPE_BOARD));
-            this.SetTabButton(ItemInfo.TYPE_MEMORY, _mainWindowLoader.GetItemImageByType(ItemInfo.TYPE_MEMORY));
-            this.SetTabButton(ItemInfo.TYPE_CARD, _mainWindowLoader.GetItemImageByType(ItemInfo.TYPE_CARD));
-            this.SetTabButton(ItemInfo.TYPE_DRIVE, _mainWindowLoader.GetItemImageByType(ItemInfo.TYPE_DRIVE));
-            this.SetTabButton(ItemInfo.TYPE_SET, _mainWindowLoader.GetItemImageByType(ItemInfo.TYPE_SET));
+            this.SetTabButton(ItemInfo.TYPE_PROCESSOR, _viewModel.GetItemImageByType(ItemInfo.TYPE_PROCESSOR));
+            this.SetTabButton(ItemInfo.TYPE_BOARD, _viewModel.GetItemImageByType(ItemInfo.TYPE_BOARD));
+            this.SetTabButton(ItemInfo.TYPE_MEMORY, _viewModel.GetItemImageByType(ItemInfo.TYPE_MEMORY));
+            this.SetTabButton(ItemInfo.TYPE_CARD, _viewModel.GetItemImageByType(ItemInfo.TYPE_CARD));
+            this.SetTabButton(ItemInfo.TYPE_DRIVE, _viewModel.GetItemImageByType(ItemInfo.TYPE_DRIVE));
+            this.SetTabButton(ItemInfo.TYPE_SET, _viewModel.GetItemImageByType(ItemInfo.TYPE_SET));
         }
 
         //initialize button dictionary

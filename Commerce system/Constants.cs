@@ -9,6 +9,8 @@ namespace Commerce_system
     public static class Constants
     {
         public const string NULL_STRING = "null";
-
+        public const string NUMBER_BREAK_KEY_WORD = "#,#";
+        public const string IMAGE_FILE_PATH = ".\\img\\item\\";
+        public const string ICON_FILE_PATH = ".\\img\\icon\\";
     }
 }

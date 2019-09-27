@@ -42,7 +42,7 @@
             this._openOrderSystem.TabIndex = 0;
             this._openOrderSystem.Text = "Order System";
             this._openOrderSystem.UseVisualStyleBackColor = true;
-            this._openOrderSystem.Click += new System.EventHandler(this.OpenOrderSyatem);
+            this._openOrderSystem.Click += new System.EventHandler(this.OpenOrderSystem);
             // 
             // _openInventorySystem
             // 

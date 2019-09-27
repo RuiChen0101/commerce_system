@@ -70,7 +70,7 @@
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="MainViewLoader.cs" />
+    <Compile Include="MainViewModel.cs" />
     <EmbeddedResource Include="EntryWindow.resx">
       <DependentUpon>EntryWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +192,9 @@
     <Content Include="img\X399 AORUS PRO.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="icon\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

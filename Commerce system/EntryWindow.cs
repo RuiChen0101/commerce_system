@@ -15,15 +15,11 @@ namespace Commerce_system
         private InitialFiles _initial;
         private ItemInfo _itemInfo;
         private ItemOrder _itemOrder;
-        private MainWindow _mainWindow;
-        private InventoryWindow _inventoryWindow;
-        private MainViewLoader _viewLoader;
+        private MainViewModel _viewModel;
         public EntryWindow()
         {
             InitializeComponent();
             this.InitialAllClass();
-            _mainWindow.FormClosed += this.HandelOrderSyatemClose;
-            _inventoryWindow.FormClosed += this.HandelInventorySyatemClose;
         }
 
         //initial all base class
@@ -32,23 +28,25 @@ namespace Commerce_system
             _initial = new InitialFiles();
             _itemInfo = new ItemInfo(_initial);
             _itemOrder = new ItemOrder(_itemInfo);
-            _mainWindow = new MainWindow();
-            _inventoryWindow = new InventoryWindow();
-            _viewLoader = new MainViewLoader(_itemInfo, _itemOrder, _mainWindow);
+            _viewModel = new MainViewModel(_itemInfo, _itemOrder);
         }
 
         //on _openOrderSystem click
-        private void OpenOrderSyatem(object sender, EventArgs e)
+        private void OpenOrderSystem(object sender, EventArgs e)
         {
             this._openOrderSystem.Enabled = false;
-            _mainWindow.Show();
+            MainWindow mainWindow = new MainWindow(_itemInfo, _itemOrder, _viewModel);
+            mainWindow.Show();
+            mainWindow.FormClosed += this.HandleOrderSystemClose;
         }
 
         //on _openInventorySystem click
         private void OpenInventorySystem(object sender, EventArgs e)
         {
             this._openInventorySystem.Enabled = false;
-            _inventoryWindow.Show();
+            InventoryWindow inventoryWindow = new InventoryWindow();
+            inventoryWindow.Show();
+            inventoryWindow.FormClosed += this.HandleInventorySystemClose;
         }
 
         //exit program
@@ -58,13 +56,13 @@ namespace Commerce_system
         }
 
         //release _openOrderSystem when form close
-        private void HandelOrderSyatemClose(object sender, FormClosedEventArgs e)
+        private void HandleOrderSystemClose(object sender, FormClosedEventArgs e)
         {
             this._openOrderSystem.Enabled = true;
         }
 
         //release _openInventorySystem when form close
-        private void HandelInventorySyatemClose(object sender, FormClosedEventArgs e)
+        private void HandleInventorySystemClose(object sender, FormClosedEventArgs e)
         {
             this._openInventorySystem.Enabled = true;
         }

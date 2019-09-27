@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Commerce_system
 {
-    public class MainViewLoader
+    public class MainViewModel
     {
         public const int DISPLAY_ITEM_COUNT = 6;
         private ItemInfo _itemInfo;
@@ -16,14 +16,14 @@ namespace Commerce_system
         private string _currentClickedItem = null;
 
         //default constructor
-        public MainViewLoader(ItemInfo itemInfo, ItemOrder itemOrder)
+        public MainViewModel(ItemInfo itemInfo, ItemOrder itemOrder)
         {
             this._itemInfo = itemInfo;
             this._itemOrder = itemOrder;
             this.InitialItemDictionary();
         }
 
-        //initialize all item button
+        //reutrn item image list
         public List<string> GetItemImageByType(String type)
         {
             List<string> imageReferenceList = new List<string>();
@@ -39,6 +39,18 @@ namespace Commerce_system
                 }
             }
             return imageReferenceList;
+        }
+
+        //update current clicked item id
+        public void UpdateCurrentItem(String type, int index)
+        {
+            this._currentClickedItem = _idDictionary[type][index];
+        }
+
+        //return currentItem
+        public string GetCurrentItem()
+        {
+            return this._currentClickedItem;
         }
 
         //initialize item id dictionary
