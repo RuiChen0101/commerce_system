@@ -15,6 +15,13 @@ namespace Commerce_system
         public const string TYPE_CARD = "gpu";
         public const string TYPE_SET = "set";
 
+        public const int TYPE_BOARD_INDEX = 0;
+        public const int TYPE_PROCESSOR_INDEX = 1;
+        public const int TYPE_MEMORY_INDEX = 2;
+        public const int TYPE_DRIVE_INDEX = 3;
+        public const int TYPE_CARD_INDEX = 4;
+        public const int TYPE_SET_INDEX = 5;
+
         private const string NAME_KEY = "name";
         private const string TYPE_KEY = "type";
         private const string IMAGE_KEY = "imgref";

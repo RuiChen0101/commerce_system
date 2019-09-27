@@ -19,6 +19,7 @@ namespace Commerce_system
         private const string ITEM_PRICE_STRING = "單價: ";
         private const string TOTAL_PRICE_STRING = "總價: ";
         private const string MONEY_UNIT = "元";
+        private const string BACK_SLASH = "/";
 
         private Dictionary<string, List<Button>> _buttonDictionary = new Dictionary<string, List<Button>>();
 
@@ -31,6 +32,7 @@ namespace Commerce_system
             this._itemOrder = itemOrder;
             this._viewModel = viewModel;
             this.InitialAllItemButton();
+            this.HandleTabIndexChanged(null, null);
         }
 
         //setting item button
@@ -82,6 +84,28 @@ namespace Commerce_system
             this.SetTabButton(ItemInfo.TYPE_CARD, _viewModel.GetItemImageByType(ItemInfo.TYPE_CARD));
             this.SetTabButton(ItemInfo.TYPE_DRIVE, _viewModel.GetItemImageByType(ItemInfo.TYPE_DRIVE));
             this.SetTabButton(ItemInfo.TYPE_SET, _viewModel.GetItemImageByType(ItemInfo.TYPE_SET));
+        }
+
+        //handel tabindex change 
+        private void HandleTabIndexChanged(object sender, TabControlEventArgs e)
+        {
+            this.UpdatePageIndicator();
+            this.UpdatePageButtonStatus();
+        }
+
+        //update page indicator data
+        private void UpdatePageIndicator()
+        {
+            Tuple<int, int> pageData = _viewModel.GetCurrentAndTotalPage(this._itemTab.SelectedIndex);
+            this._pageIndicate.Text = pageData.Item1.ToString() + BACK_SLASH + pageData.Item2.ToString();
+        }
+
+        //change page button enable status
+        private void UpdatePageButtonStatus()
+        {
+            int tabIndex = this._itemTab.SelectedIndex;
+            this._previousPage.Enabled = _viewModel.IsPreviousPageEnable(tabIndex);
+            this._nextPage.Enabled = _viewModel.IsNextPageEnable(tabIndex);
         }
 
         //initialize button dictionary
