@@ -125,30 +125,12 @@ namespace Commerce_system
         {
             this.ClearAllIdList();
             string[] allSections = _initial.GetSectionNames();
+            List<string>[] typeIdList = { _processorItemIdList, _boardItemIdList, _memoryItemIdList, _driveItemIdList, _cardItemIdList, _setItemIdList };
             foreach ( String section in allSections )
             {
                 String type = this.GetItemType(section);
-                switch (type)
-                {
-                    case TYPE_PROCESSOR:
-                        _processorItemIdList.Add(section);
-                        break;
-                    case TYPE_BOARD:
-                        _boardItemIdList.Add(section);
-                        break;
-                    case TYPE_MEMORY:
-                        _memoryItemIdList.Add(section);
-                        break;
-                    case TYPE_DRIVE:
-                        _driveItemIdList.Add(section);
-                        break;
-                    case TYPE_CARD:
-                        _cardItemIdList.Add(section);
-                        break;
-                    case TYPE_SET:
-                        _setItemIdList.Add(section);
-                        break;
-                }
+                int typeIndex = _typeList.FindIndex(x => x == type);
+                typeIdList[typeIndex].Add(section);
             }
         }
 

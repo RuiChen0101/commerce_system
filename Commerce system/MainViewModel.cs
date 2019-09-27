@@ -11,15 +11,15 @@ namespace Commerce_system
     {
         public const int DISPLAY_ITEM_COUNT = 6;
         private ItemInfo _itemInfo;
-        private ItemOrder _itemOrder;
         private Dictionary<string, List<string>> _idDictionary = new Dictionary<string, List<string>>();
+        private Dictionary<string, int> _totalPage = new Dictionary<string, int>();
+        private Dictionary<string, int> _currentPage = new Dictionary<string, int>();
         private string _currentClickedItem = null;
 
         //default constructor
-        public MainViewModel(ItemInfo itemInfo, ItemOrder itemOrder)
+        public MainViewModel(ItemInfo itemInfo)
         {
             this._itemInfo = itemInfo;
-            this._itemOrder = itemOrder;
             this.InitialItemDictionary();
         }
 
@@ -62,6 +62,11 @@ namespace Commerce_system
             _idDictionary.Add(ItemInfo.TYPE_DRIVE, FillIdListLength(_itemInfo.GetDriveItemIdList().Take(DISPLAY_ITEM_COUNT).ToList<string>()));
             _idDictionary.Add(ItemInfo.TYPE_CARD, FillIdListLength(_itemInfo.GetCardItemIdList().Take(DISPLAY_ITEM_COUNT).ToList<string>()));
             _idDictionary.Add(ItemInfo.TYPE_SET, FillIdListLength(_itemInfo.GetSetItemIdList().Take(DISPLAY_ITEM_COUNT).ToList<string>()));
+        }
+        private void InitialPageData()
+        {
+            _totalPage.Add(ItemInfo.TYPE_PROCESSOR, ((_itemInfo.GetProcessorItemIdList().Count + DISPLAY_ITEM_COUNT - 1) / DISPLAY_ITEM_COUNT));
+
         }
 
         //fill empty space of id List with "null"

@@ -1,77 +1,41 @@
-E:\files\C++\wpc\erp_system\Commerce system\obj\Debug\Commerce system.csprojAssemblyReference.cache
-E:\files\C++\wpc\erp_system\Commerce system\obj\Debug\Commerce_system.MainWindow.resources
-E:\files\C++\wpc\erp_system\Commerce system\obj\Debug\Commerce_system.Properties.Resources.resources
-E:\files\C++\wpc\erp_system\Commerce system\obj\Debug\Commerce system.csproj.GenerateResource.cache
-E:\files\C++\wpc\erp_system\Commerce system\obj\Debug\Commerce system.csproj.CoreCompileInputs.cache
-E:\files\C++\wpc\erp_system\Commerce system\bin\Debug\img\ADATA 16G DDR4-2666.jpg
-E:\files\C++\wpc\erp_system\Commerce system\bin\Debug\img\ADATA 4G DDR4-2666.jpg
-E:\files\C++\wpc\erp_system\Commerce system\bin\Debug\img\ADATA 8G DDR4-3600.jpg
-E:\files\C++\wpc\erp_system\Commerce system\bin\Debug\img\ADATA Ultimate SU650 240G.jpg
-E:\files\C++\wpc\erp_system\Commerce system\bin\Debug\img\AMD R9 3900X.jpg
-E:\files\C++\wpc\erp_system\Commerce system\bin\Debug\img\ASRock Z390 Phantom Gaming 6.jpg
-E:\files\C++\wpc\erp_system\Commerce system\bin\Debug\img\ASUS DUAL-RTX2080Ti-A11G.jpg
-E:\files\C++\wpc\erp_system\Commerce system\bin\Debug\img\ASUS PRIME H370M-PLUS.jpg
-E:\files\C++\wpc\erp_system\Commerce system\bin\Debug\img\ASUS PRIME X299 DELUXE II.jpg
-E:\files\C++\wpc\erp_system\Commerce system\bin\Debug\img\ASUS PRIME X299-A.jpg
-E:\files\C++\wpc\erp_system\Commerce system\bin\Debug\img\ASUS VC66-740U2TA.jpg
-E:\files\C++\wpc\erp_system\Commerce system\bin\Debug\img\CORSAIR MP510 240G.jpg
-E:\files\C++\wpc\erp_system\Commerce system\bin\Debug\img\GIGABYTE RX590 Gaming 8G.png
-E:\files\C++\wpc\erp_system\Commerce system\bin\Debug\img\Intel i3-8100.jpg
-E:\files\C++\wpc\erp_system\Commerce system\bin\Debug\img\Intel i7-8700.jpg
-E:\files\C++\wpc\erp_system\Commerce system\bin\Debug\img\Intel i9-9900X.jpg
-E:\files\C++\wpc\erp_system\Commerce system\bin\Debug\img\MICRON 8G DDR4-3200 LT.jpg
-E:\files\C++\wpc\erp_system\Commerce system\bin\Debug\img\MICRON Crucia MX500 250G.jpg
-E:\files\C++\wpc\erp_system\Commerce system\bin\Debug\img\MSI Cubi N 8GL.jpg
-E:\files\C++\wpc\erp_system\Commerce system\bin\Debug\img\MSI Infinite A 9SD.jpg
-E:\files\C++\wpc\erp_system\Commerce system\bin\Debug\img\MSI RTX2070 GAMING 8G.png
-E:\files\C++\wpc\erp_system\Commerce system\bin\Debug\img\MSI Z390-A PRO.jpg
-E:\files\C++\wpc\erp_system\Commerce system\bin\Debug\img\UMAX 4G DDR4-2400.jpg
-E:\files\C++\wpc\erp_system\Commerce system\bin\Debug\img\UMAX 4G DDR4-2666.jpg
-E:\files\C++\wpc\erp_system\Commerce system\bin\Debug\img\X399 AORUS PRO.png
-E:\files\C++\wpc\erp_system\Commerce system\bin\Debug\item.ini
-E:\files\C++\wpc\erp_system\Commerce system\bin\Debug\Commerce system.exe.config
-E:\files\C++\wpc\erp_system\Commerce system\bin\Debug\Commerce system.exe
-E:\files\C++\wpc\erp_system\Commerce system\bin\Debug\Commerce system.pdb
-E:\files\C++\wpc\erp_system\Commerce system\obj\Debug\Commerce system.exe
-E:\files\C++\wpc\erp_system\Commerce system\obj\Debug\Commerce system.pdb
-D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\ADATA 16G DDR4-2666.jpg
-D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\ADATA 4G DDR4-2666.jpg
-D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\ADATA 8G DDR4-3600.jpg
-D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\ADATA Ultimate SU650 240G.jpg
-D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\AMD R9 3900X.jpg
-D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\ASRock Z390 Phantom Gaming 6.jpg
-D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\ASUS DUAL-RTX2080Ti-A11G.jpg
-D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\ASUS PRIME H370M-PLUS.jpg
-D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\ASUS PRIME X299 DELUXE II.jpg
-D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\ASUS PRIME X299-A.jpg
-D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\ASUS VC66-740U2TA.jpg
-D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\CORSAIR MP510 240G.jpg
-D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\GIGABYTE RX590 Gaming 8G.png
-D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\Intel i3-8100.jpg
-D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\Intel i7-8700.jpg
-D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\Intel i9-9900X.jpg
-D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\MICRON 8G DDR4-3200 LT.jpg
-D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\MICRON Crucia MX500 250G.jpg
-D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\MSI Cubi N 8GL.jpg
-D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\MSI Infinite A 9SD.jpg
-D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\MSI RTX2070 GAMING 8G.png
-D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\MSI Z390-A PRO.jpg
-D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\UMAX 4G DDR4-2400.jpg
-D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\UMAX 4G DDR4-2666.jpg
-D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\X399 AORUS PRO.png
+D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\item\ADATA 16G DDR4-2666.jpg
+D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\item\ADATA 4G DDR4-2666.jpg
+D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\item\ADATA 8G DDR4-3600.jpg
+D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\item\ADATA Ultimate SU650 240G.jpg
+D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\item\AMD R9 3900X.jpg
+D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\item\ASRock Z390 Phantom Gaming 6.jpg
+D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\item\ASUS DUAL-RTX2080Ti-A11G.jpg
+D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\item\ASUS PRIME A320M-K.jpeg
+D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\item\ASUS PRIME H370M-PLUS.jpg
+D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\item\ASUS PRIME X299 DELUXE II.jpg
+D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\item\ASUS PRIME X299-A.jpg
+D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\item\ASUS PRIME X399-A.jpg
+D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\item\ASUS VC66-740U2TA.jpg
+D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\item\CORSAIR MP510 240G.jpg
+D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\item\GIGABYTE RX590 Gaming 8G.png
+D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\item\Intel i3-8100.jpg
+D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\item\Intel i7-8700.jpg
+D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\item\Intel i9-9900X.jpg
+D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\item\MICRON 8G DDR4-3200 LT.jpg
+D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\item\MICRON Crucia MX500 250G.jpg
+D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\item\MSI Cubi N 8GL.jpg
+D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\item\MSI Infinite A 9SD.jpg
+D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\item\MSI MEG X399 Creation.jpg
+D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\item\MSI RTX2070 GAMING 8G.png
+D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\item\MSI Z390-A PRO.jpg
+D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\item\UMAX 4G DDR4-2400.jpg
+D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\item\UMAX 4G DDR4-2666.jpg
+D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\item\X399 AORUS PRO.png
 D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\item.ini
 D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\Commerce system.exe.config
 D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\Commerce system.exe
 D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\Commerce system.pdb
 D:\files\C++\windows program course\ERP system\Commerce system\obj\Debug\Commerce system.csprojAssemblyReference.cache
+D:\files\C++\windows program course\ERP system\Commerce system\obj\Debug\Commerce_system.EntryWindow.resources
+D:\files\C++\windows program course\ERP system\Commerce system\obj\Debug\Commerce_system.InventoryWindow.resources
 D:\files\C++\windows program course\ERP system\Commerce system\obj\Debug\Commerce_system.MainWindow.resources
 D:\files\C++\windows program course\ERP system\Commerce system\obj\Debug\Commerce_system.Properties.Resources.resources
 D:\files\C++\windows program course\ERP system\Commerce system\obj\Debug\Commerce system.csproj.GenerateResource.cache
 D:\files\C++\windows program course\ERP system\Commerce system\obj\Debug\Commerce system.csproj.CoreCompileInputs.cache
 D:\files\C++\windows program course\ERP system\Commerce system\obj\Debug\Commerce system.exe
 D:\files\C++\windows program course\ERP system\Commerce system\obj\Debug\Commerce system.pdb
-D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\ASUS PRIME A320M-K.jpeg
-D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\ASUS PRIME X399-A.jpg
-D:\files\C++\windows program course\ERP system\Commerce system\bin\Debug\img\MSI MEG X399 Creation.jpg
-D:\files\C++\windows program course\ERP system\Commerce system\obj\Debug\Commerce_system.EntryWindow.resources
-D:\files\C++\windows program course\ERP system\Commerce system\obj\Debug\Commerce_system.InventoryWindow.resources

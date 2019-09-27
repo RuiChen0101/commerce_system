@@ -28,7 +28,7 @@ namespace Commerce_system
             _initial = new InitialFiles();
             _itemInfo = new ItemInfo(_initial);
             _itemOrder = new ItemOrder(_itemInfo);
-            _viewModel = new MainViewModel(_itemInfo, _itemOrder);
+            _viewModel = new MainViewModel(_itemInfo);
         }
 
         //on _openOrderSystem click

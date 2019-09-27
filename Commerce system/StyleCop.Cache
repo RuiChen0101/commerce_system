@@ -18,7 +18,7 @@
     <timestamps>
       <styleCop>2019/09/20 13:47:11.645</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2019/09/27 13:24:21.446</sourceFile>
+      <sourceFile>2019/09/27 13:44:47.151</sourceFile>
       <parser>2019/09/20 13:47:11.645</parser>
       <KellyPalRules.KellyPalAnalyzer>2019/09/20 13:47:11.645</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
@@ -95,7 +95,7 @@
     <timestamps>
       <styleCop>2019/09/20 13:47:11.645</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2019/09/27 12:39:25.827</sourceFile>
+      <sourceFile>2019/09/27 14:24:21.577</sourceFile>
       <parser>2019/09/20 13:47:11.645</parser>
       <KellyPalRules.KellyPalAnalyzer>2019/09/20 13:47:11.645</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
@@ -143,11 +143,6 @@
         <startColumn>74</startColumn>
         <endLine>25</endLine>
         <endColumn>74</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="KellyPalRules.KellyPalAnalyzer" rule="LongMethod" ruleCheckId="LM0001">
-        <context>Long method(過長函式)</context>
-        <line>124</line>
         <warning>False</warning>
       </violation>
     </violations>
@@ -178,7 +173,7 @@
     <timestamps>
       <styleCop>2019/09/20 13:47:11.645</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2019/09/27 13:36:03.620</sourceFile>
+      <sourceFile>2019/09/27 14:11:04.870</sourceFile>
       <parser>2019/09/20 13:47:11.645</parser>
       <KellyPalRules.KellyPalAnalyzer>2019/09/20 13:47:11.645</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
@@ -186,7 +181,7 @@
     <violations>
       <violation namespace="KellyPalRules.KellyPalAnalyzer" rule="LongMethod" ruleCheckId="LM0001">
         <context>Long method(過長函式)</context>
-        <line>88</line>
+        <line>87</line>
         <warning>False</warning>
       </violation>
     </violations>
@@ -195,7 +190,7 @@
     <timestamps>
       <styleCop>2019/09/20 13:47:11.645</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2019/09/27 12:48:12.285</sourceFile>
+      <sourceFile>2019/09/27 13:43:10.072</sourceFile>
       <parser>2019/09/20 13:47:11.645</parser>
       <KellyPalRules.KellyPalAnalyzer>2019/09/20 13:47:11.645</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>

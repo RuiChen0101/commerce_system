@@ -68,15 +68,19 @@
             this._setItem1 = new System.Windows.Forms.Button();
             this._descriptionBox = new System.Windows.Forms.RichTextBox();
             this._itemGroup = new System.Windows.Forms.GroupBox();
+            this._pageLabel = new System.Windows.Forms.Label();
             this._addToCart = new System.Windows.Forms.Button();
             this._itemInfoGroup = new System.Windows.Forms.GroupBox();
             this._itemPrice = new System.Windows.Forms.Label();
             this._orderList = new System.Windows.Forms.DataGridView();
-            this._totalPrice = new System.Windows.Forms.Label();
             this._orderedItemDelete = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._orderedItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._orderedItemType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._orderedItemPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._totalPrice = new System.Windows.Forms.Label();
+            this._pageIndicate = new System.Windows.Forms.Label();
+            this._previousPage = new System.Windows.Forms.Button();
+            this._nextPage = new System.Windows.Forms.Button();
             this._itemTab.SuspendLayout();
             this._boardTabPage.SuspendLayout();
             this._processorTabPage.SuspendLayout();
@@ -649,6 +653,10 @@
             // 
             // _itemGroup
             // 
+            this._itemGroup.Controls.Add(this._nextPage);
+            this._itemGroup.Controls.Add(this._previousPage);
+            this._itemGroup.Controls.Add(this._pageIndicate);
+            this._itemGroup.Controls.Add(this._pageLabel);
             this._itemGroup.Controls.Add(this._addToCart);
             this._itemGroup.Controls.Add(this._itemInfoGroup);
             this._itemGroup.Controls.Add(this._itemTab);
@@ -660,6 +668,16 @@
             this._itemGroup.TabIndex = 2;
             this._itemGroup.TabStop = false;
             this._itemGroup.Text = "商品";
+            // 
+            // _pageLabel
+            // 
+            this._pageLabel.AutoSize = true;
+            this._pageLabel.Font = new System.Drawing.Font("微軟正黑體", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._pageLabel.Location = new System.Drawing.Point(10, 590);
+            this._pageLabel.Name = "_pageLabel";
+            this._pageLabel.Size = new System.Drawing.Size(87, 35);
+            this._pageLabel.TabIndex = 3;
+            this._pageLabel.Text = "Page:";
             // 
             // _addToCart
             // 
@@ -692,9 +710,9 @@
             this._itemPrice.Location = new System.Drawing.Point(415, 114);
             this._itemPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._itemPrice.Name = "_itemPrice";
-            this._itemPrice.Size = new System.Drawing.Size(61, 30);
+            this._itemPrice.Size = new System.Drawing.Size(67, 30);
             this._itemPrice.TabIndex = 2;
-            this._itemPrice.Text = "單價";
+            this._itemPrice.Text = "單價:";
             // 
             // _orderList
             // 
@@ -715,17 +733,6 @@
             this._orderList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._orderList.Size = new System.Drawing.Size(529, 552);
             this._orderList.TabIndex = 3;
-            // 
-            // _totalPrice
-            // 
-            this._totalPrice.AutoSize = true;
-            this._totalPrice.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._totalPrice.Location = new System.Drawing.Point(996, 616);
-            this._totalPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this._totalPrice.Name = "_totalPrice";
-            this._totalPrice.Size = new System.Drawing.Size(61, 30);
-            this._totalPrice.TabIndex = 3;
-            this._totalPrice.Text = "總價";
             // 
             // _orderedItemDelete
             // 
@@ -758,6 +765,47 @@
             this._orderedItemPrice.ReadOnly = true;
             this._orderedItemPrice.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
+            // _totalPrice
+            // 
+            this._totalPrice.AutoSize = true;
+            this._totalPrice.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._totalPrice.Location = new System.Drawing.Point(714, 617);
+            this._totalPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this._totalPrice.Name = "_totalPrice";
+            this._totalPrice.Size = new System.Drawing.Size(111, 30);
+            this._totalPrice.TabIndex = 3;
+            this._totalPrice.Text = "總價: 0元";
+            // 
+            // _pageIndicate
+            // 
+            this._pageIndicate.AutoSize = true;
+            this._pageIndicate.Font = new System.Drawing.Font("微軟正黑體", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._pageIndicate.Location = new System.Drawing.Point(103, 590);
+            this._pageIndicate.Name = "_pageIndicate";
+            this._pageIndicate.Size = new System.Drawing.Size(59, 35);
+            this._pageIndicate.TabIndex = 4;
+            this._pageIndicate.Text = "1/2";
+            // 
+            // _previousPage
+            // 
+            this._previousPage.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._previousPage.Location = new System.Drawing.Point(169, 587);
+            this._previousPage.Name = "_previousPage";
+            this._previousPage.Size = new System.Drawing.Size(104, 40);
+            this._previousPage.TabIndex = 5;
+            this._previousPage.Text = "<";
+            this._previousPage.UseVisualStyleBackColor = true;
+            // 
+            // _nextPage
+            // 
+            this._nextPage.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._nextPage.Location = new System.Drawing.Point(290, 586);
+            this._nextPage.Name = "_nextPage";
+            this._nextPage.Size = new System.Drawing.Size(104, 40);
+            this._nextPage.TabIndex = 6;
+            this._nextPage.Text = ">";
+            this._nextPage.UseVisualStyleBackColor = true;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -779,6 +827,7 @@
             this._cardTabPage.ResumeLayout(false);
             this._setTabPage.ResumeLayout(false);
             this._itemGroup.ResumeLayout(false);
+            this._itemGroup.PerformLayout();
             this._itemInfoGroup.ResumeLayout(false);
             this._itemInfoGroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this._orderList)).EndInit();
@@ -843,5 +892,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn _orderedItemName;
         private System.Windows.Forms.DataGridViewTextBoxColumn _orderedItemType;
         private System.Windows.Forms.DataGridViewTextBoxColumn _orderedItemPrice;
+        private System.Windows.Forms.Label _pageLabel;
+        private System.Windows.Forms.Label _pageIndicate;
+        private System.Windows.Forms.Button _nextPage;
+        private System.Windows.Forms.Button _previousPage;
     }
 }

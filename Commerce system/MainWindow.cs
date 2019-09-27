@@ -18,6 +18,7 @@ namespace Commerce_system
 
         private const string ITEM_PRICE_STRING = "單價: ";
         private const string TOTAL_PRICE_STRING = "總價: ";
+        private const string MONEY_UNIT = "元";
 
         private Dictionary<string, List<Button>> _buttonDictionary = new Dictionary<string, List<Button>>();
 
@@ -59,7 +60,7 @@ namespace Commerce_system
             _viewModel.UpdateCurrentItem(idData[0], int.Parse(idData[1]) - 1);
             string id = _viewModel.GetCurrentItem();
             this._descriptionBox.Text = _itemInfo.GetItemName(id) + RETURN_CHAR + _itemInfo.GetItemDescription(id);
-            this._itemPrice.Text = ITEM_PRICE_STRING + _itemInfo.GetItemPrice(id).ToString(Constants.NUMBER_BREAK_KEY_WORD);
+            this._itemPrice.Text = ITEM_PRICE_STRING + _itemInfo.GetItemPrice(id).ToString(Constants.NUMBER_BREAK_KEY_WORD) + MONEY_UNIT;
         }
 
         //bubbling add_to_cart button click event
@@ -67,7 +68,7 @@ namespace Commerce_system
         {
             string id = _viewModel.GetCurrentItem();
             _itemOrder.AddToOrder(id);
-            this._totalPrice.Text = TOTAL_PRICE_STRING + _itemOrder.GetTotalPrice().ToString(Constants.NUMBER_BREAK_KEY_WORD);
+            this._totalPrice.Text = TOTAL_PRICE_STRING + _itemOrder.GetTotalPrice().ToString(Constants.NUMBER_BREAK_KEY_WORD) + MONEY_UNIT;
             string[] orderRow = { _itemInfo.GetItemName(id), _itemInfo.GetItemTypeName(id), _itemInfo.GetItemPrice(id).ToString() };
             this._orderList.Rows.Add(orderRow);
         }
