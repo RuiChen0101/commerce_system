@@ -14,12 +14,8 @@ namespace Commerce_system
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            InitialFiles ini = new InitialFiles();
-            ItemInfo itemInfo = new ItemInfo(ini);
-            ItemOrder itemOrder = new ItemOrder(itemInfo);
-            MainWindow mainWindow = new MainWindow();
-            MainViewLoader viewLoader = new MainViewLoader(itemInfo, itemOrder, mainWindow);
-            Application.Run(mainWindow);
+            EntryWindow entryWindow = new EntryWindow();
+            Application.Run(entryWindow);
         }
     }
 }

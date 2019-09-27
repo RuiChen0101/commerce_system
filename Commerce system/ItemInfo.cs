@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Commerce_system
 {
-    class ItemInfo
+    public class ItemInfo
     {
         public const string TYPE_PROCESSOR = "cpu";
         public const string TYPE_BOARD = "mb";
@@ -65,9 +65,9 @@ namespace Commerce_system
         }
 
         //get item price
-        public string GetItemPrice(string id)
+        public int GetItemPrice(string id)
         {
-            return _initial.ReadInitial(id, PRICE_KEY);
+            return int.Parse(_initial.ReadInitial(id, PRICE_KEY));
         }
 
         //get item type name by translate type string

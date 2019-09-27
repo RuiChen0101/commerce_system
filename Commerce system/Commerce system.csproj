@@ -48,7 +48,19 @@
   <ItemGroup>
     <Compile Include="Constants.cs" />
     <Compile Include="Entry.cs" />
+    <Compile Include="EntryWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EntryWindow.Designer.cs">
+      <DependentUpon>EntryWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="InitialFiles.cs" />
+    <Compile Include="InventoryWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InventoryWindow.Designer.cs">
+      <DependentUpon>InventoryWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="ItemInfo.cs" />
     <Compile Include="ItemOrder.cs" />
     <Compile Include="MainWindow.cs">
@@ -59,6 +71,12 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MainViewLoader.cs" />
+    <EmbeddedResource Include="EntryWindow.resx">
+      <DependentUpon>EntryWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventoryWindow.resx">
+      <DependentUpon>InventoryWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="mainwindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,6 +129,9 @@
     <Content Include="img\ASUS DUAL-RTX2080Ti-A11G.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="img\ASUS PRIME A320M-K.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="img\ASUS PRIME H370M-PLUS.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -118,6 +139,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="img\ASUS PRIME X299-A.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\ASUS PRIME X399-A.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="img\ASUS VC66-740U2TA.jpg">
@@ -148,6 +172,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="img\MSI Infinite A 9SD.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\MSI MEG X399 Creation.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="img\MSI RTX2070 GAMING 8G.png">

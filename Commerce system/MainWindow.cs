@@ -12,8 +12,9 @@ namespace Commerce_system
 {
     public partial class MainWindow : Form
     {
-        public event EventHandler _onItemClick;
-        public event EventHandler _onAddToOrderClick;
+        private ItemInfo _itemInfo;
+        private ItemOrder _itemOrder;
+        private MainViewLoader _mainWindowLoader;
 
         private const string IMAGE_FILE_PATH = ".\\img\\";
         private const string ITEM_PRICE_STRING = "單價: ";
@@ -22,10 +23,14 @@ namespace Commerce_system
         private Dictionary<string, List<Button>> _buttonDictionary = new Dictionary<string, List<Button>>();
 
         //default constructor
-        public MainWindow()
+        public MainWindow(ItemInfo itemInfo, ItemOrder itemOrder, MainViewLoader mainWindowLoader)
         {
             InitializeComponent();
             this.InitialButtonDictionary();
+            this._itemInfo = itemInfo;
+            this._itemOrder = itemOrder;
+            this._mainWindowLoader= mainWindowLoader;
+            this.InitialAllItemButton();
         }
 
         //show description
@@ -72,15 +77,22 @@ namespace Commerce_system
         //bubbling item button click event
         private void ItemClick(object sender, EventArgs e)
         {
-            EventHandler handler = this._onItemClick;
-            handler.Invoke(sender, e);
         }
 
         //bubbling add_to_cart button click event
         private void AddToOrderClick(object sender, EventArgs e)
         {
-            EventHandler handler = this._onAddToOrderClick;
-            handler.Invoke(sender, e);
+        }
+
+        //initial all item button
+        private void InitialAllItemButton()
+        {
+            this.SetTabButton(ItemInfo.TYPE_PROCESSOR, _mainWindowLoader.GetItemImageByType(ItemInfo.TYPE_PROCESSOR));
+            this.SetTabButton(ItemInfo.TYPE_BOARD, _mainWindowLoader.GetItemImageByType(ItemInfo.TYPE_BOARD));
+            this.SetTabButton(ItemInfo.TYPE_MEMORY, _mainWindowLoader.GetItemImageByType(ItemInfo.TYPE_MEMORY));
+            this.SetTabButton(ItemInfo.TYPE_CARD, _mainWindowLoader.GetItemImageByType(ItemInfo.TYPE_CARD));
+            this.SetTabButton(ItemInfo.TYPE_DRIVE, _mainWindowLoader.GetItemImageByType(ItemInfo.TYPE_DRIVE));
+            this.SetTabButton(ItemInfo.TYPE_SET, _mainWindowLoader.GetItemImageByType(ItemInfo.TYPE_SET));
         }
 
         //initialize button dictionary

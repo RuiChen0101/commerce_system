@@ -96,11 +96,11 @@
             this._itemTab.Controls.Add(this._driveTabPage);
             this._itemTab.Controls.Add(this._cardTabPage);
             this._itemTab.Controls.Add(this._setTabPage);
-            this._itemTab.Location = new System.Drawing.Point(4, 20);
-            this._itemTab.Margin = new System.Windows.Forms.Padding(2);
+            this._itemTab.Location = new System.Drawing.Point(5, 25);
+            this._itemTab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._itemTab.Name = "_itemTab";
             this._itemTab.SelectedIndex = 0;
-            this._itemTab.Size = new System.Drawing.Size(494, 298);
+            this._itemTab.Size = new System.Drawing.Size(659, 372);
             this._itemTab.TabIndex = 0;
             // 
             // _boardTabPage
@@ -111,11 +111,11 @@
             this._boardTabPage.Controls.Add(this._boardItem2);
             this._boardTabPage.Controls.Add(this._boardItem4);
             this._boardTabPage.Controls.Add(this._boardItem1);
-            this._boardTabPage.Location = new System.Drawing.Point(4, 22);
-            this._boardTabPage.Margin = new System.Windows.Forms.Padding(2);
+            this._boardTabPage.Location = new System.Drawing.Point(4, 25);
+            this._boardTabPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._boardTabPage.Name = "_boardTabPage";
-            this._boardTabPage.Padding = new System.Windows.Forms.Padding(2);
-            this._boardTabPage.Size = new System.Drawing.Size(486, 272);
+            this._boardTabPage.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this._boardTabPage.Size = new System.Drawing.Size(651, 343);
             this._boardTabPage.TabIndex = 1;
             this._boardTabPage.Text = "主機板";
             this._boardTabPage.UseVisualStyleBackColor = true;
@@ -123,10 +123,10 @@
             // _boardItem6
             // 
             this._boardItem6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._boardItem6.Location = new System.Drawing.Point(340, 145);
-            this._boardItem6.Margin = new System.Windows.Forms.Padding(2);
+            this._boardItem6.Location = new System.Drawing.Point(453, 181);
+            this._boardItem6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._boardItem6.Name = "_boardItem6";
-            this._boardItem6.Size = new System.Drawing.Size(142, 126);
+            this._boardItem6.Size = new System.Drawing.Size(189, 158);
             this._boardItem6.TabIndex = 11;
             this._boardItem6.Tag = "mb_6";
             this._boardItem6.UseVisualStyleBackColor = true;
@@ -135,10 +135,10 @@
             // _boardItem3
             // 
             this._boardItem3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._boardItem3.Location = new System.Drawing.Point(340, 4);
-            this._boardItem3.Margin = new System.Windows.Forms.Padding(2);
+            this._boardItem3.Location = new System.Drawing.Point(453, 5);
+            this._boardItem3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._boardItem3.Name = "_boardItem3";
-            this._boardItem3.Size = new System.Drawing.Size(142, 127);
+            this._boardItem3.Size = new System.Drawing.Size(189, 159);
             this._boardItem3.TabIndex = 10;
             this._boardItem3.Tag = "mb_3";
             this._boardItem3.UseVisualStyleBackColor = true;
@@ -147,10 +147,10 @@
             // _boardItem5
             // 
             this._boardItem5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._boardItem5.Location = new System.Drawing.Point(172, 145);
-            this._boardItem5.Margin = new System.Windows.Forms.Padding(2);
+            this._boardItem5.Location = new System.Drawing.Point(229, 181);
+            this._boardItem5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._boardItem5.Name = "_boardItem5";
-            this._boardItem5.Size = new System.Drawing.Size(142, 126);
+            this._boardItem5.Size = new System.Drawing.Size(189, 158);
             this._boardItem5.TabIndex = 9;
             this._boardItem5.Tag = "mb_5";
             this._boardItem5.UseVisualStyleBackColor = true;
@@ -159,10 +159,10 @@
             // _boardItem2
             // 
             this._boardItem2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._boardItem2.Location = new System.Drawing.Point(172, 4);
-            this._boardItem2.Margin = new System.Windows.Forms.Padding(2);
+            this._boardItem2.Location = new System.Drawing.Point(229, 5);
+            this._boardItem2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._boardItem2.Name = "_boardItem2";
-            this._boardItem2.Size = new System.Drawing.Size(142, 127);
+            this._boardItem2.Size = new System.Drawing.Size(189, 159);
             this._boardItem2.TabIndex = 8;
             this._boardItem2.Tag = "mb_2";
             this._boardItem2.UseVisualStyleBackColor = true;
@@ -171,10 +171,10 @@
             // _boardItem4
             // 
             this._boardItem4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._boardItem4.Location = new System.Drawing.Point(5, 145);
-            this._boardItem4.Margin = new System.Windows.Forms.Padding(2);
+            this._boardItem4.Location = new System.Drawing.Point(7, 181);
+            this._boardItem4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._boardItem4.Name = "_boardItem4";
-            this._boardItem4.Size = new System.Drawing.Size(142, 126);
+            this._boardItem4.Size = new System.Drawing.Size(189, 158);
             this._boardItem4.TabIndex = 7;
             this._boardItem4.Tag = "mb_4";
             this._boardItem4.UseVisualStyleBackColor = true;
@@ -183,10 +183,10 @@
             // _boardItem1
             // 
             this._boardItem1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._boardItem1.Location = new System.Drawing.Point(5, 4);
-            this._boardItem1.Margin = new System.Windows.Forms.Padding(2);
+            this._boardItem1.Location = new System.Drawing.Point(7, 5);
+            this._boardItem1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._boardItem1.Name = "_boardItem1";
-            this._boardItem1.Size = new System.Drawing.Size(142, 127);
+            this._boardItem1.Size = new System.Drawing.Size(189, 159);
             this._boardItem1.TabIndex = 6;
             this._boardItem1.Tag = "mb_1";
             this._boardItem1.UseVisualStyleBackColor = true;
@@ -200,11 +200,11 @@
             this._processorTabPage.Controls.Add(this._processorItem2);
             this._processorTabPage.Controls.Add(this._processorItem4);
             this._processorTabPage.Controls.Add(this._processorItem1);
-            this._processorTabPage.Location = new System.Drawing.Point(4, 22);
-            this._processorTabPage.Margin = new System.Windows.Forms.Padding(2);
+            this._processorTabPage.Location = new System.Drawing.Point(4, 25);
+            this._processorTabPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._processorTabPage.Name = "_processorTabPage";
-            this._processorTabPage.Padding = new System.Windows.Forms.Padding(2);
-            this._processorTabPage.Size = new System.Drawing.Size(486, 272);
+            this._processorTabPage.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this._processorTabPage.Size = new System.Drawing.Size(651, 343);
             this._processorTabPage.TabIndex = 0;
             this._processorTabPage.Text = "CPU";
             this._processorTabPage.UseVisualStyleBackColor = true;
@@ -212,10 +212,10 @@
             // _processorItem6
             // 
             this._processorItem6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._processorItem6.Location = new System.Drawing.Point(340, 145);
-            this._processorItem6.Margin = new System.Windows.Forms.Padding(2);
+            this._processorItem6.Location = new System.Drawing.Point(453, 181);
+            this._processorItem6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._processorItem6.Name = "_processorItem6";
-            this._processorItem6.Size = new System.Drawing.Size(142, 126);
+            this._processorItem6.Size = new System.Drawing.Size(189, 158);
             this._processorItem6.TabIndex = 5;
             this._processorItem6.Tag = "cpu_6";
             this._processorItem6.UseVisualStyleBackColor = true;
@@ -224,10 +224,10 @@
             // _processorItem3
             // 
             this._processorItem3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._processorItem3.Location = new System.Drawing.Point(340, 4);
-            this._processorItem3.Margin = new System.Windows.Forms.Padding(2);
+            this._processorItem3.Location = new System.Drawing.Point(453, 5);
+            this._processorItem3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._processorItem3.Name = "_processorItem3";
-            this._processorItem3.Size = new System.Drawing.Size(142, 127);
+            this._processorItem3.Size = new System.Drawing.Size(189, 159);
             this._processorItem3.TabIndex = 4;
             this._processorItem3.Tag = "cpu_3";
             this._processorItem3.UseVisualStyleBackColor = true;
@@ -236,10 +236,10 @@
             // _processorItem5
             // 
             this._processorItem5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._processorItem5.Location = new System.Drawing.Point(172, 145);
-            this._processorItem5.Margin = new System.Windows.Forms.Padding(2);
+            this._processorItem5.Location = new System.Drawing.Point(229, 181);
+            this._processorItem5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._processorItem5.Name = "_processorItem5";
-            this._processorItem5.Size = new System.Drawing.Size(142, 126);
+            this._processorItem5.Size = new System.Drawing.Size(189, 158);
             this._processorItem5.TabIndex = 3;
             this._processorItem5.Tag = "cpu_5";
             this._processorItem5.UseVisualStyleBackColor = true;
@@ -248,10 +248,10 @@
             // _processorItem2
             // 
             this._processorItem2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._processorItem2.Location = new System.Drawing.Point(172, 4);
-            this._processorItem2.Margin = new System.Windows.Forms.Padding(2);
+            this._processorItem2.Location = new System.Drawing.Point(229, 5);
+            this._processorItem2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._processorItem2.Name = "_processorItem2";
-            this._processorItem2.Size = new System.Drawing.Size(142, 127);
+            this._processorItem2.Size = new System.Drawing.Size(189, 159);
             this._processorItem2.TabIndex = 2;
             this._processorItem2.Tag = "cpu_2";
             this._processorItem2.UseVisualStyleBackColor = true;
@@ -260,10 +260,10 @@
             // _processorItem4
             // 
             this._processorItem4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._processorItem4.Location = new System.Drawing.Point(5, 145);
-            this._processorItem4.Margin = new System.Windows.Forms.Padding(2);
+            this._processorItem4.Location = new System.Drawing.Point(7, 181);
+            this._processorItem4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._processorItem4.Name = "_processorItem4";
-            this._processorItem4.Size = new System.Drawing.Size(142, 126);
+            this._processorItem4.Size = new System.Drawing.Size(189, 158);
             this._processorItem4.TabIndex = 1;
             this._processorItem4.Tag = "cpu_4";
             this._processorItem4.UseVisualStyleBackColor = true;
@@ -272,10 +272,10 @@
             // _processorItem1
             // 
             this._processorItem1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._processorItem1.Location = new System.Drawing.Point(5, 4);
-            this._processorItem1.Margin = new System.Windows.Forms.Padding(2);
+            this._processorItem1.Location = new System.Drawing.Point(7, 5);
+            this._processorItem1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._processorItem1.Name = "_processorItem1";
-            this._processorItem1.Size = new System.Drawing.Size(142, 127);
+            this._processorItem1.Size = new System.Drawing.Size(189, 159);
             this._processorItem1.TabIndex = 0;
             this._processorItem1.Tag = "cpu_1";
             this._processorItem1.UseVisualStyleBackColor = true;
@@ -289,10 +289,10 @@
             this._memoryTabPage.Controls.Add(this._memoryItem2);
             this._memoryTabPage.Controls.Add(this._memoryItem4);
             this._memoryTabPage.Controls.Add(this._memoryItem1);
-            this._memoryTabPage.Location = new System.Drawing.Point(4, 22);
-            this._memoryTabPage.Margin = new System.Windows.Forms.Padding(2);
+            this._memoryTabPage.Location = new System.Drawing.Point(4, 25);
+            this._memoryTabPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._memoryTabPage.Name = "_memoryTabPage";
-            this._memoryTabPage.Size = new System.Drawing.Size(486, 272);
+            this._memoryTabPage.Size = new System.Drawing.Size(651, 343);
             this._memoryTabPage.TabIndex = 2;
             this._memoryTabPage.Text = "記憶體";
             this._memoryTabPage.UseVisualStyleBackColor = true;
@@ -300,10 +300,10 @@
             // _memoryItem6
             // 
             this._memoryItem6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._memoryItem6.Location = new System.Drawing.Point(340, 145);
-            this._memoryItem6.Margin = new System.Windows.Forms.Padding(2);
+            this._memoryItem6.Location = new System.Drawing.Point(453, 181);
+            this._memoryItem6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._memoryItem6.Name = "_memoryItem6";
-            this._memoryItem6.Size = new System.Drawing.Size(142, 126);
+            this._memoryItem6.Size = new System.Drawing.Size(189, 158);
             this._memoryItem6.TabIndex = 17;
             this._memoryItem6.Tag = "mem_6";
             this._memoryItem6.UseVisualStyleBackColor = true;
@@ -312,10 +312,10 @@
             // _memoryItem3
             // 
             this._memoryItem3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._memoryItem3.Location = new System.Drawing.Point(340, 4);
-            this._memoryItem3.Margin = new System.Windows.Forms.Padding(2);
+            this._memoryItem3.Location = new System.Drawing.Point(453, 5);
+            this._memoryItem3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._memoryItem3.Name = "_memoryItem3";
-            this._memoryItem3.Size = new System.Drawing.Size(142, 127);
+            this._memoryItem3.Size = new System.Drawing.Size(189, 159);
             this._memoryItem3.TabIndex = 16;
             this._memoryItem3.Tag = "mem_3";
             this._memoryItem3.UseVisualStyleBackColor = true;
@@ -324,10 +324,10 @@
             // _memoryItem5
             // 
             this._memoryItem5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._memoryItem5.Location = new System.Drawing.Point(172, 145);
-            this._memoryItem5.Margin = new System.Windows.Forms.Padding(2);
+            this._memoryItem5.Location = new System.Drawing.Point(229, 181);
+            this._memoryItem5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._memoryItem5.Name = "_memoryItem5";
-            this._memoryItem5.Size = new System.Drawing.Size(142, 126);
+            this._memoryItem5.Size = new System.Drawing.Size(189, 158);
             this._memoryItem5.TabIndex = 15;
             this._memoryItem5.Tag = "mem_5";
             this._memoryItem5.UseVisualStyleBackColor = true;
@@ -336,10 +336,10 @@
             // _memoryItem2
             // 
             this._memoryItem2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._memoryItem2.Location = new System.Drawing.Point(172, 4);
-            this._memoryItem2.Margin = new System.Windows.Forms.Padding(2);
+            this._memoryItem2.Location = new System.Drawing.Point(229, 5);
+            this._memoryItem2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._memoryItem2.Name = "_memoryItem2";
-            this._memoryItem2.Size = new System.Drawing.Size(142, 127);
+            this._memoryItem2.Size = new System.Drawing.Size(189, 159);
             this._memoryItem2.TabIndex = 14;
             this._memoryItem2.Tag = "mem_2";
             this._memoryItem2.UseVisualStyleBackColor = true;
@@ -348,10 +348,10 @@
             // _memoryItem4
             // 
             this._memoryItem4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._memoryItem4.Location = new System.Drawing.Point(5, 145);
-            this._memoryItem4.Margin = new System.Windows.Forms.Padding(2);
+            this._memoryItem4.Location = new System.Drawing.Point(7, 181);
+            this._memoryItem4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._memoryItem4.Name = "_memoryItem4";
-            this._memoryItem4.Size = new System.Drawing.Size(142, 126);
+            this._memoryItem4.Size = new System.Drawing.Size(189, 158);
             this._memoryItem4.TabIndex = 13;
             this._memoryItem4.Tag = "mem_4";
             this._memoryItem4.UseVisualStyleBackColor = true;
@@ -360,10 +360,10 @@
             // _memoryItem1
             // 
             this._memoryItem1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._memoryItem1.Location = new System.Drawing.Point(5, 4);
-            this._memoryItem1.Margin = new System.Windows.Forms.Padding(2);
+            this._memoryItem1.Location = new System.Drawing.Point(7, 5);
+            this._memoryItem1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._memoryItem1.Name = "_memoryItem1";
-            this._memoryItem1.Size = new System.Drawing.Size(142, 127);
+            this._memoryItem1.Size = new System.Drawing.Size(189, 159);
             this._memoryItem1.TabIndex = 12;
             this._memoryItem1.Tag = "mem_1";
             this._memoryItem1.UseVisualStyleBackColor = true;
@@ -377,10 +377,10 @@
             this._driveTabPage.Controls.Add(this._driveItem2);
             this._driveTabPage.Controls.Add(this._driveItem4);
             this._driveTabPage.Controls.Add(this._driveItem1);
-            this._driveTabPage.Location = new System.Drawing.Point(4, 22);
-            this._driveTabPage.Margin = new System.Windows.Forms.Padding(2);
+            this._driveTabPage.Location = new System.Drawing.Point(4, 25);
+            this._driveTabPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._driveTabPage.Name = "_driveTabPage";
-            this._driveTabPage.Size = new System.Drawing.Size(486, 272);
+            this._driveTabPage.Size = new System.Drawing.Size(651, 343);
             this._driveTabPage.TabIndex = 3;
             this._driveTabPage.Text = "硬碟";
             this._driveTabPage.UseVisualStyleBackColor = true;
@@ -388,10 +388,10 @@
             // _driveItem6
             // 
             this._driveItem6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._driveItem6.Location = new System.Drawing.Point(340, 145);
-            this._driveItem6.Margin = new System.Windows.Forms.Padding(2);
+            this._driveItem6.Location = new System.Drawing.Point(453, 181);
+            this._driveItem6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._driveItem6.Name = "_driveItem6";
-            this._driveItem6.Size = new System.Drawing.Size(142, 126);
+            this._driveItem6.Size = new System.Drawing.Size(189, 158);
             this._driveItem6.TabIndex = 17;
             this._driveItem6.Tag = "hdd_6";
             this._driveItem6.UseVisualStyleBackColor = true;
@@ -400,10 +400,10 @@
             // _driveItem3
             // 
             this._driveItem3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._driveItem3.Location = new System.Drawing.Point(340, 4);
-            this._driveItem3.Margin = new System.Windows.Forms.Padding(2);
+            this._driveItem3.Location = new System.Drawing.Point(453, 5);
+            this._driveItem3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._driveItem3.Name = "_driveItem3";
-            this._driveItem3.Size = new System.Drawing.Size(142, 127);
+            this._driveItem3.Size = new System.Drawing.Size(189, 159);
             this._driveItem3.TabIndex = 16;
             this._driveItem3.Tag = "hdd_3";
             this._driveItem3.UseVisualStyleBackColor = true;
@@ -412,10 +412,10 @@
             // _driveItem5
             // 
             this._driveItem5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._driveItem5.Location = new System.Drawing.Point(172, 145);
-            this._driveItem5.Margin = new System.Windows.Forms.Padding(2);
+            this._driveItem5.Location = new System.Drawing.Point(229, 181);
+            this._driveItem5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._driveItem5.Name = "_driveItem5";
-            this._driveItem5.Size = new System.Drawing.Size(142, 126);
+            this._driveItem5.Size = new System.Drawing.Size(189, 158);
             this._driveItem5.TabIndex = 15;
             this._driveItem5.Tag = "hdd_5";
             this._driveItem5.UseVisualStyleBackColor = true;
@@ -424,10 +424,10 @@
             // _driveItem2
             // 
             this._driveItem2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._driveItem2.Location = new System.Drawing.Point(172, 4);
-            this._driveItem2.Margin = new System.Windows.Forms.Padding(2);
+            this._driveItem2.Location = new System.Drawing.Point(229, 5);
+            this._driveItem2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._driveItem2.Name = "_driveItem2";
-            this._driveItem2.Size = new System.Drawing.Size(142, 127);
+            this._driveItem2.Size = new System.Drawing.Size(189, 159);
             this._driveItem2.TabIndex = 14;
             this._driveItem2.Tag = "hdd_2";
             this._driveItem2.UseVisualStyleBackColor = true;
@@ -436,10 +436,10 @@
             // _driveItem4
             // 
             this._driveItem4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._driveItem4.Location = new System.Drawing.Point(5, 145);
-            this._driveItem4.Margin = new System.Windows.Forms.Padding(2);
+            this._driveItem4.Location = new System.Drawing.Point(7, 181);
+            this._driveItem4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._driveItem4.Name = "_driveItem4";
-            this._driveItem4.Size = new System.Drawing.Size(142, 126);
+            this._driveItem4.Size = new System.Drawing.Size(189, 158);
             this._driveItem4.TabIndex = 13;
             this._driveItem4.Tag = "hdd_4";
             this._driveItem4.UseVisualStyleBackColor = true;
@@ -448,10 +448,10 @@
             // _driveItem1
             // 
             this._driveItem1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._driveItem1.Location = new System.Drawing.Point(5, 4);
-            this._driveItem1.Margin = new System.Windows.Forms.Padding(2);
+            this._driveItem1.Location = new System.Drawing.Point(7, 5);
+            this._driveItem1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._driveItem1.Name = "_driveItem1";
-            this._driveItem1.Size = new System.Drawing.Size(142, 127);
+            this._driveItem1.Size = new System.Drawing.Size(189, 159);
             this._driveItem1.TabIndex = 12;
             this._driveItem1.Tag = "hdd_1";
             this._driveItem1.UseVisualStyleBackColor = true;
@@ -465,10 +465,10 @@
             this._cardTabPage.Controls.Add(this._cardItem2);
             this._cardTabPage.Controls.Add(this._cardItem4);
             this._cardTabPage.Controls.Add(this._cardItem1);
-            this._cardTabPage.Location = new System.Drawing.Point(4, 22);
-            this._cardTabPage.Margin = new System.Windows.Forms.Padding(2);
+            this._cardTabPage.Location = new System.Drawing.Point(4, 25);
+            this._cardTabPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._cardTabPage.Name = "_cardTabPage";
-            this._cardTabPage.Size = new System.Drawing.Size(486, 272);
+            this._cardTabPage.Size = new System.Drawing.Size(651, 343);
             this._cardTabPage.TabIndex = 4;
             this._cardTabPage.Text = "顯示卡";
             this._cardTabPage.UseVisualStyleBackColor = true;
@@ -476,10 +476,10 @@
             // _cardItem6
             // 
             this._cardItem6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._cardItem6.Location = new System.Drawing.Point(340, 145);
-            this._cardItem6.Margin = new System.Windows.Forms.Padding(2);
+            this._cardItem6.Location = new System.Drawing.Point(453, 181);
+            this._cardItem6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._cardItem6.Name = "_cardItem6";
-            this._cardItem6.Size = new System.Drawing.Size(142, 126);
+            this._cardItem6.Size = new System.Drawing.Size(189, 158);
             this._cardItem6.TabIndex = 17;
             this._cardItem6.Tag = "gpu_6";
             this._cardItem6.UseVisualStyleBackColor = true;
@@ -488,10 +488,10 @@
             // _cardItem3
             // 
             this._cardItem3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._cardItem3.Location = new System.Drawing.Point(340, 4);
-            this._cardItem3.Margin = new System.Windows.Forms.Padding(2);
+            this._cardItem3.Location = new System.Drawing.Point(453, 5);
+            this._cardItem3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._cardItem3.Name = "_cardItem3";
-            this._cardItem3.Size = new System.Drawing.Size(142, 127);
+            this._cardItem3.Size = new System.Drawing.Size(189, 159);
             this._cardItem3.TabIndex = 16;
             this._cardItem3.Tag = "gpu_3";
             this._cardItem3.UseVisualStyleBackColor = true;
@@ -500,10 +500,10 @@
             // _cardItem5
             // 
             this._cardItem5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._cardItem5.Location = new System.Drawing.Point(172, 145);
-            this._cardItem5.Margin = new System.Windows.Forms.Padding(2);
+            this._cardItem5.Location = new System.Drawing.Point(229, 181);
+            this._cardItem5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._cardItem5.Name = "_cardItem5";
-            this._cardItem5.Size = new System.Drawing.Size(142, 126);
+            this._cardItem5.Size = new System.Drawing.Size(189, 158);
             this._cardItem5.TabIndex = 15;
             this._cardItem5.Tag = "gpu_5";
             this._cardItem5.UseVisualStyleBackColor = true;
@@ -512,10 +512,10 @@
             // _cardItem2
             // 
             this._cardItem2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._cardItem2.Location = new System.Drawing.Point(172, 4);
-            this._cardItem2.Margin = new System.Windows.Forms.Padding(2);
+            this._cardItem2.Location = new System.Drawing.Point(229, 5);
+            this._cardItem2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._cardItem2.Name = "_cardItem2";
-            this._cardItem2.Size = new System.Drawing.Size(142, 127);
+            this._cardItem2.Size = new System.Drawing.Size(189, 159);
             this._cardItem2.TabIndex = 14;
             this._cardItem2.Tag = "gpu_2";
             this._cardItem2.UseVisualStyleBackColor = true;
@@ -524,10 +524,10 @@
             // _cardItem4
             // 
             this._cardItem4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._cardItem4.Location = new System.Drawing.Point(5, 145);
-            this._cardItem4.Margin = new System.Windows.Forms.Padding(2);
+            this._cardItem4.Location = new System.Drawing.Point(7, 181);
+            this._cardItem4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._cardItem4.Name = "_cardItem4";
-            this._cardItem4.Size = new System.Drawing.Size(142, 126);
+            this._cardItem4.Size = new System.Drawing.Size(189, 158);
             this._cardItem4.TabIndex = 13;
             this._cardItem4.Tag = "gpu_4";
             this._cardItem4.UseVisualStyleBackColor = true;
@@ -536,10 +536,10 @@
             // _cardItem1
             // 
             this._cardItem1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._cardItem1.Location = new System.Drawing.Point(5, 4);
-            this._cardItem1.Margin = new System.Windows.Forms.Padding(2);
+            this._cardItem1.Location = new System.Drawing.Point(7, 5);
+            this._cardItem1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._cardItem1.Name = "_cardItem1";
-            this._cardItem1.Size = new System.Drawing.Size(142, 127);
+            this._cardItem1.Size = new System.Drawing.Size(189, 159);
             this._cardItem1.TabIndex = 12;
             this._cardItem1.Tag = "gpu_1";
             this._cardItem1.UseVisualStyleBackColor = true;
@@ -553,10 +553,10 @@
             this._setTabPage.Controls.Add(this._setItem2);
             this._setTabPage.Controls.Add(this._setItem4);
             this._setTabPage.Controls.Add(this._setItem1);
-            this._setTabPage.Location = new System.Drawing.Point(4, 22);
-            this._setTabPage.Margin = new System.Windows.Forms.Padding(2);
+            this._setTabPage.Location = new System.Drawing.Point(4, 25);
+            this._setTabPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._setTabPage.Name = "_setTabPage";
-            this._setTabPage.Size = new System.Drawing.Size(486, 272);
+            this._setTabPage.Size = new System.Drawing.Size(651, 343);
             this._setTabPage.TabIndex = 5;
             this._setTabPage.Text = "套裝電腦";
             this._setTabPage.UseVisualStyleBackColor = true;
@@ -564,10 +564,10 @@
             // _setItem6
             // 
             this._setItem6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._setItem6.Location = new System.Drawing.Point(340, 145);
-            this._setItem6.Margin = new System.Windows.Forms.Padding(2);
+            this._setItem6.Location = new System.Drawing.Point(453, 181);
+            this._setItem6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._setItem6.Name = "_setItem6";
-            this._setItem6.Size = new System.Drawing.Size(142, 126);
+            this._setItem6.Size = new System.Drawing.Size(189, 158);
             this._setItem6.TabIndex = 17;
             this._setItem6.Tag = "set_6";
             this._setItem6.UseVisualStyleBackColor = true;
@@ -576,10 +576,10 @@
             // _setItem3
             // 
             this._setItem3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._setItem3.Location = new System.Drawing.Point(340, 4);
-            this._setItem3.Margin = new System.Windows.Forms.Padding(2);
+            this._setItem3.Location = new System.Drawing.Point(453, 5);
+            this._setItem3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._setItem3.Name = "_setItem3";
-            this._setItem3.Size = new System.Drawing.Size(142, 127);
+            this._setItem3.Size = new System.Drawing.Size(189, 159);
             this._setItem3.TabIndex = 16;
             this._setItem3.Tag = "set_3";
             this._setItem3.UseVisualStyleBackColor = true;
@@ -588,10 +588,10 @@
             // _setItem5
             // 
             this._setItem5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._setItem5.Location = new System.Drawing.Point(172, 145);
-            this._setItem5.Margin = new System.Windows.Forms.Padding(2);
+            this._setItem5.Location = new System.Drawing.Point(229, 181);
+            this._setItem5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._setItem5.Name = "_setItem5";
-            this._setItem5.Size = new System.Drawing.Size(142, 126);
+            this._setItem5.Size = new System.Drawing.Size(189, 158);
             this._setItem5.TabIndex = 15;
             this._setItem5.Tag = "set_5";
             this._setItem5.UseVisualStyleBackColor = true;
@@ -600,10 +600,10 @@
             // _setItem2
             // 
             this._setItem2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._setItem2.Location = new System.Drawing.Point(172, 4);
-            this._setItem2.Margin = new System.Windows.Forms.Padding(2);
+            this._setItem2.Location = new System.Drawing.Point(229, 5);
+            this._setItem2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._setItem2.Name = "_setItem2";
-            this._setItem2.Size = new System.Drawing.Size(142, 127);
+            this._setItem2.Size = new System.Drawing.Size(189, 159);
             this._setItem2.TabIndex = 14;
             this._setItem2.Tag = "set_2";
             this._setItem2.UseVisualStyleBackColor = true;
@@ -612,10 +612,10 @@
             // _setItem4
             // 
             this._setItem4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._setItem4.Location = new System.Drawing.Point(5, 145);
-            this._setItem4.Margin = new System.Windows.Forms.Padding(2);
+            this._setItem4.Location = new System.Drawing.Point(7, 181);
+            this._setItem4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._setItem4.Name = "_setItem4";
-            this._setItem4.Size = new System.Drawing.Size(142, 126);
+            this._setItem4.Size = new System.Drawing.Size(189, 158);
             this._setItem4.TabIndex = 13;
             this._setItem4.Tag = "set_4";
             this._setItem4.UseVisualStyleBackColor = true;
@@ -624,10 +624,10 @@
             // _setItem1
             // 
             this._setItem1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._setItem1.Location = new System.Drawing.Point(5, 4);
-            this._setItem1.Margin = new System.Windows.Forms.Padding(2);
+            this._setItem1.Location = new System.Drawing.Point(7, 5);
+            this._setItem1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._setItem1.Name = "_setItem1";
-            this._setItem1.Size = new System.Drawing.Size(142, 127);
+            this._setItem1.Size = new System.Drawing.Size(189, 159);
             this._setItem1.TabIndex = 12;
             this._setItem1.Tag = "set_1";
             this._setItem1.UseVisualStyleBackColor = true;
@@ -637,11 +637,12 @@
             // 
             this._descriptionBox.DetectUrls = false;
             this._descriptionBox.Font = new System.Drawing.Font("微軟正黑體", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._descriptionBox.Location = new System.Drawing.Point(6, 21);
+            this._descriptionBox.Location = new System.Drawing.Point(8, 26);
+            this._descriptionBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._descriptionBox.Name = "_descriptionBox";
             this._descriptionBox.ReadOnly = true;
             this._descriptionBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this._descriptionBox.Size = new System.Drawing.Size(299, 94);
+            this._descriptionBox.Size = new System.Drawing.Size(397, 116);
             this._descriptionBox.TabIndex = 1;
             this._descriptionBox.Text = "";
             // 
@@ -650,19 +651,21 @@
             this._itemGroup.Controls.Add(this._addToCart);
             this._itemGroup.Controls.Add(this._itemInfoGroup);
             this._itemGroup.Controls.Add(this._itemTab);
-            this._itemGroup.Location = new System.Drawing.Point(13, 12);
+            this._itemGroup.Location = new System.Drawing.Point(17, 15);
             this._itemGroup.Margin = new System.Windows.Forms.Padding(0);
             this._itemGroup.Name = "_itemGroup";
-            this._itemGroup.Size = new System.Drawing.Size(511, 511);
+            this._itemGroup.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this._itemGroup.Size = new System.Drawing.Size(681, 639);
             this._itemGroup.TabIndex = 2;
             this._itemGroup.TabStop = false;
             this._itemGroup.Text = "商品";
             // 
             // _addToCart
             // 
-            this._addToCart.Location = new System.Drawing.Point(411, 468);
+            this._addToCart.Location = new System.Drawing.Point(548, 585);
+            this._addToCart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._addToCart.Name = "_addToCart";
-            this._addToCart.Size = new System.Drawing.Size(88, 37);
+            this._addToCart.Size = new System.Drawing.Size(117, 46);
             this._addToCart.TabIndex = 2;
             this._addToCart.Text = "加到購物車";
             this._addToCart.UseVisualStyleBackColor = true;
@@ -672,9 +675,11 @@
             // 
             this._itemInfoGroup.Controls.Add(this._itemPrice);
             this._itemInfoGroup.Controls.Add(this._descriptionBox);
-            this._itemInfoGroup.Location = new System.Drawing.Point(9, 336);
+            this._itemInfoGroup.Location = new System.Drawing.Point(12, 420);
+            this._itemInfoGroup.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._itemInfoGroup.Name = "_itemInfoGroup";
-            this._itemInfoGroup.Size = new System.Drawing.Size(490, 126);
+            this._itemInfoGroup.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this._itemInfoGroup.Size = new System.Drawing.Size(653, 158);
             this._itemInfoGroup.TabIndex = 1;
             this._itemInfoGroup.TabStop = false;
             this._itemInfoGroup.Text = "商品介紹";
@@ -683,9 +688,10 @@
             // 
             this._itemPrice.AutoSize = true;
             this._itemPrice.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._itemPrice.Location = new System.Drawing.Point(311, 91);
+            this._itemPrice.Location = new System.Drawing.Point(415, 114);
+            this._itemPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._itemPrice.Name = "_itemPrice";
-            this._itemPrice.Size = new System.Drawing.Size(48, 24);
+            this._itemPrice.Size = new System.Drawing.Size(61, 30);
             this._itemPrice.TabIndex = 2;
             this._itemPrice.Text = "單價";
             // 
@@ -698,13 +704,14 @@
             this._orderedItemName,
             this._orderedItemType,
             this._orderedItemPrice});
-            this._orderList.Location = new System.Drawing.Point(539, 32);
+            this._orderList.Location = new System.Drawing.Point(719, 40);
+            this._orderList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._orderList.Name = "_orderList";
             this._orderList.ReadOnly = true;
             this._orderList.RowHeadersVisible = false;
             this._orderList.RowTemplate.Height = 24;
             this._orderList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._orderList.Size = new System.Drawing.Size(397, 442);
+            this._orderList.Size = new System.Drawing.Size(529, 552);
             this._orderList.TabIndex = 3;
             // 
             // _orderedItemName
@@ -735,23 +742,24 @@
             // 
             this._totalPrice.AutoSize = true;
             this._totalPrice.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._totalPrice.Location = new System.Drawing.Point(747, 493);
+            this._totalPrice.Location = new System.Drawing.Point(996, 616);
+            this._totalPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._totalPrice.Name = "_totalPrice";
-            this._totalPrice.Size = new System.Drawing.Size(48, 24);
+            this._totalPrice.Size = new System.Drawing.Size(61, 30);
             this._totalPrice.TabIndex = 3;
             this._totalPrice.Text = "總價";
             // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(946, 541);
+            this.ClientSize = new System.Drawing.Size(1262, 673);
             this.Controls.Add(this._totalPrice);
             this.Controls.Add(this._orderList);
             this.Controls.Add(this._itemGroup);
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.MaximumSize = new System.Drawing.Size(962, 580);
-            this.MinimumSize = new System.Drawing.Size(962, 580);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximumSize = new System.Drawing.Size(1280, 720);
+            this.MinimumSize = new System.Drawing.Size(1280, 720);
             this.Name = "MainWindow";
             this.Text = "mainWindow";
             this._itemTab.ResumeLayout(false);

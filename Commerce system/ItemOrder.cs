@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Commerce_system
 {
-    class ItemOrder
+    public class ItemOrder
     {
         private List<string> _orderIdList = new List<string>();
         private int _totalPrice = 0;
@@ -22,7 +22,7 @@ namespace Commerce_system
         public void AddToOrder(string itemId)
         {
             _orderIdList.Add(itemId);
-            _totalPrice += int.Parse(_itemInfo.GetItemPrice(itemId));
+            _totalPrice += _itemInfo.GetItemPrice(itemId);
         }
 
         //return total price
