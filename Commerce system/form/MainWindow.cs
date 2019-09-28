@@ -20,6 +20,7 @@ namespace Commerce_system
         private const string TOTAL_PRICE_STRING = "總價: ";
         private const string MONEY_UNIT = "元";
         private const string BACK_SLASH = "/";
+        private const string DELETE_ICON_PATH = ".\\img\\icon\\delete.png";
 
         private Dictionary<string, List<Button>> _buttonDictionary = new Dictionary<string, List<Button>>();
 
@@ -71,19 +72,8 @@ namespace Commerce_system
             string id = _viewModel.GetCurrentItem();
             _itemOrder.AddToOrder(id);
             this._totalPrice.Text = TOTAL_PRICE_STRING + _itemOrder.GetTotalPrice().ToString(Constants.NUMBER_BREAK_KEY_WORD) + MONEY_UNIT;
-            string[] orderRow = { "null", _itemInfo.GetItemName(id), _itemInfo.GetItemTypeName(id), _itemInfo.GetItemPrice(id).ToString(Constants.NUMBER_BREAK_KEY_WORD) };
+            string[] orderRow = { "", _itemInfo.GetItemName(id), _itemInfo.GetItemTypeName(id), _itemInfo.GetItemPrice(id).ToString(Constants.NUMBER_BREAK_KEY_WORD) };
             this._orderList.Rows.Add(orderRow);
-        }
-
-        //initial all item button
-        private void InitialAllItemButton()
-        {
-            this.SetTabButton(ItemInfo.TYPE_PROCESSOR, _viewModel.GetItemImageByType(ItemInfo.TYPE_PROCESSOR));
-            this.SetTabButton(ItemInfo.TYPE_BOARD, _viewModel.GetItemImageByType(ItemInfo.TYPE_BOARD));
-            this.SetTabButton(ItemInfo.TYPE_MEMORY, _viewModel.GetItemImageByType(ItemInfo.TYPE_MEMORY));
-            this.SetTabButton(ItemInfo.TYPE_CARD, _viewModel.GetItemImageByType(ItemInfo.TYPE_CARD));
-            this.SetTabButton(ItemInfo.TYPE_DRIVE, _viewModel.GetItemImageByType(ItemInfo.TYPE_DRIVE));
-            this.SetTabButton(ItemInfo.TYPE_SET, _viewModel.GetItemImageByType(ItemInfo.TYPE_SET));
         }
 
         //handel tabindex change 
@@ -126,6 +116,53 @@ namespace Commerce_system
             this.UpdatePageIndicator();
             this.UpdatePageButtonStatus();
             this.SetTabButton(type, _viewModel.GetItemImageByType(type));
+        }
+
+        //hangdle order record delete
+        private void DeleteOrderRecord(int index)
+        {
+            _itemOrder.DeleteFromOrder(index);
+            this._orderList.Rows.RemoveAt(index);
+            this._totalPrice.Text = TOTAL_PRICE_STRING + _itemOrder.GetTotalPrice().ToString(Constants.NUMBER_BREAK_KEY_WORD) + MONEY_UNIT;
+        }
+
+        //handle cell click event
+        private void ClickCellContent(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                this.DeleteOrderRecord(e.RowIndex);
+            }
+        }
+
+        //draw delete image to data grid
+        private void SetDeleteImageGrid(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            const int DIVIDER = 2;
+            if (e.RowIndex < 0)
+                return;
+            if (e.ColumnIndex == 0)
+            {
+                Image image = Image.FromFile(DELETE_ICON_PATH);
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                var w = image.Width / DIVIDER;
+                var h = image.Height / DIVIDER;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / DIVIDER;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / DIVIDER;
+                e.Graphics.DrawImage(image, new Rectangle(x, y, w, h));
+                e.Handled = true;
+            }
+        }
+
+        //initial all item button
+        private void InitialAllItemButton()
+        {
+            this.SetTabButton(ItemInfo.TYPE_PROCESSOR, _viewModel.GetItemImageByType(ItemInfo.TYPE_PROCESSOR));
+            this.SetTabButton(ItemInfo.TYPE_BOARD, _viewModel.GetItemImageByType(ItemInfo.TYPE_BOARD));
+            this.SetTabButton(ItemInfo.TYPE_MEMORY, _viewModel.GetItemImageByType(ItemInfo.TYPE_MEMORY));
+            this.SetTabButton(ItemInfo.TYPE_CARD, _viewModel.GetItemImageByType(ItemInfo.TYPE_CARD));
+            this.SetTabButton(ItemInfo.TYPE_DRIVE, _viewModel.GetItemImageByType(ItemInfo.TYPE_DRIVE));
+            this.SetTabButton(ItemInfo.TYPE_SET, _viewModel.GetItemImageByType(ItemInfo.TYPE_SET));
         }
 
         //initialize button dictionary
