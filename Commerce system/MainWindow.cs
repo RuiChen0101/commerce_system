@@ -71,7 +71,7 @@ namespace Commerce_system
             string id = _viewModel.GetCurrentItem();
             _itemOrder.AddToOrder(id);
             this._totalPrice.Text = TOTAL_PRICE_STRING + _itemOrder.GetTotalPrice().ToString(Constants.NUMBER_BREAK_KEY_WORD) + MONEY_UNIT;
-            string[] orderRow = { _itemInfo.GetItemName(id), _itemInfo.GetItemTypeName(id), _itemInfo.GetItemPrice(id).ToString() };
+            string[] orderRow = { "null", _itemInfo.GetItemName(id), _itemInfo.GetItemTypeName(id), _itemInfo.GetItemPrice(id).ToString(Constants.NUMBER_BREAK_KEY_WORD) };
             this._orderList.Rows.Add(orderRow);
         }
 
@@ -96,7 +96,7 @@ namespace Commerce_system
         //update page indicator data
         private void UpdatePageIndicator()
         {
-            Tuple<int, int> pageData = _viewModel.GetCurrentAndTotalPage(this._itemTab.SelectedIndex);
+            Tuple<int, int> pageData = _viewModel.GetCurrentAndTotalPage(_itemInfo.GetTypeList()[this._itemTab.SelectedIndex]);
             this._pageIndicate.Text = pageData.Item1.ToString() + BACK_SLASH + pageData.Item2.ToString();
         }
 
@@ -104,8 +104,28 @@ namespace Commerce_system
         private void UpdatePageButtonStatus()
         {
             int tabIndex = this._itemTab.SelectedIndex;
-            this._previousPage.Enabled = _viewModel.IsPreviousPageEnable(tabIndex);
-            this._nextPage.Enabled = _viewModel.IsNextPageEnable(tabIndex);
+            this._previousPage.Enabled = _viewModel.IsPreviousPageEnable(_itemInfo.GetTypeList()[this._itemTab.SelectedIndex]);
+            this._nextPage.Enabled = _viewModel.IsNextPageEnable(_itemInfo.GetTypeList()[this._itemTab.SelectedIndex]);
+        }
+
+        //change page
+        private void ClickNextPage(object sender, EventArgs e)
+        {
+            string type = _itemInfo.GetTypeList()[this._itemTab.SelectedIndex];
+            _viewModel.ChangeToNextPage(type);
+            this.UpdatePageIndicator();
+            this.UpdatePageButtonStatus();
+            this.SetTabButton(type, _viewModel.GetItemImageByType(type));
+        }
+
+        //change page
+        private void ClickPreviousPage(object sender, EventArgs e)
+        {
+            string type = _itemInfo.GetTypeList()[this._itemTab.SelectedIndex];
+            _viewModel.ChangeToPreviousPage(type);
+            this.UpdatePageIndicator();
+            this.UpdatePageButtonStatus();
+            this.SetTabButton(type, _viewModel.GetItemImageByType(type));
         }
 
         //initialize button dictionary

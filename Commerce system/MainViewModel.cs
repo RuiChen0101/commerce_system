@@ -12,8 +12,8 @@ namespace Commerce_system
         public const int DISPLAY_ITEM_COUNT = 6;
         private ItemInfo _itemInfo;
         private Dictionary<string, List<string>> _idDictionary = new Dictionary<string, List<string>>();
-        private int[] _totalPage = { 0,0,0,0,0,0 };
-        private int[] _currentPage = { 1,1,1,1,1,1 };
+        private Dictionary<string, int> _totalPage = new Dictionary<string, int>();
+        private Dictionary<string, int> _currentPage = new Dictionary<string, int>();
         private string _currentClickedItem = null;
 
         //default constructor
@@ -55,44 +55,69 @@ namespace Commerce_system
         }
 
         //return page data
-        public Tuple<int,int> GetCurrentAndTotalPage(int index)
+        public Tuple<int,int> GetCurrentAndTotalPage(string type)
         {
-            return new Tuple<int, int>(_currentPage[index],_totalPage[index]);
+            return new Tuple<int, int>(_currentPage[type],_totalPage[type]);
         }
 
         //check PreviousPage button is enable
-        public bool IsPreviousPageEnable(int index)
+        public bool IsPreviousPageEnable(string type)
         {
-            return _currentPage[index] != 1;
+            return _currentPage[type] != 1;
         }
 
         //check NextPage button is enable
-        public bool IsNextPageEnable(int index)
+        public bool IsNextPageEnable(string type)
         {
-            return _currentPage[index] != _totalPage[index];
+            return _currentPage[type] != _totalPage[type];
+        }
+
+        //change to next page
+        public void ChangeToNextPage(string type)
+        {
+            if (IsNextPageEnable(type))
+            {
+                _currentPage[type]++;
+                _idDictionary[type] = FillIdListLength(_itemInfo.GetItemIdListByType(type).Skip((_currentPage[type] - 1) * DISPLAY_ITEM_COUNT).Take(DISPLAY_ITEM_COUNT).ToList<string>());
+            }
+        }
+
+        //change to previous page
+        public void ChangeToPreviousPage(string type)
+        {
+            if (IsPreviousPageEnable(type))
+            {
+                _currentPage[type]--;
+                _idDictionary[type] = FillIdListLength(_itemInfo.GetItemIdListByType(type).Skip((_currentPage[type] - 1) * DISPLAY_ITEM_COUNT).Take(DISPLAY_ITEM_COUNT).ToList<string>());
+            }
         }
 
         //initialize item id dictionary
         private void InitialItemDictionary()
         {
-            _idDictionary.Add(ItemInfo.TYPE_PROCESSOR, FillIdListLength(_itemInfo.GetProcessorItemIdList().Take(DISPLAY_ITEM_COUNT).ToList<string>()));
-            _idDictionary.Add(ItemInfo.TYPE_BOARD, FillIdListLength(_itemInfo.GetBoardItemIdList().Take(DISPLAY_ITEM_COUNT).ToList<string>()));
-            _idDictionary.Add(ItemInfo.TYPE_MEMORY, FillIdListLength(_itemInfo.GetMemoryItemIdList().Take(DISPLAY_ITEM_COUNT).ToList<string>()));
-            _idDictionary.Add(ItemInfo.TYPE_DRIVE, FillIdListLength(_itemInfo.GetDriveItemIdList().Take(DISPLAY_ITEM_COUNT).ToList<string>()));
-            _idDictionary.Add(ItemInfo.TYPE_CARD, FillIdListLength(_itemInfo.GetCardItemIdList().Take(DISPLAY_ITEM_COUNT).ToList<string>()));
-            _idDictionary.Add(ItemInfo.TYPE_SET, FillIdListLength(_itemInfo.GetSetItemIdList().Take(DISPLAY_ITEM_COUNT).ToList<string>()));
+            _idDictionary.Add(ItemInfo.TYPE_PROCESSOR, FillIdListLength(_itemInfo.GetItemIdListByType(ItemInfo.TYPE_PROCESSOR).Take(DISPLAY_ITEM_COUNT).ToList<string>()));
+            _idDictionary.Add(ItemInfo.TYPE_BOARD, FillIdListLength(_itemInfo.GetItemIdListByType(ItemInfo.TYPE_BOARD).Take(DISPLAY_ITEM_COUNT).ToList<string>()));
+            _idDictionary.Add(ItemInfo.TYPE_MEMORY, FillIdListLength(_itemInfo.GetItemIdListByType(ItemInfo.TYPE_MEMORY).Take(DISPLAY_ITEM_COUNT).ToList<string>()));
+            _idDictionary.Add(ItemInfo.TYPE_DRIVE, FillIdListLength(_itemInfo.GetItemIdListByType(ItemInfo.TYPE_DRIVE).Take(DISPLAY_ITEM_COUNT).ToList<string>()));
+            _idDictionary.Add(ItemInfo.TYPE_CARD, FillIdListLength(_itemInfo.GetItemIdListByType(ItemInfo.TYPE_CARD).Take(DISPLAY_ITEM_COUNT).ToList<string>()));
+            _idDictionary.Add(ItemInfo.TYPE_SET, FillIdListLength(_itemInfo.GetItemIdListByType(ItemInfo.TYPE_SET).Take(DISPLAY_ITEM_COUNT).ToList<string>()));
         }
 
         //initial page data
         private void InitialPageData()
         {
-            _totalPage[ItemInfo.TYPE_PROCESSOR_INDEX] = ((_itemInfo.GetProcessorItemIdList().Count + DISPLAY_ITEM_COUNT - 1) / DISPLAY_ITEM_COUNT);
-            _totalPage[ItemInfo.TYPE_BOARD_INDEX] = ((_itemInfo.GetBoardItemIdList().Count + DISPLAY_ITEM_COUNT - 1) / DISPLAY_ITEM_COUNT);
-            _totalPage[ItemInfo.TYPE_MEMORY_INDEX] = ((_itemInfo.GetMemoryItemIdList().Count + DISPLAY_ITEM_COUNT - 1) / DISPLAY_ITEM_COUNT);
-            _totalPage[ItemInfo.TYPE_DRIVE_INDEX] = ((_itemInfo.GetDriveItemIdList().Count + DISPLAY_ITEM_COUNT - 1) / DISPLAY_ITEM_COUNT);
-            _totalPage[ItemInfo.TYPE_CARD_INDEX] = ((_itemInfo.GetCardItemIdList().Count + DISPLAY_ITEM_COUNT - 1) / DISPLAY_ITEM_COUNT);
-            _totalPage[ItemInfo.TYPE_SET_INDEX] = ((_itemInfo.GetSetItemIdList().Count + DISPLAY_ITEM_COUNT - 1) / DISPLAY_ITEM_COUNT);
-            Console.WriteLine(_totalPage[ItemInfo.TYPE_BOARD_INDEX].ToString());
+            _totalPage.Add(ItemInfo.TYPE_PROCESSOR,((_itemInfo.GetItemIdListByType(ItemInfo.TYPE_PROCESSOR).Count + DISPLAY_ITEM_COUNT - 1) / DISPLAY_ITEM_COUNT));
+            _totalPage.Add(ItemInfo.TYPE_BOARD, ((_itemInfo.GetItemIdListByType(ItemInfo.TYPE_BOARD).Count + DISPLAY_ITEM_COUNT - 1) / DISPLAY_ITEM_COUNT));
+            _totalPage.Add(ItemInfo.TYPE_MEMORY, ((_itemInfo.GetItemIdListByType(ItemInfo.TYPE_MEMORY).Count + DISPLAY_ITEM_COUNT - 1) / DISPLAY_ITEM_COUNT));
+            _totalPage.Add(ItemInfo.TYPE_DRIVE, ((_itemInfo.GetItemIdListByType(ItemInfo.TYPE_DRIVE).Count + DISPLAY_ITEM_COUNT - 1) / DISPLAY_ITEM_COUNT));
+            _totalPage.Add(ItemInfo.TYPE_CARD, ((_itemInfo.GetItemIdListByType(ItemInfo.TYPE_CARD).Count + DISPLAY_ITEM_COUNT - 1) / DISPLAY_ITEM_COUNT));
+            _totalPage.Add(ItemInfo.TYPE_SET, ((_itemInfo.GetItemIdListByType(ItemInfo.TYPE_SET).Count + DISPLAY_ITEM_COUNT - 1) / DISPLAY_ITEM_COUNT));
+            _currentPage.Add(ItemInfo.TYPE_PROCESSOR, 1);
+            _currentPage.Add(ItemInfo.TYPE_BOARD, 1);
+            _currentPage.Add(ItemInfo.TYPE_MEMORY, 1);
+            _currentPage.Add(ItemInfo.TYPE_DRIVE, 1);
+            _currentPage.Add(ItemInfo.TYPE_CARD, 1);
+            _currentPage.Add(ItemInfo.TYPE_SET, 1);
         }
 
         //fill empty space of id List with "null"

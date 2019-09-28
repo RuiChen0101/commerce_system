@@ -28,8 +28,8 @@ namespace Commerce_system
         private const string DESCRIPTION_KEY = "desc";
         private const string PRICE_KEY = "price";
 
-        private readonly List<string> _typeList = new List<string>() { TYPE_PROCESSOR, TYPE_BOARD, TYPE_MEMORY, TYPE_DRIVE, TYPE_CARD, TYPE_SET };
-        private readonly List<string> _typeNameList = new List<string>() { "CPU", "主機板", "記憶體", "硬碟", "顯示卡", "套裝電腦" };
+        private readonly List<string> _typeList = new List<string>() { TYPE_BOARD, TYPE_PROCESSOR, TYPE_MEMORY, TYPE_DRIVE, TYPE_CARD, TYPE_SET };
+        private readonly List<string> _typeNameList = new List<string>() { "主機板", "CPU", "記憶體", "硬碟", "顯示卡", "套裝電腦" };
 
         private List<string> _processorItemIdList = new List<string>();
         private List<string> _boardItemIdList = new List<string>();
@@ -85,40 +85,12 @@ namespace Commerce_system
             return this._typeNameList[typeIndex];
         }
 
-        //get all processor item id list
-        public List<string> GetProcessorItemIdList()
+        //get all item id list by input bype
+        public List<string> GetItemIdListByType(string type)
         {
-            return this._processorItemIdList;
-        }
-
-        //get all mother board item id list
-        public List<string> GetBoardItemIdList()
-        {
-            return this._boardItemIdList;
-        }
-
-        //get all memoryory item id list
-        public List<string> GetMemoryItemIdList()
-        {
-            return this._memoryItemIdList;
-        }
-
-        //get all hard drive item id list
-        public List<string> GetDriveItemIdList()
-        {
-            return this._driveItemIdList;
-        }
-
-        //get all card item id list
-        public List<string> GetCardItemIdList()
-        {
-            return this._cardItemIdList;
-        }
-
-        //get all set item id list
-        public List<string> GetSetItemIdList()
-        {
-            return this._setItemIdList;
+            List<string>[] typeIdList = { _boardItemIdList, _processorItemIdList, _memoryItemIdList, _driveItemIdList, _cardItemIdList, _setItemIdList };
+            int typeIndex = _typeList.FindIndex(x => x == type);
+            return typeIdList[typeIndex];
         }
 
         //get all type
@@ -132,7 +104,7 @@ namespace Commerce_system
         {
             this.ClearAllIdList();
             string[] allSections = _initial.GetSectionNames();
-            List<string>[] typeIdList = { _processorItemIdList, _boardItemIdList, _memoryItemIdList, _driveItemIdList, _cardItemIdList, _setItemIdList };
+            List<string>[] typeIdList = { _boardItemIdList, _processorItemIdList, _memoryItemIdList, _driveItemIdList, _cardItemIdList, _setItemIdList };
             foreach ( String section in allSections )
             {
                 String type = this.GetItemType(section);

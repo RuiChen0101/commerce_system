@@ -76,11 +76,11 @@
             this._itemInfoGroup = new System.Windows.Forms.GroupBox();
             this._itemPrice = new System.Windows.Forms.Label();
             this._orderList = new System.Windows.Forms.DataGridView();
+            this._totalPrice = new System.Windows.Forms.Label();
             this._orderedItemDelete = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._orderedItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._orderedItemType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._orderedItemPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._totalPrice = new System.Windows.Forms.Label();
             this._itemTab.SuspendLayout();
             this._boardTabPage.SuspendLayout();
             this._processorTabPage.SuspendLayout();
@@ -678,6 +678,7 @@
             this._nextPage.TabIndex = 6;
             this._nextPage.Text = ">";
             this._nextPage.UseVisualStyleBackColor = true;
+            this._nextPage.Click += new System.EventHandler(this.ClickNextPage);
             // 
             // _previousPage
             // 
@@ -689,6 +690,7 @@
             this._previousPage.TabIndex = 5;
             this._previousPage.Text = "<";
             this._previousPage.UseVisualStyleBackColor = true;
+            this._previousPage.Click += new System.EventHandler(this.ClickPreviousPage);
             // 
             // _pageIndicate
             // 
@@ -762,37 +764,6 @@
             this._orderList.Size = new System.Drawing.Size(397, 442);
             this._orderList.TabIndex = 3;
             // 
-            // _orderedItemDelete
-            // 
-            this._orderedItemDelete.FillWeight = 30F;
-            this._orderedItemDelete.HeaderText = "刪除";
-            this._orderedItemDelete.Name = "_orderedItemDelete";
-            this._orderedItemDelete.ReadOnly = true;
-            // 
-            // _orderedItemName
-            // 
-            this._orderedItemName.FillWeight = 152.2843F;
-            this._orderedItemName.HeaderText = "商品名稱";
-            this._orderedItemName.Name = "_orderedItemName";
-            this._orderedItemName.ReadOnly = true;
-            this._orderedItemName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // _orderedItemType
-            // 
-            this._orderedItemType.FillWeight = 73.85786F;
-            this._orderedItemType.HeaderText = "商品類別";
-            this._orderedItemType.Name = "_orderedItemType";
-            this._orderedItemType.ReadOnly = true;
-            this._orderedItemType.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // _orderedItemPrice
-            // 
-            this._orderedItemPrice.FillWeight = 73.85786F;
-            this._orderedItemPrice.HeaderText = "單價";
-            this._orderedItemPrice.Name = "_orderedItemPrice";
-            this._orderedItemPrice.ReadOnly = true;
-            this._orderedItemPrice.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
             // _totalPrice
             // 
             this._totalPrice.AutoSize = true;
@@ -802,6 +773,38 @@
             this._totalPrice.Size = new System.Drawing.Size(87, 24);
             this._totalPrice.TabIndex = 3;
             this._totalPrice.Text = "總價: 0元";
+            // 
+            // _orderedItemDelete
+            // 
+            this._orderedItemDelete.FillWeight = 40F;
+            this._orderedItemDelete.HeaderText = "刪除";
+            this._orderedItemDelete.Name = "_orderedItemDelete";
+            this._orderedItemDelete.ReadOnly = true;
+            this._orderedItemDelete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // _orderedItemName
+            // 
+            this._orderedItemName.FillWeight = 133.5F;
+            this._orderedItemName.HeaderText = "商品名稱";
+            this._orderedItemName.Name = "_orderedItemName";
+            this._orderedItemName.ReadOnly = true;
+            this._orderedItemName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // _orderedItemType
+            // 
+            this._orderedItemType.FillWeight = 64.74747F;
+            this._orderedItemType.HeaderText = "商品類別";
+            this._orderedItemType.Name = "_orderedItemType";
+            this._orderedItemType.ReadOnly = true;
+            this._orderedItemType.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // _orderedItemPrice
+            // 
+            this._orderedItemPrice.FillWeight = 64.74747F;
+            this._orderedItemPrice.HeaderText = "單價";
+            this._orderedItemPrice.Name = "_orderedItemPrice";
+            this._orderedItemPrice.ReadOnly = true;
+            this._orderedItemPrice.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // MainWindow
             // 
@@ -885,13 +888,13 @@
         private System.Windows.Forms.Button _setItem2;
         private System.Windows.Forms.Button _setItem4;
         private System.Windows.Forms.Button _setItem1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _orderedItemDelete;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _orderedItemName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _orderedItemType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _orderedItemPrice;
         private System.Windows.Forms.Label _pageLabel;
         private System.Windows.Forms.Label _pageIndicate;
         private System.Windows.Forms.Button _nextPage;
         private System.Windows.Forms.Button _previousPage;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _orderedItemDelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _orderedItemName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _orderedItemType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _orderedItemPrice;
     }
 }
