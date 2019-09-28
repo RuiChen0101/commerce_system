@@ -135,6 +135,13 @@ namespace Commerce_system
             }
         }
 
+        //start checkout
+        private void ClickCheckOut(object sender, EventArgs e)
+        {
+            PaymentDialog paymentDialog = new PaymentDialog();
+            paymentDialog.ShowDialog();
+        }
+
         //draw delete image to data grid
         private void SetDeleteImageGrid(object sender, DataGridViewCellPaintingEventArgs e)
         {

@@ -194,7 +194,7 @@
               <Weight>57</Weight>
               <Project>Commerce system</Project>
               <File>MainWindow.cs</File>
-              <Line>169</Line>
+              <Line>176</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -320,6 +320,16 @@
           <AnalysisFileManager>
             <AnalysisFiles>
               <AnalysisFile>
+                <RelativePath>dialog\PaymentDialog.cs</RelativePath>
+                <ProjectName>Commerce system</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>dialog\PaymentDialog.Designer.cs</RelativePath>
+                <ProjectName>Commerce system</ProjectName>
+                <AnalysisFileType>Designer</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
                 <RelativePath>Entry.cs</RelativePath>
                 <ProjectName>Commerce system</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
@@ -396,7 +406,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>1810</ProductionLoc>
+          <ProductionLoc>2211</ProductionLoc>
           <TestLoc>0</TestLoc>
         </CodeReview>
       </Data>
