@@ -25,6 +25,13 @@ namespace Commerce_system
             _totalPrice += _itemInfo.GetItemPrice(itemId);
         }
 
+        //delete record
+        public void DeleteFromOrder(int index)
+        {
+            _totalPrice -= _itemInfo.GetItemPrice(_orderIdList[index]);
+            _orderIdList.RemoveAt(index);
+        }
+
         //return total price
         public int GetTotalPrice()
         {

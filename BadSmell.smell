@@ -188,6 +188,22 @@
           <Reviews>
             <Smell>
               <Id>1</Id>
+              <SmellType>Long method(過長函式)</SmellType>
+              <HashCode>LongMethod.MainWindow.InitialButtonDictionary.57</HashCode>
+              <Severity>Red</Severity>
+              <Weight>57</Weight>
+              <Project>Commerce system</Project>
+              <File>MainWindow.cs</File>
+              <Line>176</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>2</Id>
               <SmellType>ICS(縮排與換行-1)</SmellType>
               <HashCode>IndentAndNewLine1._typeList.        private readonly List&lt;string&gt; _typeList = new List&lt;string&gt;() { TYPE_BOARD, TYPE_PROCESSOR, TYPE_MEMORY, TYPE_DRIVE, TYPE_CARD, TYPE_SET };</HashCode>
               <Severity>Red</Severity>
@@ -203,7 +219,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>2</Id>
+              <Id>3</Id>
               <SmellType>ICS(縮排與換行-1)</SmellType>
               <HashCode>IndentAndNewLine1._typeNameList.        private readonly List&lt;string&gt; _typeNameList = new List&lt;string&gt;() { "主機板", "CPU", "記憶體", "硬碟", "顯示卡", "套裝電腦" };</HashCode>
               <Severity>Red</Severity>
@@ -219,7 +235,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>3</Id>
+              <Id>4</Id>
               <SmellType>ICS(縮排與換行-3)</SmellType>
               <HashCode>IndentAndNewLine3._typeList.        private readonly List&lt;string&gt; _typeList = new List&lt;string&gt;() { TYPE_BOARD, TYPE_PROCESSOR, TYPE_MEMORY, TYPE_DRIVE, TYPE_CARD, TYPE_SET };</HashCode>
               <Severity>Red</Severity>
@@ -235,7 +251,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>4</Id>
+              <Id>5</Id>
               <SmellType>ICS(縮排與換行-3)</SmellType>
               <HashCode>IndentAndNewLine3._typeNameList.        private readonly List&lt;string&gt; _typeNameList = new List&lt;string&gt;() { "主機板", "CPU", "記憶體", "硬碟", "顯示卡", "套裝電腦" };</HashCode>
               <Severity>Red</Severity>
@@ -251,81 +267,49 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>5</Id>
-              <SmellType>Literal constants(字面常數)-"null"</SmellType>
-              <HashCode>LiteralConstants.AddToOrderClick."null"</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>Commerce system</Project>
-              <File>MainWindow.cs</File>
-              <Line>74</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
               <Id>6</Id>
-              <SmellType>Long method(過長函式)</SmellType>
-              <HashCode>LongMethod.MainWindow.InitialButtonDictionary.57</HashCode>
-              <Severity>Red</Severity>
-              <Weight>57</Weight>
-              <Project>Commerce system</Project>
-              <File>MainWindow.cs</File>
-              <Line>132</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>7</Id>
               <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>64 目前物件 Commerce_system.MainWindow，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemInfo，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Commerce_system.ItemInfo.GetItemName(string) 以及 Commerce_system.ItemInfo.GetItemDescription(string)</HashCode>
+              <HashCode>65 目前物件 Commerce_system.MainWindow，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemInfo，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Commerce_system.ItemInfo.GetItemName(string) 以及 Commerce_system.ItemInfo.GetItemDescription(string)</HashCode>
               <Severity>Warning</Severity>
               <Weight>1</Weight>
               <Project>Commerce system</Project>
-              <File>E:\files\C++\wpc\erp_system\Commerce system\MainWindow.cs</File>
-              <Line>64</Line>
-              <StartLine>63</StartLine>
+              <File>E:\files\C++\wpc\erp_system\Commerce system\form\MainWindow.cs</File>
+              <Line>65</Line>
+              <StartLine>64</StartLine>
               <StartCol>0</StartCol>
-              <EndLine>64</EndLine>
+              <EndLine>65</EndLine>
               <EndCol>0</EndCol>
               <Comment>目前物件 Commerce_system.MainWindow，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemInfo，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Commerce_system.ItemInfo.GetItemName(string) 以及 Commerce_system.ItemInfo.GetItemDescription(string)</Comment>
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>8</Id>
+              <Id>7</Id>
               <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>73 目前物件 Commerce_system.MainWindow，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemInfo，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：Commerce_system.ItemInfo.GetItemName(string) 以及 Commerce_system.ItemInfo.GetItemTypeName(string) 以及 Commerce_system.ItemInfo.GetItemPrice(string)</HashCode>
+              <HashCode>74 目前物件 Commerce_system.MainWindow，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemInfo，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：Commerce_system.ItemInfo.GetItemName(string) 以及 Commerce_system.ItemInfo.GetItemTypeName(string) 以及 Commerce_system.ItemInfo.GetItemPrice(string)</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>Commerce system</Project>
-              <File>E:\files\C++\wpc\erp_system\Commerce system\MainWindow.cs</File>
-              <Line>73</Line>
-              <StartLine>73</StartLine>
+              <File>E:\files\C++\wpc\erp_system\Commerce system\form\MainWindow.cs</File>
+              <Line>74</Line>
+              <StartLine>74</StartLine>
               <StartCol>21</StartCol>
-              <EndLine>73</EndLine>
-              <EndCol>170</EndCol>
+              <EndLine>74</EndLine>
+              <EndCol>166</EndCol>
               <Comment>目前物件 Commerce_system.MainWindow，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemInfo，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：Commerce_system.ItemInfo.GetItemName(string) 以及 Commerce_system.ItemInfo.GetItemTypeName(string) 以及 Commerce_system.ItemInfo.GetItemPrice(string)</Comment>
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>9</Id>
+              <Id>8</Id>
               <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>100 目前物件 Commerce_system.MainWindow，使用物件的方法或屬性次數：1次，Envy到對象物件 Commerce_system.MainViewModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Commerce_system.MainViewModel.GetCurrentAndTotalPage(string) 以及 Commerce_system.MainViewModel.GetCurrentAndTotalPage(string)</HashCode>
+              <HashCode>90 目前物件 Commerce_system.MainWindow，使用物件的方法或屬性次數：1次，Envy到對象物件 Commerce_system.MainViewModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Commerce_system.MainViewModel.GetCurrentAndTotalPage(string) 以及 Commerce_system.MainViewModel.GetCurrentAndTotalPage(string)</HashCode>
               <Severity>Warning</Severity>
               <Weight>1</Weight>
               <Project>Commerce system</Project>
-              <File>E:\files\C++\wpc\erp_system\Commerce system\MainWindow.cs</File>
-              <Line>100</Line>
-              <StartLine>99</StartLine>
+              <File>E:\files\C++\wpc\erp_system\Commerce system\form\MainWindow.cs</File>
+              <Line>90</Line>
+              <StartLine>89</StartLine>
               <StartCol>0</StartCol>
-              <EndLine>100</EndLine>
+              <EndLine>90</EndLine>
               <EndCol>0</EndCol>
               <Comment>目前物件 Commerce_system.MainWindow，使用物件的方法或屬性次數：1次，Envy到對象物件 Commerce_system.MainViewModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Commerce_system.MainViewModel.GetCurrentAndTotalPage(string) 以及 Commerce_system.MainViewModel.GetCurrentAndTotalPage(string)</Comment>
               <Auto>false</Auto>
@@ -336,9 +320,14 @@
           <AnalysisFileManager>
             <AnalysisFiles>
               <AnalysisFile>
-                <RelativePath>Constants.cs</RelativePath>
+                <RelativePath>dialog\PaymentDialog.cs</RelativePath>
                 <ProjectName>Commerce system</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>dialog\PaymentDialog.Designer.cs</RelativePath>
+                <ProjectName>Commerce system</ProjectName>
+                <AnalysisFileType>Designer</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>Entry.cs</RelativePath>
@@ -346,54 +335,59 @@
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
-                <RelativePath>EntryWindow.cs</RelativePath>
+                <RelativePath>form\EntryWindow.cs</RelativePath>
                 <ProjectName>Commerce system</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
-                <RelativePath>EntryWindow.Designer.cs</RelativePath>
+                <RelativePath>form\EntryWindow.Designer.cs</RelativePath>
                 <ProjectName>Commerce system</ProjectName>
                 <AnalysisFileType>Designer</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
-                <RelativePath>InitialFiles.cs</RelativePath>
+                <RelativePath>form\InventoryWindow.cs</RelativePath>
                 <ProjectName>Commerce system</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
-                <RelativePath>InventoryWindow.cs</RelativePath>
-                <ProjectName>Commerce system</ProjectName>
-                <AnalysisFileType>Model</AnalysisFileType>
-              </AnalysisFile>
-              <AnalysisFile>
-                <RelativePath>InventoryWindow.Designer.cs</RelativePath>
+                <RelativePath>form\InventoryWindow.Designer.cs</RelativePath>
                 <ProjectName>Commerce system</ProjectName>
                 <AnalysisFileType>Designer</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
-                <RelativePath>ItemInfo.cs</RelativePath>
+                <RelativePath>form\MainWindow.cs</RelativePath>
                 <ProjectName>Commerce system</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
-                <RelativePath>ItemOrder.cs</RelativePath>
-                <ProjectName>Commerce system</ProjectName>
-                <AnalysisFileType>Model</AnalysisFileType>
-              </AnalysisFile>
-              <AnalysisFile>
-                <RelativePath>MainViewModel.cs</RelativePath>
-                <ProjectName>Commerce system</ProjectName>
-                <AnalysisFileType>Model</AnalysisFileType>
-              </AnalysisFile>
-              <AnalysisFile>
-                <RelativePath>MainWindow.cs</RelativePath>
-                <ProjectName>Commerce system</ProjectName>
-                <AnalysisFileType>Model</AnalysisFileType>
-              </AnalysisFile>
-              <AnalysisFile>
-                <RelativePath>mainwindow.Designer.cs</RelativePath>
+                <RelativePath>form\mainwindow.Designer.cs</RelativePath>
                 <ProjectName>Commerce system</ProjectName>
                 <AnalysisFileType>Designer</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>model\Constants.cs</RelativePath>
+                <ProjectName>Commerce system</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>model\InitialFiles.cs</RelativePath>
+                <ProjectName>Commerce system</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>model\ItemInfo.cs</RelativePath>
+                <ProjectName>Commerce system</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>model\ItemOrder.cs</RelativePath>
+                <ProjectName>Commerce system</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>model\MainViewModel.cs</RelativePath>
+                <ProjectName>Commerce system</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>Properties\AssemblyInfo.cs</RelativePath>
@@ -412,7 +406,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>1756</ProductionLoc>
+          <ProductionLoc>2226</ProductionLoc>
           <TestLoc>0</TestLoc>
         </CodeReview>
       </Data>
