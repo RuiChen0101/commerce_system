@@ -55,9 +55,10 @@ namespace Commerce_system
         }
 
         //return page data
-        public Tuple<int,int> GetCurrentAndTotalPage(string type)
+        public string GetCurrentAndTotalPage(string type)
         {
-            return new Tuple<int, int>(_currentPage[type],_totalPage[type]);
+            const string BACK_SLASH = "/";
+            return _currentPage[type].ToString() + BACK_SLASH + _totalPage[type].ToString();
         }
 
         //check PreviousPage button is enable

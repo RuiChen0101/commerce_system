@@ -21,7 +21,7 @@
     <timestamps>
       <styleCop>2019/09/20 16:31:27.102</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2019/09/28 22:39:04.377</sourceFile>
+      <sourceFile>2019/09/29 13:44:47.470</sourceFile>
       <parser>2019/09/20 16:31:27.102</parser>
       <KellyPalRules.KellyPalAnalyzer>2019/09/20 16:31:27.102</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
@@ -32,7 +32,7 @@
     <timestamps>
       <styleCop>2019/09/20 16:31:27.102</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2019/09/28 22:39:04.369</sourceFile>
+      <sourceFile>2019/09/29 13:00:05.181</sourceFile>
       <parser>2019/09/20 16:31:27.102</parser>
       <KellyPalRules.KellyPalAnalyzer>2019/09/20 16:31:27.102</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
@@ -54,7 +54,7 @@
     <timestamps>
       <styleCop>2019/09/20 16:31:27.102</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2019/09/28 22:39:04.597</sourceFile>
+      <sourceFile>2019/09/29 09:49:28.894</sourceFile>
       <parser>2019/09/20 16:31:27.102</parser>
       <KellyPalRules.KellyPalAnalyzer>2019/09/20 16:31:27.102</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
@@ -98,7 +98,7 @@
     <timestamps>
       <styleCop>2019/09/20 16:31:27.102</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2019/09/28 22:39:04.594</sourceFile>
+      <sourceFile>2019/09/29 11:55:49.218</sourceFile>
       <parser>2019/09/20 16:31:27.102</parser>
       <KellyPalRules.KellyPalAnalyzer>2019/09/20 16:31:27.102</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
@@ -106,7 +106,7 @@
     <violations>
       <violation namespace="KellyPalRules.KellyPalAnalyzer" rule="LongMethod" ruleCheckId="LM0001">
         <context>Long method(過長函式)</context>
-        <line>176</line>
+        <line>181</line>
         <warning>False</warning>
       </violation>
     </violations>
@@ -204,7 +204,7 @@
     <timestamps>
       <styleCop>2019/09/20 16:31:27.102</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2019/09/28 22:40:05.491</sourceFile>
+      <sourceFile>2019/09/29 09:56:02.006</sourceFile>
       <parser>2019/09/20 16:31:27.102</parser>
       <KellyPalRules.KellyPalAnalyzer>2019/09/20 16:31:27.102</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
@@ -215,7 +215,18 @@
     <timestamps>
       <styleCop>2019/09/20 16:31:27.102</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2019/09/28 11:11:37.683</sourceFile>
+      <sourceFile>2019/09/29 09:53:11.086</sourceFile>
+      <parser>2019/09/20 16:31:27.102</parser>
+      <KellyPalRules.KellyPalAnalyzer>2019/09/20 16:31:27.102</KellyPalRules.KellyPalAnalyzer>
+      <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
+  <sourcecode name="PaymentViewModel.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2019/09/20 16:31:27.102</styleCop>
+      <settingsFile>0001/01/01 00:00:00.000</settingsFile>
+      <sourceFile>2019/09/29 13:46:52.329</sourceFile>
       <parser>2019/09/20 16:31:27.102</parser>
       <KellyPalRules.KellyPalAnalyzer>2019/09/20 16:31:27.102</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>

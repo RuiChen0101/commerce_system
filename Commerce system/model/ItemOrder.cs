@@ -32,6 +32,13 @@ namespace Commerce_system
             _orderIdList.RemoveAt(index);
         }
 
+        //clear order list
+        public void ClearOrder()
+        {
+            _orderIdList.Clear();
+            _totalPrice = 0;
+        }
+
         //return total price
         public int GetTotalPrice()
         {

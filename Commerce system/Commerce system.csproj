@@ -75,6 +75,7 @@
     <Compile Include="form\mainwindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="model\PaymentViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="model\MainViewModel.cs" />
     <EmbeddedResource Include="dialog\PaymentDialog.resx">

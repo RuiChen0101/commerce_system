@@ -15,23 +15,24 @@ namespace Commerce_system
         private ItemInfo _itemInfo;
         private ItemOrder _itemOrder;
         private MainViewModel _viewModel;
+        private PaymentDialog _paymentDialog;
 
         private const string ITEM_PRICE_STRING = "單價: ";
         private const string TOTAL_PRICE_STRING = "總價: ";
         private const string MONEY_UNIT = "元";
-        private const string BACK_SLASH = "/";
         private const string DELETE_ICON_PATH = ".\\img\\icon\\delete.png";
 
         private Dictionary<string, List<Button>> _buttonDictionary = new Dictionary<string, List<Button>>();
 
         //default constructor
-        public MainWindow(ItemInfo itemInfo, ItemOrder itemOrder, MainViewModel viewModel)
+        public MainWindow(ItemInfo itemInfo, ItemOrder itemOrder)
         {
             InitializeComponent();
             this.InitialButtonDictionary();
             this._itemInfo = itemInfo;
             this._itemOrder = itemOrder;
-            this._viewModel = viewModel;
+            this._viewModel = new MainViewModel(_itemInfo);
+            this._paymentDialog = new PaymentDialog();
             this.InitialAllItemButton();
             this.HandleTabIndexChanged(null, null);
         }
@@ -86,8 +87,7 @@ namespace Commerce_system
         //update page indicator data
         private void UpdatePageIndicator()
         {
-            Tuple<int, int> pageData = _viewModel.GetCurrentAndTotalPage(_itemInfo.GetTypeList()[this._itemTab.SelectedIndex]);
-            this._pageIndicate.Text = pageData.Item1.ToString() + BACK_SLASH + pageData.Item2.ToString();
+            this._pageIndicate.Text = _viewModel.GetCurrentAndTotalPage(_itemInfo.GetTypeList()[this._itemTab.SelectedIndex]);
         }
 
         //change page button enable status
@@ -138,8 +138,13 @@ namespace Commerce_system
         //start checkout
         private void ClickCheckOut(object sender, EventArgs e)
         {
-            PaymentDialog paymentDialog = new PaymentDialog();
-            paymentDialog.ShowDialog();
+            DialogResult result = _paymentDialog.ShowDialog();
+            if (result == DialogResult.Yes)
+            {
+                this._orderList.Rows.Clear();
+                this._itemOrder.ClearOrder();
+                this._totalPrice.Text = TOTAL_PRICE_STRING + _itemOrder.GetTotalPrice().ToString(Constants.NUMBER_BREAK_KEY_WORD) + MONEY_UNIT;
+            }
         }
 
         //draw delete image to data grid

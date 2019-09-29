@@ -15,7 +15,6 @@ namespace Commerce_system
         private InitialFiles _initial;
         private ItemInfo _itemInfo;
         private ItemOrder _itemOrder;
-        private MainViewModel _viewModel;
         public EntryWindow()
         {
             InitializeComponent();
@@ -28,14 +27,13 @@ namespace Commerce_system
             _initial = new InitialFiles();
             _itemInfo = new ItemInfo(_initial);
             _itemOrder = new ItemOrder(_itemInfo);
-            _viewModel = new MainViewModel(_itemInfo);
         }
 
         //on _openOrderSystem click
         private void OpenOrderSystem(object sender, EventArgs e)
         {
             this._openOrderSystem.Enabled = false;
-            MainWindow mainWindow = new MainWindow(_itemInfo, _itemOrder, _viewModel);
+            MainWindow mainWindow = new MainWindow(_itemInfo, _itemOrder);
             mainWindow.Show();
             mainWindow.FormClosed += this.HandleOrderSystemClose;
         }
