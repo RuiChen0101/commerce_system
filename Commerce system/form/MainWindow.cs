@@ -28,7 +28,12 @@ namespace Commerce_system
         public MainWindow(ItemInfo itemInfo, ItemOrder itemOrder)
         {
             InitializeComponent();
-            this.InitialButtonDictionary();
+            this.InitialProcessorButtonDictionary();
+            this.InitialBoardButtonDictionary();
+            this.InitialMemoryButtonDictionary();
+            this.InitialDriveButtonDictionary();
+            this.InitialCardButtonDictionary();
+            this.InitialSetButtonDictionary();
             this._itemInfo = itemInfo;
             this._itemOrder = itemOrder;
             this._viewModel = new MainViewModel(_itemInfo);
@@ -177,8 +182,8 @@ namespace Commerce_system
             this.SetTabButton(ItemInfo.TYPE_SET, _viewModel.GetItemImageByType(ItemInfo.TYPE_SET));
         }
 
-        //initialize button dictionary
-        private void InitialButtonDictionary()
+        //initialize processor button dictionary
+        private void InitialProcessorButtonDictionary()
         {
             _buttonDictionary.Add(ItemInfo.TYPE_PROCESSOR, new List<Button>
             {
@@ -189,6 +194,11 @@ namespace Commerce_system
                 this._processorItem5,
                 this._processorItem6,
             });
+        }
+
+        //initialize board button dictionary
+        private void InitialBoardButtonDictionary()
+        {
             _buttonDictionary.Add(ItemInfo.TYPE_BOARD, new List<Button>
             {
                 this._boardItem1,
@@ -198,6 +208,11 @@ namespace Commerce_system
                 this._boardItem5,
                 this._boardItem6,
             });
+        }
+
+        //initialize memory button dictionary
+        private void InitialMemoryButtonDictionary()
+        {
             _buttonDictionary.Add(ItemInfo.TYPE_MEMORY, new List<Button>
             {
                 this._memoryItem1,
@@ -207,6 +222,11 @@ namespace Commerce_system
                 this._memoryItem5,
                 this._memoryItem6,
             });
+        }
+
+        //initialize drive button dictionary
+        private void InitialDriveButtonDictionary()
+        {
             _buttonDictionary.Add(ItemInfo.TYPE_DRIVE, new List<Button>
             {
                 this._driveItem1,
@@ -216,6 +236,11 @@ namespace Commerce_system
                 this._driveItem5,
                 this._driveItem6,
             });
+        }
+
+        //initialize card button dictionary
+        private void InitialCardButtonDictionary()
+        {
             _buttonDictionary.Add(ItemInfo.TYPE_CARD, new List<Button>
             {
                 this._cardItem1,
@@ -225,6 +250,11 @@ namespace Commerce_system
                 this._cardItem5,
                 this._cardItem6,
             });
+        }
+
+        //initialize set button dictionary
+        private void InitialSetButtonDictionary()
+        {
             _buttonDictionary.Add(ItemInfo.TYPE_SET, new List<Button>
             {
                 this._setItem1,

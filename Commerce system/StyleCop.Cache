@@ -17,6 +17,9 @@
   <project key="1281634580">
     <configuration>DEBUG;TRACE</configuration>
   </project>
+  <project key="-1972789362">
+    <configuration>DEBUG;TRACE</configuration>
+  </project>
   <sourcecode name="PaymentDialog.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2019/09/20 16:31:27.102</styleCop>
@@ -98,18 +101,12 @@
     <timestamps>
       <styleCop>2019/09/20 16:31:27.102</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2019/09/29 11:55:49.218</sourceFile>
+      <sourceFile>2019/09/30 11:36:04.368</sourceFile>
       <parser>2019/09/20 16:31:27.102</parser>
       <KellyPalRules.KellyPalAnalyzer>2019/09/20 16:31:27.102</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
     </timestamps>
-    <violations>
-      <violation namespace="KellyPalRules.KellyPalAnalyzer" rule="LongMethod" ruleCheckId="LM0001">
-        <context>Long method(過長函式)</context>
-        <line>181</line>
-        <warning>False</warning>
-      </violation>
-    </violations>
+    <violations />
   </sourcecode>
   <sourcecode name="mainwindow.Designer.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
