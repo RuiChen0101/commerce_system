@@ -155,17 +155,16 @@ namespace Commerce_system
         //draw delete image to data grid
         private void SetDeleteImageGrid(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            const int DIVIDER = 2;
             if (e.RowIndex < 0)
                 return;
             if (e.ColumnIndex == 0)
             {
                 Image image = Image.FromFile(DELETE_ICON_PATH);
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-                var w = image.Width / DIVIDER;
-                var h = image.Height / DIVIDER;
-                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / DIVIDER;
-                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / DIVIDER;
+                int w = image.Width >> 1;
+                int h = image.Height >> 1;
+                var x = e.CellBounds.Left + ((e.CellBounds.Width - w) >> 1);
+                var y = e.CellBounds.Top + ((e.CellBounds.Height - h) >> 1);
                 e.Graphics.DrawImage(image, new Rectangle(x, y, w, h));
                 e.Handled = true;
             }

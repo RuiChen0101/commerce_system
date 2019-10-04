@@ -98,6 +98,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="item.ini">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -118,6 +119,15 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="img\icon\add_shopping_cart.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\icon\arrow_back.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\icon\arrow_forward.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="img\icon\delete.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

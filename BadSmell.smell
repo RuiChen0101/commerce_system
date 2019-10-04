@@ -257,7 +257,7 @@
               <Severity>Warning</Severity>
               <Weight>1</Weight>
               <Project>Commerce system</Project>
-              <File>E:\files\C++\wpc\commerce_system\Commerce system\form\MainWindow.cs</File>
+              <File>D:\files\C++\windows program course\ERP system\Commerce system\form\MainWindow.cs</File>
               <Line>71</Line>
               <StartLine>70</StartLine>
               <StartCol>0</StartCol>
@@ -273,7 +273,7 @@
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>Commerce system</Project>
-              <File>E:\files\C++\wpc\commerce_system\Commerce system\form\MainWindow.cs</File>
+              <File>D:\files\C++\windows program course\ERP system\Commerce system\form\MainWindow.cs</File>
               <Line>80</Line>
               <StartLine>80</StartLine>
               <StartCol>21</StartCol>
@@ -386,7 +386,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>2540</ProductionLoc>
+          <ProductionLoc>2539</ProductionLoc>
           <TestLoc>0</TestLoc>
         </CodeReview>
       </Data>

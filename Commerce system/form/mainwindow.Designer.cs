@@ -68,11 +68,8 @@
             this._setItem1 = new System.Windows.Forms.Button();
             this._descriptionBox = new System.Windows.Forms.RichTextBox();
             this._itemGroup = new System.Windows.Forms.GroupBox();
-            this._nextPage = new System.Windows.Forms.Button();
-            this._previousPage = new System.Windows.Forms.Button();
             this._pageIndicate = new System.Windows.Forms.Label();
             this._pageLabel = new System.Windows.Forms.Label();
-            this._addToCart = new System.Windows.Forms.Button();
             this._itemInfoGroup = new System.Windows.Forms.GroupBox();
             this._itemPrice = new System.Windows.Forms.Label();
             this._orderList = new System.Windows.Forms.DataGridView();
@@ -82,6 +79,9 @@
             this._orderedItemPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._totalPrice = new System.Windows.Forms.Label();
             this._checkOut = new System.Windows.Forms.Button();
+            this._nextPage = new System.Windows.Forms.Button();
+            this._previousPage = new System.Windows.Forms.Button();
+            this._addToCart = new System.Windows.Forms.Button();
             this._itemTab.SuspendLayout();
             this._boardTabPage.SuspendLayout();
             this._processorTabPage.SuspendLayout();
@@ -671,30 +671,6 @@
             this._itemGroup.TabStop = false;
             this._itemGroup.Text = "商品";
             // 
-            // _nextPage
-            // 
-            this._nextPage.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._nextPage.Location = new System.Drawing.Point(257, 588);
-            this._nextPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this._nextPage.Name = "_nextPage";
-            this._nextPage.Size = new System.Drawing.Size(80, 38);
-            this._nextPage.TabIndex = 6;
-            this._nextPage.Text = ">";
-            this._nextPage.UseVisualStyleBackColor = true;
-            this._nextPage.Click += new System.EventHandler(this.ClickNextPage);
-            // 
-            // _previousPage
-            // 
-            this._previousPage.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._previousPage.Location = new System.Drawing.Point(169, 588);
-            this._previousPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this._previousPage.Name = "_previousPage";
-            this._previousPage.Size = new System.Drawing.Size(80, 38);
-            this._previousPage.TabIndex = 5;
-            this._previousPage.Text = "<";
-            this._previousPage.UseVisualStyleBackColor = true;
-            this._previousPage.Click += new System.EventHandler(this.ClickPreviousPage);
-            // 
             // _pageIndicate
             // 
             this._pageIndicate.AutoSize = true;
@@ -714,17 +690,6 @@
             this._pageLabel.Size = new System.Drawing.Size(87, 35);
             this._pageLabel.TabIndex = 3;
             this._pageLabel.Text = "Page:";
-            // 
-            // _addToCart
-            // 
-            this._addToCart.Location = new System.Drawing.Point(548, 585);
-            this._addToCart.Margin = new System.Windows.Forms.Padding(4);
-            this._addToCart.Name = "_addToCart";
-            this._addToCart.Size = new System.Drawing.Size(117, 46);
-            this._addToCart.TabIndex = 2;
-            this._addToCart.Text = "加到購物車";
-            this._addToCart.UseVisualStyleBackColor = true;
-            this._addToCart.Click += new System.EventHandler(this.AddToOrderClick);
             // 
             // _itemInfoGroup
             // 
@@ -819,13 +784,48 @@
             // _checkOut
             // 
             this._checkOut.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._checkOut.Location = new System.Drawing.Point(1132, 618);
+            this._checkOut.Location = new System.Drawing.Point(1132, 605);
             this._checkOut.Name = "_checkOut";
-            this._checkOut.Size = new System.Drawing.Size(116, 36);
+            this._checkOut.Size = new System.Drawing.Size(116, 49);
             this._checkOut.TabIndex = 4;
             this._checkOut.Text = "訂購";
             this._checkOut.UseVisualStyleBackColor = true;
             this._checkOut.Click += new System.EventHandler(this.ClickCheckOut);
+            // 
+            // _nextPage
+            // 
+            this._nextPage.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._nextPage.Image = global::Commerce_system.Properties.Resources.arrow_forward;
+            this._nextPage.Location = new System.Drawing.Point(257, 588);
+            this._nextPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this._nextPage.Name = "_nextPage";
+            this._nextPage.Size = new System.Drawing.Size(80, 38);
+            this._nextPage.TabIndex = 6;
+            this._nextPage.UseVisualStyleBackColor = true;
+            this._nextPage.Click += new System.EventHandler(this.ClickNextPage);
+            // 
+            // _previousPage
+            // 
+            this._previousPage.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._previousPage.Image = global::Commerce_system.Properties.Resources.arrow_back;
+            this._previousPage.Location = new System.Drawing.Point(169, 588);
+            this._previousPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this._previousPage.Name = "_previousPage";
+            this._previousPage.Size = new System.Drawing.Size(80, 38);
+            this._previousPage.TabIndex = 5;
+            this._previousPage.UseVisualStyleBackColor = true;
+            this._previousPage.Click += new System.EventHandler(this.ClickPreviousPage);
+            // 
+            // _addToCart
+            // 
+            this._addToCart.Image = global::Commerce_system.Properties.Resources.add_shopping_cart;
+            this._addToCart.Location = new System.Drawing.Point(548, 585);
+            this._addToCart.Margin = new System.Windows.Forms.Padding(4);
+            this._addToCart.Name = "_addToCart";
+            this._addToCart.Size = new System.Drawing.Size(117, 46);
+            this._addToCart.TabIndex = 2;
+            this._addToCart.UseVisualStyleBackColor = true;
+            this._addToCart.Click += new System.EventHandler(this.AddToOrderClick);
             // 
             // MainWindow
             // 
