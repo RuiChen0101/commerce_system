@@ -257,7 +257,7 @@
               <Severity>Warning</Severity>
               <Weight>1</Weight>
               <Project>Commerce system</Project>
-              <File>D:\files\C++\windows program course\ERP system\Commerce system\form\MainWindow.cs</File>
+              <File>E:\files\C++\wpc\commerce_system\Commerce system\form\MainWindow.cs</File>
               <Line>71</Line>
               <StartLine>70</StartLine>
               <StartCol>0</StartCol>
@@ -273,7 +273,7 @@
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>Commerce system</Project>
-              <File>D:\files\C++\windows program course\ERP system\Commerce system\form\MainWindow.cs</File>
+              <File>E:\files\C++\wpc\commerce_system\Commerce system\form\MainWindow.cs</File>
               <Line>80</Line>
               <StartLine>80</StartLine>
               <StartCol>21</StartCol>
@@ -283,7 +283,12 @@
               <Auto>false</Auto>
             </Smell>
           </Reviews>
-          <HashCodeIgnoreList />
+          <HashCodeIgnoreList>
+            <string>IndentAndNewLine1._typeList.        private readonly List&lt;string&gt; _typeList = new List&lt;string&gt;() { TYPE_PROCESSOR, TYPE_BOARD, TYPE_MEMORY, TYPE_DRIVE, TYPE_CARD, TYPE_SET };</string>
+            <string>IndentAndNewLine1._typeNameList.        private readonly List&lt;string&gt; _typeNameList = new List&lt;string&gt;() { "CPU", "主機板", "記憶體", "硬碟", "顯示卡", "套裝電腦" };</string>
+            <string>IndentAndNewLine3._typeList.        private readonly List&lt;string&gt; _typeList = new List&lt;string&gt;() { TYPE_PROCESSOR, TYPE_BOARD, TYPE_MEMORY, TYPE_DRIVE, TYPE_CARD, TYPE_SET };</string>
+            <string>IndentAndNewLine3._typeNameList.        private readonly List&lt;string&gt; _typeNameList = new List&lt;string&gt;() { "CPU", "主機板", "記憶體", "硬碟", "顯示卡", "套裝電腦" };</string>
+          </HashCodeIgnoreList>
           <HashCodeRequestIgnoreList>
             <string>IndentAndNewLine1._typeList.        private readonly List&lt;string&gt; _typeList = new List&lt;string&gt;() { TYPE_BOARD, TYPE_PROCESSOR, TYPE_MEMORY, TYPE_DRIVE, TYPE_CARD, TYPE_SET };</string>
             <string>IndentAndNewLine1._typeNameList.        private readonly List&lt;string&gt; _typeNameList = new List&lt;string&gt;() { "主機板", "CPU", "記憶體", "硬碟", "顯示卡", "套裝電腦" };</string>
