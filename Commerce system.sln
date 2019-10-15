@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.852
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commerce system", "Commerce system\Commerce system.csproj", "{9F8C281E-1394-4DDC-87A0-422A9F4E3004}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridViewNumericUpDownElements", "Commerce system\DataGridViewNumericUpDownElements\DataGridViewNumericUpDownElements.csproj", "{82B50731-BE90-433F-BB6E-9B509C5F3B7C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{9F8C281E-1394-4DDC-87A0-422A9F4E3004}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F8C281E-1394-4DDC-87A0-422A9F4E3004}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F8C281E-1394-4DDC-87A0-422A9F4E3004}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82B50731-BE90-433F-BB6E-9B509C5F3B7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82B50731-BE90-433F-BB6E-9B509C5F3B7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82B50731-BE90-433F-BB6E-9B509C5F3B7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82B50731-BE90-433F-BB6E-9B509C5F3B7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B5A80E06-C7C2-483F-95A3-73EEC1100225}
 	EndGlobalSection
 EndGlobal

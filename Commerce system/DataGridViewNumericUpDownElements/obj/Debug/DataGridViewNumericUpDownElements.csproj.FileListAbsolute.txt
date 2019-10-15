@@ -1,0 +1,17 @@
+C:\Users\hong\Desktop\DGVNUPD\DataGridViewNumericUpDown\DataGridViewNumericUpDownElements\bin\Debug\DataGridViewNumericUpDownElements.dll
+C:\Users\hong\Desktop\DGVNUPD\DataGridViewNumericUpDown\DataGridViewNumericUpDownElements\bin\Debug\DataGridViewNumericUpDownElements.pdb
+C:\Users\hong\Desktop\DGVNUPD\DataGridViewNumericUpDown\DataGridViewNumericUpDownElements\obj\Debug\DataGridViewNumericUpDownElements.csproj.CoreCompileInputs.cache
+C:\Users\hong\Desktop\DGVNUPD\DataGridViewNumericUpDown\DataGridViewNumericUpDownElements\obj\Debug\DataGridViewNumericUpDownElements.dll
+C:\Users\hong\Desktop\DGVNUPD\DataGridViewNumericUpDown\DataGridViewNumericUpDownElements\obj\Debug\DataGridViewNumericUpDownElements.pdb
+C:\Users\hong\Documents\Visual Studio 2015\Projects\WindowsFormsApplication1\DataGridViewNumericUpDownElements\bin\Debug\DataGridViewNumericUpDownElements.dll
+C:\Users\hong\Documents\Visual Studio 2015\Projects\WindowsFormsApplication1\DataGridViewNumericUpDownElements\bin\Debug\DataGridViewNumericUpDownElements.pdb
+C:\Users\hong\Documents\Visual Studio 2015\Projects\WindowsFormsApplication1\DataGridViewNumericUpDownElements\obj\Debug\DataGridViewNumericUpDownElements.csprojAssemblyReference.cache
+C:\Users\hong\Documents\Visual Studio 2015\Projects\WindowsFormsApplication1\DataGridViewNumericUpDownElements\obj\Debug\DataGridViewNumericUpDownElements.csproj.CoreCompileInputs.cache
+C:\Users\hong\Documents\Visual Studio 2015\Projects\WindowsFormsApplication1\DataGridViewNumericUpDownElements\obj\Debug\DataGridViewNumericUpDownElements.dll
+C:\Users\hong\Documents\Visual Studio 2015\Projects\WindowsFormsApplication1\DataGridViewNumericUpDownElements\obj\Debug\DataGridViewNumericUpDownElements.pdb
+E:\files\C++\wpc\commerce_system\Commerce system\DataGridViewNumericUpDownElements\bin\Debug\DataGridViewNumericUpDownElements.dll
+E:\files\C++\wpc\commerce_system\Commerce system\DataGridViewNumericUpDownElements\bin\Debug\DataGridViewNumericUpDownElements.pdb
+E:\files\C++\wpc\commerce_system\Commerce system\DataGridViewNumericUpDownElements\obj\Debug\DataGridViewNumericUpDownElements.csprojAssemblyReference.cache
+E:\files\C++\wpc\commerce_system\Commerce system\DataGridViewNumericUpDownElements\obj\Debug\DataGridViewNumericUpDownElements.csproj.CoreCompileInputs.cache
+E:\files\C++\wpc\commerce_system\Commerce system\DataGridViewNumericUpDownElements\obj\Debug\DataGridViewNumericUpDownElements.dll
+E:\files\C++\wpc\commerce_system\Commerce system\DataGridViewNumericUpDownElements\obj\Debug\DataGridViewNumericUpDownElements.pdb

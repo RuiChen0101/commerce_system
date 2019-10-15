@@ -19,6 +19,7 @@ namespace Commerce_system
 
         private const string ITEM_PRICE_STRING = "單價: ";
         private const string TOTAL_PRICE_STRING = "總價: ";
+        private const string STOCK_LEFT_STRING = "庫存數量: ";
         private const string MONEY_UNIT = "元";
         private const string DELETE_ICON_PATH = ".\\img\\icon\\delete.png";
 
@@ -36,7 +37,7 @@ namespace Commerce_system
             this.InitialSetButtonDictionary();
             this._itemInfo = itemInfo;
             this._itemOrder = itemOrder;
-            this._viewModel = new MainViewModel(_itemInfo);
+            this._viewModel = new MainViewModel(_itemInfo,_itemOrder);
             this._paymentDialog = new PaymentDialog();
             this.InitialAllItemButton();
             this.HandleTabIndexChanged(null, null);
@@ -62,14 +63,13 @@ namespace Commerce_system
         //bubbling item button click event
         private void ClickItem(object sender, EventArgs e)
         {
-            const char BREAK_CHAR = '_';
             const string RETURN_CHAR = "\n";
             string senderTag = ((Button)sender).Tag.ToString();
-            string[] idData = senderTag.Split(BREAK_CHAR);
-            _viewModel.UpdateCurrentItem(idData[0], int.Parse(idData[1]) - 1);
-            string id = _viewModel.GetCurrentItem();
+            string id = _viewModel.UpdateCurrentItemByTag(senderTag);
             this._descriptionBox.Text = _itemInfo.GetItemName(id) + RETURN_CHAR + _itemInfo.GetItemDescription(id);
             this._itemPrice.Text = ITEM_PRICE_STRING + _itemInfo.GetItemPrice(id).ToString(Constants.NUMBER_BREAK_KEY_WORD) + MONEY_UNIT;
+            this._itemStock.Text = STOCK_LEFT_STRING + _itemInfo.GetItemStock(id).ToString();
+            this._addToCart.Enabled = _viewModel.IsAddToCartEnable();
         }
 
         //bubbling add_to_cart button click event
@@ -78,8 +78,9 @@ namespace Commerce_system
             string id = _viewModel.GetCurrentItem();
             _itemOrder.AddToOrder(id);
             this._totalPrice.Text = TOTAL_PRICE_STRING + _itemOrder.GetTotalPrice().ToString(Constants.NUMBER_BREAK_KEY_WORD) + MONEY_UNIT;
-            string[] orderRow = { "", _itemInfo.GetItemName(id), _itemInfo.GetItemTypeName(id), _itemInfo.GetItemPrice(id).ToString(Constants.NUMBER_BREAK_KEY_WORD) };
+            string[] orderRow = { "", _itemInfo.GetItemName(id), _itemInfo.GetItemTypeName(id), _itemInfo.GetItemPrice(id).ToString(Constants.NUMBER_BREAK_KEY_WORD),"1","100" };
             this._orderList.Rows.Add(orderRow);
+            this._addToCart.Enabled = _viewModel.IsAddToCartEnable();
         }
 
         //handel tabindex change 
@@ -129,6 +130,7 @@ namespace Commerce_system
             _itemOrder.DeleteFromOrder(index);
             this._orderList.Rows.RemoveAt(index);
             this._totalPrice.Text = TOTAL_PRICE_STRING + _itemOrder.GetTotalPrice().ToString(Constants.NUMBER_BREAK_KEY_WORD) + MONEY_UNIT;
+            this._addToCart.Enabled = _viewModel.IsAddToCartEnable();
         }
 
         //handle cell click event

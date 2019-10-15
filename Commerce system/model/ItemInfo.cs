@@ -27,6 +27,7 @@ namespace Commerce_system
         private const string IMAGE_KEY = "imgref";
         private const string DESCRIPTION_KEY = "desc";
         private const string PRICE_KEY = "price";
+        private const string STOCK_KEY = "stock";
 
         private readonly List<string> _typeList = new List<string>() { TYPE_BOARD, TYPE_PROCESSOR, TYPE_MEMORY, TYPE_DRIVE, TYPE_CARD, TYPE_SET };
         private readonly List<string> _typeNameList = new List<string>() { "主機板", "CPU", "記憶體", "硬碟", "顯示卡", "套裝電腦" };
@@ -75,6 +76,18 @@ namespace Commerce_system
         public int GetItemPrice(string id)
         {
             return int.Parse(_initial.ReadInitial(id, PRICE_KEY));
+        }
+
+        //get item stock
+        public int GetItemStock(string id)
+        {
+            return int.Parse(_initial.ReadInitial(id, STOCK_KEY));
+        }
+
+        //set stock
+        public void WriteBackStockQuantity(string id, int quantity)
+        {
+            _initial.WriteInitial(id, STOCK_KEY, quantity.ToString());
         }
 
         //get item type name by translate type string

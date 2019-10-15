@@ -18,6 +18,11 @@ namespace Commerce_system
 
         private static extern uint GetPrivateProfileSectionNames(IntPtr returnValue, uint size, string filePath);
 
+        //imported function
+        [DllImport("kernel32")]
+
+        private static extern long WritePrivateProfileString(string section, string key, string value, string filePath);
+
         private const string FILE_PATH = ".\\item.ini";
 
         //read .ini file data
@@ -27,6 +32,12 @@ namespace Commerce_system
             StringBuilder temp = new StringBuilder(BUFFER_SIZE);
             GetPrivateProfileString(section, key, defaultValue, temp, BUFFER_SIZE, FILE_PATH);
             return temp.ToString();
+        }
+
+        //write data back to ini file
+        public void WriteInitial(string section, string key, string value)
+        {
+            WritePrivateProfileString(section, key, value, FILE_PATH);
         }
 
         //get all section in .ini file

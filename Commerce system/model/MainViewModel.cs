@@ -11,15 +11,17 @@ namespace Commerce_system
     {
         public const int DISPLAY_ITEM_COUNT = 6;
         private ItemInfo _itemInfo;
+        private ItemOrder _itemOrder;
         private Dictionary<string, List<string>> _idDictionary = new Dictionary<string, List<string>>();
         private Dictionary<string, int> _totalPage = new Dictionary<string, int>();
         private Dictionary<string, int> _currentPage = new Dictionary<string, int>();
         private string _currentClickedItem = null;
 
         //default constructor
-        public MainViewModel(ItemInfo itemInfo)
+        public MainViewModel(ItemInfo itemInfo, ItemOrder itemOrder)
         {
             this._itemInfo = itemInfo;
+            this._itemOrder = itemOrder;
             this.InitialItemDictionary();
             this.InitialPageData();
         }
@@ -43,9 +45,12 @@ namespace Commerce_system
         }
 
         //update current clicked item id
-        public void UpdateCurrentItem(String type, int index)
+        public string UpdateCurrentItemByTag(string senderTag)
         {
-            this._currentClickedItem = _idDictionary[type][index];
+            const char BREAK_CHAR = '_';
+            string[] idData = senderTag.Split(BREAK_CHAR);
+            this._currentClickedItem = _idDictionary[idData[0]][int.Parse(idData[1]) - 1];
+            return this._currentClickedItem;
         }
 
         //return currentItem
@@ -71,6 +76,12 @@ namespace Commerce_system
         public bool IsNextPageEnable(string type)
         {
             return _currentPage[type] != _totalPage[type];
+        }
+
+        //check NextPage button is enable
+        public bool IsAddToCartEnable()
+        {
+            return !_itemOrder.IsInOrder(this._currentClickedItem) && !(_itemInfo.GetItemStock(this._currentClickedItem) <= 0);
         }
 
         //change to next page

@@ -101,7 +101,7 @@
     <timestamps>
       <styleCop>2019/09/20 16:31:27.102</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2019/10/05 10:02:51.441</sourceFile>
+      <sourceFile>2019/10/15 21:20:36.014</sourceFile>
       <parser>2019/09/20 16:31:27.102</parser>
       <KellyPalRules.KellyPalAnalyzer>2019/09/20 16:31:27.102</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
@@ -112,7 +112,7 @@
     <timestamps>
       <styleCop>2019/09/20 16:31:27.102</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2019/10/05 10:02:51.463</sourceFile>
+      <sourceFile>2019/10/15 21:29:17.345</sourceFile>
       <parser>2019/09/20 16:31:27.102</parser>
       <KellyPalRules.KellyPalAnalyzer>2019/09/20 16:31:27.102</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
@@ -134,7 +134,7 @@
     <timestamps>
       <styleCop>2019/09/20 16:31:27.102</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2019/09/28 11:36:48.279</sourceFile>
+      <sourceFile>2019/10/15 21:30:38.264</sourceFile>
       <parser>2019/09/20 16:31:27.102</parser>
       <KellyPalRules.KellyPalAnalyzer>2019/09/20 16:31:27.102</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
@@ -145,7 +145,7 @@
     <timestamps>
       <styleCop>2019/09/20 16:31:27.102</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2019/09/28 10:39:17.684</sourceFile>
+      <sourceFile>2019/10/15 21:26:11.049</sourceFile>
       <parser>2019/09/20 16:31:27.102</parser>
       <KellyPalRules.KellyPalAnalyzer>2019/09/20 16:31:27.102</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
@@ -153,45 +153,45 @@
     <violations>
       <violation namespace="KellyPalRules.KellyPalAnalyzer" rule="IndentAndNewLine1" ruleCheckId="IN0001">
         <context>ICS(縮排與換行-1)</context>
-        <line>31</line>
-        <index>1104</index>
-        <endIndex>1104</endIndex>
-        <startLine>31</startLine>
+        <line>32</line>
+        <index>1155</index>
+        <endIndex>1155</endIndex>
+        <startLine>32</startLine>
         <startColumn>70</startColumn>
-        <endLine>31</endLine>
+        <endLine>32</endLine>
         <endColumn>70</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="KellyPalRules.KellyPalAnalyzer" rule="IndentAndNewLine3" ruleCheckId="IN0003">
         <context>ICS(縮排與換行-3)</context>
-        <line>31</line>
-        <index>1104</index>
-        <endIndex>1104</endIndex>
-        <startLine>31</startLine>
+        <line>32</line>
+        <index>1155</index>
+        <endIndex>1155</endIndex>
+        <startLine>32</startLine>
         <startColumn>70</startColumn>
-        <endLine>31</endLine>
+        <endLine>32</endLine>
         <endColumn>70</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="KellyPalRules.KellyPalAnalyzer" rule="IndentAndNewLine1" ruleCheckId="IN0001">
         <context>ICS(縮排與換行-1)</context>
-        <line>32</line>
-        <index>1256</index>
-        <endIndex>1256</endIndex>
-        <startLine>32</startLine>
+        <line>33</line>
+        <index>1307</index>
+        <endIndex>1307</endIndex>
+        <startLine>33</startLine>
         <startColumn>74</startColumn>
-        <endLine>32</endLine>
+        <endLine>33</endLine>
         <endColumn>74</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="KellyPalRules.KellyPalAnalyzer" rule="IndentAndNewLine3" ruleCheckId="IN0003">
         <context>ICS(縮排與換行-3)</context>
-        <line>32</line>
-        <index>1256</index>
-        <endIndex>1256</endIndex>
-        <startLine>32</startLine>
+        <line>33</line>
+        <index>1307</index>
+        <endIndex>1307</endIndex>
+        <startLine>33</startLine>
         <startColumn>74</startColumn>
-        <endLine>32</endLine>
+        <endLine>33</endLine>
         <endColumn>74</endColumn>
         <warning>False</warning>
       </violation>
@@ -201,7 +201,7 @@
     <timestamps>
       <styleCop>2019/09/20 16:31:27.102</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2019/09/29 09:56:02.006</sourceFile>
+      <sourceFile>2019/10/15 20:56:45.399</sourceFile>
       <parser>2019/09/20 16:31:27.102</parser>
       <KellyPalRules.KellyPalAnalyzer>2019/09/20 16:31:27.102</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
@@ -212,7 +212,7 @@
     <timestamps>
       <styleCop>2019/09/20 16:31:27.102</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2019/09/29 09:53:11.086</sourceFile>
+      <sourceFile>2019/10/15 21:26:28.159</sourceFile>
       <parser>2019/09/20 16:31:27.102</parser>
       <KellyPalRules.KellyPalAnalyzer>2019/09/20 16:31:27.102</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
@@ -234,7 +234,7 @@
     <timestamps>
       <styleCop>2019/09/20 16:31:27.102</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2019/09/20 15:49:18.039</sourceFile>
+      <sourceFile>2019/10/15 20:32:05.472</sourceFile>
       <parser>2019/09/20 16:31:27.102</parser>
       <KellyPalRules.KellyPalAnalyzer>2019/09/20 16:31:27.102</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
