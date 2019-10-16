@@ -52,6 +52,12 @@
     <Compile Include="dialog\PaymentDialog.Designer.cs">
       <DependentUpon>PaymentDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="dialog\SupplyDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dialog\SupplyDialog.Designer.cs">
+      <DependentUpon>SupplyDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="model\Constants.cs" />
     <Compile Include="Entry.cs" />
     <Compile Include="form\EntryWindow.cs">
@@ -80,6 +86,9 @@
     <Compile Include="model\MainViewModel.cs" />
     <EmbeddedResource Include="dialog\PaymentDialog.resx">
       <DependentUpon>PaymentDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dialog\SupplyDialog.resx">
+      <DependentUpon>SupplyDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\EntryWindow.resx">
       <DependentUpon>EntryWindow.cs</DependentUpon>
@@ -129,6 +138,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="img\icon\delete.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\icon\delivery-truck.bmp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="img\item\ADATA 16G DDR4-2666.jpg">

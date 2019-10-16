@@ -32,6 +32,7 @@ namespace Commerce_system
         private readonly List<string> _typeList = new List<string>() { TYPE_BOARD, TYPE_PROCESSOR, TYPE_MEMORY, TYPE_DRIVE, TYPE_CARD, TYPE_SET };
         private readonly List<string> _typeNameList = new List<string>() { "主機板", "CPU", "記憶體", "硬碟", "顯示卡", "套裝電腦" };
 
+        private List<string> _totalIdList = new List<string>();
         private List<string> _processorItemIdList = new List<string>();
         private List<string> _boardItemIdList = new List<string>();
         private List<string> _memoryItemIdList = new List<string>();
@@ -87,7 +88,8 @@ namespace Commerce_system
         //set stock
         public void WriteBackStockQuantity(string id, int quantity)
         {
-            _initial.WriteInitial(id, STOCK_KEY, quantity.ToString());
+            int leftStock = this.GetItemStock(id) - quantity;
+            _initial.WriteInitial(id, STOCK_KEY, leftStock.ToString());
         }
 
         //get item type name by translate type string
@@ -104,6 +106,12 @@ namespace Commerce_system
             List<string>[] typeIdList = { _boardItemIdList, _processorItemIdList, _memoryItemIdList, _driveItemIdList, _cardItemIdList, _setItemIdList };
             int typeIndex = _typeList.FindIndex(x => x == type);
             return typeIdList[typeIndex];
+        }
+
+        //get all id list
+        public List<string> GetTotalIdList()
+        {
+            return _totalIdList;
         }
 
         //get all type
@@ -123,6 +131,7 @@ namespace Commerce_system
                 String type = this.GetItemType(section);
                 int typeIndex = _typeList.FindIndex(x => x == type);
                 typeIdList[typeIndex].Add(section);
+                this._totalIdList.Add(section);
             }
         }
 

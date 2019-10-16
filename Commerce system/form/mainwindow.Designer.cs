@@ -77,14 +77,14 @@
             this._itemStock = new System.Windows.Forms.Label();
             this._itemPrice = new System.Windows.Forms.Label();
             this._orderList = new System.Windows.Forms.DataGridView();
-            this._totalPrice = new System.Windows.Forms.Label();
-            this._checkOut = new System.Windows.Forms.Button();
             this._orderedItemDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this._orderedItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._orderedItemType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._orderedItemPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._quantity = new DataGridViewNumericUpDownElements.DataGridViewNumericUpDownColumn();
             this._itemTotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._totalPrice = new System.Windows.Forms.Label();
+            this._checkOut = new System.Windows.Forms.Button();
             this._itemTab.SuspendLayout();
             this._boardTabPage.SuspendLayout();
             this._processorTabPage.SuspendLayout();
@@ -785,29 +785,8 @@
             this._orderList.Size = new System.Drawing.Size(533, 442);
             this._orderList.TabIndex = 3;
             this._orderList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClickCellContent);
+            this._orderList.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.ChangeQuantity);
             this._orderList.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.SetDeleteImageGrid);
-            // 
-            // _totalPrice
-            // 
-            this._totalPrice.AutoSize = true;
-            this._totalPrice.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._totalPrice.Location = new System.Drawing.Point(536, 494);
-            this._totalPrice.Name = "_totalPrice";
-            this._totalPrice.Size = new System.Drawing.Size(87, 24);
-            this._totalPrice.TabIndex = 3;
-            this._totalPrice.Text = "總價: 0元";
-            // 
-            // _checkOut
-            // 
-            this._checkOut.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._checkOut.Location = new System.Drawing.Point(985, 481);
-            this._checkOut.Margin = new System.Windows.Forms.Padding(2);
-            this._checkOut.Name = "_checkOut";
-            this._checkOut.Size = new System.Drawing.Size(87, 39);
-            this._checkOut.TabIndex = 4;
-            this._checkOut.Text = "訂購";
-            this._checkOut.UseVisualStyleBackColor = true;
-            this._checkOut.Click += new System.EventHandler(this.ClickCheckOut);
             // 
             // _orderedItemDelete
             // 
@@ -858,6 +837,28 @@
             this._itemTotalPrice.ReadOnly = true;
             this._itemTotalPrice.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this._itemTotalPrice.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // _totalPrice
+            // 
+            this._totalPrice.AutoSize = true;
+            this._totalPrice.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._totalPrice.Location = new System.Drawing.Point(536, 494);
+            this._totalPrice.Name = "_totalPrice";
+            this._totalPrice.Size = new System.Drawing.Size(87, 24);
+            this._totalPrice.TabIndex = 3;
+            this._totalPrice.Text = "總價: 0元";
+            // 
+            // _checkOut
+            // 
+            this._checkOut.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._checkOut.Location = new System.Drawing.Point(985, 481);
+            this._checkOut.Margin = new System.Windows.Forms.Padding(2);
+            this._checkOut.Name = "_checkOut";
+            this._checkOut.Size = new System.Drawing.Size(87, 39);
+            this._checkOut.TabIndex = 4;
+            this._checkOut.Text = "訂購";
+            this._checkOut.UseVisualStyleBackColor = true;
+            this._checkOut.Click += new System.EventHandler(this.ClickCheckOut);
             // 
             // MainWindow
             // 

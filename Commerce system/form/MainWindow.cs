@@ -78,7 +78,7 @@ namespace Commerce_system
             string id = _viewModel.GetCurrentItem();
             _itemOrder.AddToOrder(id);
             this._totalPrice.Text = TOTAL_PRICE_STRING + _itemOrder.GetTotalPrice().ToString(Constants.NUMBER_BREAK_KEY_WORD) + MONEY_UNIT;
-            string[] orderRow = { "", _itemInfo.GetItemName(id), _itemInfo.GetItemTypeName(id), _itemInfo.GetItemPrice(id).ToString(Constants.NUMBER_BREAK_KEY_WORD),"1","100" };
+            string[] orderRow = { "", _itemInfo.GetItemName(id), _itemInfo.GetItemTypeName(id), _itemInfo.GetItemPrice(id).ToString(Constants.NUMBER_BREAK_KEY_WORD),1.ToString(), _itemInfo.GetItemPrice(id).ToString(Constants.NUMBER_BREAK_KEY_WORD) };
             this._orderList.Rows.Add(orderRow);
             this._addToCart.Enabled = _viewModel.IsAddToCartEnable();
         }
@@ -142,6 +142,27 @@ namespace Commerce_system
             }
         }
 
+        //handle cell click event
+        private void ChangeQuantity(object sender, DataGridViewCellEventArgs e)
+        {
+            const int QUANTITY_INDEX = 4;
+            const int TOTAL_PRICE_INDEX = 5;
+            if (e.ColumnIndex == QUANTITY_INDEX)
+            {
+                int newQuantity = int.Parse(this._orderList.Rows[e.RowIndex].Cells[QUANTITY_INDEX].Value.ToString());
+                int result = _itemOrder.UpdateQuantity(e.RowIndex, newQuantity);
+                if (newQuantity != result)
+                {
+                    const string STOCK_STATUS = "庫存狀態";
+                    const string STOCK_NOT_ENOUGH = "庫存不足";
+                    MessageBox.Show(STOCK_NOT_ENOUGH, STOCK_STATUS);
+                }
+                this._orderList.Rows[e.RowIndex].Cells[QUANTITY_INDEX].Value = result.ToString();
+                this._orderList.Rows[e.RowIndex].Cells[TOTAL_PRICE_INDEX].Value = _itemOrder.GetItemTotalPrice(e.RowIndex).ToString(Constants.NUMBER_BREAK_KEY_WORD);
+                this._totalPrice.Text = TOTAL_PRICE_STRING + _itemOrder.GetTotalPrice().ToString(Constants.NUMBER_BREAK_KEY_WORD) + MONEY_UNIT;
+            }
+        }
+
         //start checkout
         private void ClickCheckOut(object sender, EventArgs e)
         {
@@ -149,7 +170,7 @@ namespace Commerce_system
             if (result == DialogResult.Yes)
             {
                 this._orderList.Rows.Clear();
-                this._itemOrder.ClearOrder();
+                this._itemOrder.ProceedCheckOut();
                 this._totalPrice.Text = TOTAL_PRICE_STRING + _itemOrder.GetTotalPrice().ToString(Constants.NUMBER_BREAK_KEY_WORD) + MONEY_UNIT;
             }
         }

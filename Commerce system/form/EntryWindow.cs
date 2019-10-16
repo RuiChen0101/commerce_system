@@ -42,7 +42,7 @@ namespace Commerce_system
         private void OpenInventorySystem(object sender, EventArgs e)
         {
             this._openInventorySystem.Enabled = false;
-            InventoryWindow inventoryWindow = new InventoryWindow();
+            InventoryWindow inventoryWindow = new InventoryWindow(_itemInfo);
             inventoryWindow.Show();
             inventoryWindow.FormClosed += this.HandleInventorySystemClose;
         }

@@ -8,6 +8,7 @@ namespace Commerce_system
 {
     public class ItemOrder
     {
+        public const int UPDATE_SUCCESS = -1;
         private Dictionary<string,int> _orderIdList = new Dictionary<string, int>();
         private int _totalPrice = 0;
         private ItemInfo _itemInfo;
@@ -28,9 +29,27 @@ namespace Commerce_system
         //delete record
         public void DeleteFromOrder(int index)
         {
-            string key = _orderIdList.ElementAt(index).Key;
-            _totalPrice -= _itemInfo.GetItemPrice(key);
-            _orderIdList.Remove(key);
+            string id = _orderIdList.ElementAt(index).Key;
+            _totalPrice -= _itemInfo.GetItemPrice(id) * _orderIdList[id];
+            _orderIdList.Remove(id);
+        }
+
+        //update record quantity
+        public int UpdateQuantity(int index, int quantity)
+        {
+            string id = _orderIdList.ElementAt(index).Key;
+            quantity = _itemInfo.GetItemStock(id) >= quantity ? quantity : _itemInfo.GetItemStock(id);
+            int quantityDelta = quantity - _orderIdList[id];
+            _totalPrice += (_itemInfo.GetItemPrice(id) * quantityDelta);
+            _orderIdList[id] = quantity;
+            return quantity;
+        }
+
+        //get item total price
+        public int GetItemTotalPrice(int index)
+        {
+            string id = _orderIdList.ElementAt(index).Key;
+            return _itemInfo.GetItemPrice(id) * _orderIdList[id];
         }
 
         //check item already in order
@@ -40,8 +59,12 @@ namespace Commerce_system
         }
 
         //clear order list
-        public void ClearOrder()
+        public void ProceedCheckOut()
         {
+            foreach (var item in _orderIdList)
+            {
+                _itemInfo.WriteBackStockQuantity(item.Key, item.Value);
+            }
             _orderIdList.Clear();
             _totalPrice = 0;
         }

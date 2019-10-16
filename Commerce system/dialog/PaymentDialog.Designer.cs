@@ -80,6 +80,7 @@
             // 
             this._cardHolderFirstName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this._cardHolderFirstName.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._cardHolderFirstName.ImeMode = System.Windows.Forms.ImeMode.Off;
             this._cardHolderFirstName.Location = new System.Drawing.Point(37, 78);
             this._cardHolderFirstName.Margin = new System.Windows.Forms.Padding(2);
             this._cardHolderFirstName.MaxLength = 12;
@@ -93,6 +94,7 @@
             // 
             this._cardHolderLastName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this._cardHolderLastName.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._cardHolderLastName.ImeMode = System.Windows.Forms.ImeMode.Off;
             this._cardHolderLastName.Location = new System.Drawing.Point(186, 78);
             this._cardHolderLastName.Margin = new System.Windows.Forms.Padding(2);
             this._cardHolderLastName.MaxLength = 12;
@@ -127,6 +129,7 @@
             // _cardNumber2
             // 
             this._cardNumber2.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._cardNumber2.ImeMode = System.Windows.Forms.ImeMode.Off;
             this._cardNumber2.Location = new System.Drawing.Point(115, 142);
             this._cardNumber2.Margin = new System.Windows.Forms.Padding(2);
             this._cardNumber2.MaxLength = 4;
@@ -139,6 +142,7 @@
             // _cardNumber1
             // 
             this._cardNumber1.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._cardNumber1.ImeMode = System.Windows.Forms.ImeMode.Off;
             this._cardNumber1.Location = new System.Drawing.Point(37, 142);
             this._cardNumber1.Margin = new System.Windows.Forms.Padding(2);
             this._cardNumber1.MaxLength = 4;
@@ -173,6 +177,7 @@
             // _cardNumber4
             // 
             this._cardNumber4.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._cardNumber4.ImeMode = System.Windows.Forms.ImeMode.Off;
             this._cardNumber4.Location = new System.Drawing.Point(264, 142);
             this._cardNumber4.Margin = new System.Windows.Forms.Padding(2);
             this._cardNumber4.MaxLength = 4;
@@ -185,6 +190,7 @@
             // _cardNumber3
             // 
             this._cardNumber3.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._cardNumber3.ImeMode = System.Windows.Forms.ImeMode.Off;
             this._cardNumber3.Location = new System.Drawing.Point(187, 142);
             this._cardNumber3.Margin = new System.Windows.Forms.Padding(2);
             this._cardNumber3.MaxLength = 4;
@@ -285,6 +291,7 @@
             // _verifyCode
             // 
             this._verifyCode.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._verifyCode.ImeMode = System.Windows.Forms.ImeMode.Off;
             this._verifyCode.Location = new System.Drawing.Point(37, 277);
             this._verifyCode.Margin = new System.Windows.Forms.Padding(2);
             this._verifyCode.MaxLength = 3;
@@ -297,6 +304,7 @@
             // _mail
             // 
             this._mail.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._mail.ImeMode = System.Windows.Forms.ImeMode.Off;
             this._mail.Location = new System.Drawing.Point(37, 338);
             this._mail.Margin = new System.Windows.Forms.Padding(2);
             this._mail.Name = "_mail";
@@ -318,6 +326,7 @@
             // _address
             // 
             this._address.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._address.ImeMode = System.Windows.Forms.ImeMode.Off;
             this._address.Location = new System.Drawing.Point(37, 397);
             this._address.Margin = new System.Windows.Forms.Padding(2);
             this._address.Name = "_address";
