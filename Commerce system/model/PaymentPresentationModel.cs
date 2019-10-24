@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Commerce_system
 {
-    class PaymentViewModel
+    class PaymentPresentationModel
     {
         private readonly string[] _fieldList = { "_cardHolderFirstName", "_cardHolderLastName", "_cardNumber1", "_cardNumber2", "_cardNumber3", "_cardNumber4", "_verifyCode", "_mail", "_address" };
         private const string MAIL_CHECK_WORD = "@";
         private Dictionary<string, bool> _inputData = new Dictionary<string, bool>();
 
-        public PaymentViewModel()
+        public PaymentPresentationModel()
         {
             this.InitialData();
         }
@@ -87,15 +86,15 @@ namespace Commerce_system
         }
 
         //is number only input
-        public bool IsNumberInput(KeyPressEventArgs e)
+        public bool IsNumberInput(char input)
         {
-            return Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar);
+            return Char.IsDigit(input) || Char.IsControl(input);
         }
 
         //is string only input
-        public bool IsStringInput(KeyPressEventArgs e)
+        public bool IsStringInput(char input)
         {
-            return Char.IsLetter(e.KeyChar) || Char.IsControl(e.KeyChar);
+            return Char.IsLetter(input) || Char.IsControl(input);
         }
 
         //is submit enable

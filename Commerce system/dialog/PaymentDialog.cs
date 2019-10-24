@@ -16,13 +16,13 @@ namespace Commerce_system
         private const string CARD_NUMBER_LENGTH_ERROR_MESSAGE = "長度不足(4碼)";
         private const string EMPTY_ERROR_MESSAGE = "此欄不能為空";
         private const string MAIL_ERROR_MESSAGE = "非電子郵件";
-        private PaymentViewModel _viewModel;
+        private PaymentPresentationModel _viewModel;
         private ErrorProvider _errorProvider;
 
         public PaymentDialog()
         {
             InitializeComponent();
-            _viewModel = new PaymentViewModel();
+            _viewModel = new PaymentPresentationModel();
             _errorProvider = new ErrorProvider();
             this._expireMonth.SelectedIndex = 0;
             this._expireYear.SelectedIndex = 0;
@@ -99,13 +99,13 @@ namespace Commerce_system
         //varify number only input
         private void CheckNumberInput(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !_viewModel.IsNumberInput(e);
+            e.Handled = !_viewModel.IsNumberInput(e.KeyChar);
         }
 
         //varify string only input
         private void CheckStringInput(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !_viewModel.IsStringInput(e);
+            e.Handled = !_viewModel.IsStringInput(e.KeyChar);
         }
 
         //submimt click

@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Commerce_system
 {
-    public class MainViewModel
+    public class MainPresentationModel
     {
         public const int DISPLAY_ITEM_COUNT = 6;
         private ItemInfo _itemInfo;
@@ -18,7 +17,7 @@ namespace Commerce_system
         private string _currentClickedItem = null;
 
         //default constructor
-        public MainViewModel(ItemInfo itemInfo, ItemOrder itemOrder)
+        public MainPresentationModel(ItemInfo itemInfo, ItemOrder itemOrder)
         {
             this._itemInfo = itemInfo;
             this._itemOrder = itemOrder;

@@ -850,8 +850,9 @@
             // 
             // _checkOut
             // 
+            this._checkOut.Enabled = false;
             this._checkOut.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._checkOut.Location = new System.Drawing.Point(985, 481);
+            this._checkOut.Location = new System.Drawing.Point(984, 490);
             this._checkOut.Margin = new System.Windows.Forms.Padding(2);
             this._checkOut.Name = "_checkOut";
             this._checkOut.Size = new System.Drawing.Size(87, 39);

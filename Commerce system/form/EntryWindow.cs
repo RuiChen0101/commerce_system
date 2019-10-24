@@ -12,7 +12,6 @@ namespace Commerce_system
 {
     public partial class EntryWindow : Form
     {
-        private InitialFiles _initial;
         private ItemInfo _itemInfo;
         private ItemOrder _itemOrder;
         public EntryWindow()
@@ -24,8 +23,7 @@ namespace Commerce_system
         //initial all base class
         private void InitialAllClass()
         {
-            _initial = new InitialFiles();
-            _itemInfo = new ItemInfo(_initial);
+            _itemInfo = new ItemInfo();
             _itemOrder = new ItemOrder(_itemInfo);
         }
 
@@ -47,6 +45,15 @@ namespace Commerce_system
             inventoryWindow.FormClosed += this.HandleInventorySystemClose;
         }
 
+        //on _openProductManageSystem click
+        private void OpenProductSystem(object sender, EventArgs e)
+        {
+            this._openProductManageSystem.Enabled = false;
+            ProductWindow productWindow = new ProductWindow(_itemInfo);
+            productWindow.Show();
+            productWindow.FormClosed += this.HandleProductSystemClose;
+        }
+
         //exit program
         private void Exit(object sender, EventArgs e)
         {
@@ -63,6 +70,12 @@ namespace Commerce_system
         private void HandleInventorySystemClose(object sender, FormClosedEventArgs e)
         {
             this._openInventorySystem.Enabled = true;
+        }
+
+        //release _openProductManageSystem when form close
+        private void HandleProductSystemClose(object sender, FormClosedEventArgs e)
+        {
+            this._openProductManageSystem.Enabled = true;
         }
     }
 }

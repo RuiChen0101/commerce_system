@@ -8,6 +8,9 @@ namespace Commerce_system
 {
     public class ItemInfo
     {
+        public event OnStockChangeEventHandler _stockChangeEvent;
+        public delegate void OnStockChangeEventHandler();
+
         public const string TYPE_PROCESSOR = "cpu";
         public const string TYPE_BOARD = "mb";
         public const string TYPE_MEMORY = "mem";
@@ -29,6 +32,8 @@ namespace Commerce_system
         private const string PRICE_KEY = "price";
         private const string STOCK_KEY = "stock";
 
+        private const string INITILA_FILE_PATH = ".//item.ini";
+
         private readonly List<string> _typeList = new List<string>() { TYPE_BOARD, TYPE_PROCESSOR, TYPE_MEMORY, TYPE_DRIVE, TYPE_CARD, TYPE_SET };
         private readonly List<string> _typeNameList = new List<string>() { "主機板", "CPU", "記憶體", "硬碟", "顯示卡", "套裝電腦" };
 
@@ -43,10 +48,12 @@ namespace Commerce_system
         private InitialFiles _initial;
 
         //deafult constructor
-        public ItemInfo(InitialFiles initial)
+        public ItemInfo()
         {
-            this._initial = initial;
+            this._initial = new InitialFiles(INITILA_FILE_PATH);
             this.InitialAllItemIdList();
+            this._initial.WriteInitial("幹你視窗", "QQ", "fuck");
+            this._initial.WriteInitial("幹你視窗", "QQQ", "....");
         }
 
         //get item name
@@ -58,7 +65,7 @@ namespace Commerce_system
         //get item type
         public string GetItemType(string id)
         {
-            return _initial.ReadInitial(id, TYPE_KEY);
+            return id != null ? _initial.ReadInitial(id, TYPE_KEY) : null;
         }
 
         //get item image reference
@@ -76,20 +83,21 @@ namespace Commerce_system
         //get item price
         public int GetItemPrice(string id)
         {
-            return int.Parse(_initial.ReadInitial(id, PRICE_KEY));
+            return id != null ? int.Parse(_initial.ReadInitial(id, PRICE_KEY)) : 0;
         }
 
         //get item stock
         public int GetItemStock(string id)
         {
-            return int.Parse(_initial.ReadInitial(id, STOCK_KEY));
+            return id != null ? int.Parse(_initial.ReadInitial(id, STOCK_KEY)) : 0;
         }
 
         //set stock
         public void WriteBackStockQuantity(string id, int quantity)
         {
-            int leftStock = this.GetItemStock(id) - quantity;
+            int leftStock = this.GetItemStock(id) + quantity;
             _initial.WriteInitial(id, STOCK_KEY, leftStock.ToString());
+            _stockChangeEvent();
         }
 
         //get item type name by translate type string

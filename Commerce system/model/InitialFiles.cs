@@ -23,21 +23,26 @@ namespace Commerce_system
 
         private static extern long WritePrivateProfileString(string section, string key, string value, string filePath);
 
-        private const string FILE_PATH = ".\\item.ini";
+        private string _filePath;
+
+        public InitialFiles(string filePath)
+        {
+            this._filePath = filePath;
+        }
 
         //read .ini file data
         public string ReadInitial(string section, string key, string defaultValue = Constants.NULL_STRING)
         {
             const int BUFFER_SIZE = 255;
             StringBuilder temp = new StringBuilder(BUFFER_SIZE);
-            GetPrivateProfileString(section, key, defaultValue, temp, BUFFER_SIZE, FILE_PATH);
+            GetPrivateProfileString(section, key, defaultValue, temp, BUFFER_SIZE, this._filePath);
             return temp.ToString();
         }
 
         //write data back to ini file
         public void WriteInitial(string section, string key, string value)
         {
-            WritePrivateProfileString(section, key, value, FILE_PATH);
+            WritePrivateProfileString(section, key, value, this._filePath);
         }
 
         //get all section in .ini file
@@ -45,7 +50,7 @@ namespace Commerce_system
         {
             const uint MAX_BUFFER = 32767;
             IntPtr pointerReturnedString = Marshal.AllocCoTaskMem((int)MAX_BUFFER);
-            uint bytesReturned = GetPrivateProfileSectionNames(pointerReturnedString, MAX_BUFFER, FILE_PATH);
+            uint bytesReturned = GetPrivateProfileSectionNames(pointerReturnedString, MAX_BUFFER, this._filePath);
             return ConvertBytesToStringArray(pointerReturnedString, bytesReturned);
         }
 

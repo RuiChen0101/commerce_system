@@ -52,10 +52,23 @@ namespace Commerce_system
             return _itemInfo.GetItemPrice(id) * _orderIdList[id];
         }
 
+        //get item total price
+        public int GetItemQuantity(int index)
+        {
+            string id = _orderIdList.ElementAt(index).Key;
+            return _orderIdList[id];
+        }
+
         //check item already in order
         public bool IsInOrder(string id)
         {
-            return _orderIdList.ContainsKey(id);
+            return id != null ? _orderIdList.ContainsKey(id) : false;
+        }
+
+        //if checkout can enable
+        public bool IsCheckOutEnable()
+        {
+            return _orderIdList.Count != 0;
         }
 
         //clear order list
@@ -63,7 +76,7 @@ namespace Commerce_system
         {
             foreach (var item in _orderIdList)
             {
-                _itemInfo.WriteBackStockQuantity(item.Key, item.Value);
+                _itemInfo.WriteBackStockQuantity(item.Key, -item.Value);
             }
             _orderIdList.Clear();
             _totalPrice = 0;

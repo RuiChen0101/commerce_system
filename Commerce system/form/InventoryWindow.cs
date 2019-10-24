@@ -20,11 +20,12 @@ namespace Commerce_system
             this._itemInfo = itemInfo;
             InitializeComponent();
             this._totalIdList = _itemInfo.GetTotalIdList();
-            this.InitialInventoryList();
+            this.SetUpInventoryList();
+            _itemInfo._stockChangeEvent += this.UpdateStockEvent;
         }
 
         //Initial Inventory List
-        private void InitialInventoryList()
+        private void SetUpInventoryList()
         {
             this._inventoryList.Rows.Clear();
             foreach (string id in _totalIdList)
@@ -53,13 +54,22 @@ namespace Commerce_system
             }
         }
 
+        //stock update event handeler
+        private void UpdateStockEvent()
+        {
+            this.SetUpInventoryList();
+        }
+
         //Click Cell Content
         private void ChangeSelection(object sender, EventArgs e)
         {
-            int index = this._inventoryList.SelectedRows[0].Index;
-            string id = _totalIdList[index];
-            this._itemPicture.BackgroundImage = new Bitmap(Constants.IMAGE_FILE_PATH + _itemInfo.GetItemImageReference(id));
-            this._descriptionBox.Text = _itemInfo.GetItemDescription(id);
+            if (this._inventoryList.SelectedRows.Count != 0)
+            {
+                int index = this._inventoryList.SelectedRows[0].Index;
+                string id = _totalIdList[index];
+                this._itemPicture.BackgroundImage = new Bitmap(Constants.IMAGE_FILE_PATH + _itemInfo.GetItemImageReference(id));
+                this._descriptionBox.Text = _itemInfo.GetItemDescription(id);
+            }
         }
 
         // supply click
@@ -68,8 +78,8 @@ namespace Commerce_system
             const int SUPPLY_INDEX = 4;
             if (e.ColumnIndex == SUPPLY_INDEX)
             {
-                SupplyDialog supply = new SupplyDialog();
-                supply.Show();
+                SupplyDialog supply = new SupplyDialog(_itemInfo, _totalIdList[e.RowIndex]);
+                supply.ShowDialog();
             }
         }
     }

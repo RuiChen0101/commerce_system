@@ -14,7 +14,7 @@ namespace Commerce_system
     {
         private ItemInfo _itemInfo;
         private ItemOrder _itemOrder;
-        private MainViewModel _viewModel;
+        private MainPresentationModel _viewModel;
         private PaymentDialog _paymentDialog;
 
         private const string ITEM_PRICE_STRING = "單價: ";
@@ -37,16 +37,17 @@ namespace Commerce_system
             this.InitialSetButtonDictionary();
             this._itemInfo = itemInfo;
             this._itemOrder = itemOrder;
-            this._viewModel = new MainViewModel(_itemInfo,_itemOrder);
+            this._viewModel = new MainPresentationModel(_itemInfo,_itemOrder);
             this._paymentDialog = new PaymentDialog();
             this.InitialAllItemButton();
             this.HandleTabIndexChanged(null, null);
+            _itemInfo._stockChangeEvent += this.UpdateStockEvent;
         }
 
         //setting item button
         private void SetTabButton(string type, List<string> imageReference)
         {
-            for (int i = 0; i < MainViewModel.DISPLAY_ITEM_COUNT; i++)
+            for (int i = 0; i < MainPresentationModel.DISPLAY_ITEM_COUNT; i++)
             {
                 if (imageReference[i].Equals(Constants.NULL_STRING))
                 {
@@ -81,6 +82,7 @@ namespace Commerce_system
             string[] orderRow = { "", _itemInfo.GetItemName(id), _itemInfo.GetItemTypeName(id), _itemInfo.GetItemPrice(id).ToString(Constants.NUMBER_BREAK_KEY_WORD),1.ToString(), _itemInfo.GetItemPrice(id).ToString(Constants.NUMBER_BREAK_KEY_WORD) };
             this._orderList.Rows.Add(orderRow);
             this._addToCart.Enabled = _viewModel.IsAddToCartEnable();
+            this._checkOut.Enabled = _itemOrder.IsCheckOutEnable();
         }
 
         //handel tabindex change 
@@ -112,6 +114,7 @@ namespace Commerce_system
             this.UpdatePageIndicator();
             this.UpdatePageButtonStatus();
             this.SetTabButton(type, _viewModel.GetItemImageByType(type));
+            this.ClearItemInfo();
         }
 
         //change page
@@ -122,6 +125,7 @@ namespace Commerce_system
             this.UpdatePageIndicator();
             this.UpdatePageButtonStatus();
             this.SetTabButton(type, _viewModel.GetItemImageByType(type));
+            this.ClearItemInfo();
         }
 
         //hangdle order record delete
@@ -131,6 +135,7 @@ namespace Commerce_system
             this._orderList.Rows.RemoveAt(index);
             this._totalPrice.Text = TOTAL_PRICE_STRING + _itemOrder.GetTotalPrice().ToString(Constants.NUMBER_BREAK_KEY_WORD) + MONEY_UNIT;
             this._addToCart.Enabled = _viewModel.IsAddToCartEnable();
+            this._checkOut.Enabled = _itemOrder.IsCheckOutEnable();
         }
 
         //handle cell click event
@@ -163,6 +168,13 @@ namespace Commerce_system
             }
         }
 
+        //stock update event handeler
+        private void UpdateStockEvent()
+        {
+            this._itemStock.Text = STOCK_LEFT_STRING + _itemInfo.GetItemStock(_viewModel.GetCurrentItem()).ToString();
+            this._addToCart.Enabled = _viewModel.IsAddToCartEnable();
+        }
+
         //start checkout
         private void ClickCheckOut(object sender, EventArgs e)
         {
@@ -191,6 +203,14 @@ namespace Commerce_system
                 e.Graphics.DrawImage(image, new Rectangle(x, y, w, h));
                 e.Handled = true;
             }
+        }
+
+        //clear item info
+        private void ClearItemInfo()
+        {
+            this._descriptionBox.Text = "";
+            this._itemStock.Text = STOCK_LEFT_STRING;
+            this._itemPrice.Text = ITEM_PRICE_STRING;
         }
 
         //initial all item button
