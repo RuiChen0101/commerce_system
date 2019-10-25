@@ -14,6 +14,7 @@ namespace Commerce_system
     {
         private ItemInfo _itemInfo;
         private ItemOrder _itemOrder;
+        private TypeInfo _typeInfo;
         public EntryWindow()
         {
             InitializeComponent();
@@ -23,7 +24,8 @@ namespace Commerce_system
         //initial all base class
         private void InitialAllClass()
         {
-            _itemInfo = new ItemInfo();
+            _typeInfo = new TypeInfo();
+            _itemInfo = new ItemInfo(_typeInfo);
             _itemOrder = new ItemOrder(_itemInfo);
         }
 
@@ -31,7 +33,7 @@ namespace Commerce_system
         private void OpenOrderSystem(object sender, EventArgs e)
         {
             this._openOrderSystem.Enabled = false;
-            MainWindow mainWindow = new MainWindow(_itemInfo, _itemOrder);
+            MainWindow mainWindow = new MainWindow(_itemInfo, _typeInfo, _itemOrder);
             mainWindow.Show();
             mainWindow.FormClosed += this.HandleOrderSystemClose;
         }

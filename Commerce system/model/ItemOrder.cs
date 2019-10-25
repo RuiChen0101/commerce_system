@@ -87,5 +87,15 @@ namespace Commerce_system
         {
             return _totalPrice;
         }
+
+        //return total price
+        private void UpdateTotalPrice()
+        {
+            this._totalPrice = 0;
+            foreach (var item in _orderIdList)
+            {
+                this._totalPrice += _itemInfo.GetItemPrice(item.Key) * _orderIdList[item.Key];
+            }
+        }
     }
 }

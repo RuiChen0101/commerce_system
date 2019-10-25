@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="model\CategoryInfo.cs" />
+    <Compile Include="model\TypeInfo.cs" />
     <Compile Include="dialog\PaymentDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,7 +119,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="category.ini">
+    <None Include="type.ini">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="item.ini">

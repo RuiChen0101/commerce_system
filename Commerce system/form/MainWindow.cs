@@ -14,6 +14,7 @@ namespace Commerce_system
     {
         private ItemInfo _itemInfo;
         private ItemOrder _itemOrder;
+        private TypeInfo _typeInfo;
         private MainPresentationModel _viewModel;
         private PaymentDialog _paymentDialog;
 
@@ -26,19 +27,15 @@ namespace Commerce_system
         private Dictionary<string, List<Button>> _buttonDictionary = new Dictionary<string, List<Button>>();
 
         //default constructor
-        public MainWindow(ItemInfo itemInfo, ItemOrder itemOrder)
+        public MainWindow(ItemInfo itemInfo, TypeInfo typeInfo, ItemOrder itemOrder)
         {
             InitializeComponent();
-            this.InitialProcessorButtonDictionary();
-            this.InitialBoardButtonDictionary();
-            this.InitialMemoryButtonDictionary();
-            this.InitialDriveButtonDictionary();
-            this.InitialCardButtonDictionary();
-            this.InitialSetButtonDictionary();
             this._itemInfo = itemInfo;
             this._itemOrder = itemOrder;
-            this._viewModel = new MainPresentationModel(_itemInfo,_itemOrder);
+            this._typeInfo = typeInfo;
+            this._viewModel = new MainPresentationModel(_itemInfo, _typeInfo, _itemOrder);
             this._paymentDialog = new PaymentDialog();
+            this.InitialItemTab();
             this.InitialAllItemButton();
             this.HandleTabIndexChanged(null, null);
             _itemInfo._stockChangeEvent += this.UpdateStockEvent;
@@ -213,99 +210,19 @@ namespace Commerce_system
             this._itemPrice.Text = ITEM_PRICE_STRING;
         }
 
+        //initial item tab
+        private void InitialItemTab()
+        {
+
+        }
+
         //initial all item button
         private void InitialAllItemButton()
         {
-            this.SetTabButton(ItemInfo.TYPE_PROCESSOR, _viewModel.GetItemImageByType(ItemInfo.TYPE_PROCESSOR));
-            this.SetTabButton(ItemInfo.TYPE_BOARD, _viewModel.GetItemImageByType(ItemInfo.TYPE_BOARD));
-            this.SetTabButton(ItemInfo.TYPE_MEMORY, _viewModel.GetItemImageByType(ItemInfo.TYPE_MEMORY));
-            this.SetTabButton(ItemInfo.TYPE_CARD, _viewModel.GetItemImageByType(ItemInfo.TYPE_CARD));
-            this.SetTabButton(ItemInfo.TYPE_DRIVE, _viewModel.GetItemImageByType(ItemInfo.TYPE_DRIVE));
-            this.SetTabButton(ItemInfo.TYPE_SET, _viewModel.GetItemImageByType(ItemInfo.TYPE_SET));
-        }
-
-        //initialize processor button dictionary
-        private void InitialProcessorButtonDictionary()
-        {
-            _buttonDictionary.Add(ItemInfo.TYPE_PROCESSOR, new List<Button>
+            foreach (string type in this._typeInfo.GetTypeList())
             {
-                this._processorItem1,
-                this._processorItem2,
-                this._processorItem3,
-                this._processorItem4,
-                this._processorItem5,
-                this._processorItem6,
-            });
-        }
-
-        //initialize board button dictionary
-        private void InitialBoardButtonDictionary()
-        {
-            _buttonDictionary.Add(ItemInfo.TYPE_BOARD, new List<Button>
-            {
-                this._boardItem1,
-                this._boardItem2,
-                this._boardItem3,
-                this._boardItem4,
-                this._boardItem5,
-                this._boardItem6,
-            });
-        }
-
-        //initialize memory button dictionary
-        private void InitialMemoryButtonDictionary()
-        {
-            _buttonDictionary.Add(ItemInfo.TYPE_MEMORY, new List<Button>
-            {
-                this._memoryItem1,
-                this._memoryItem2,
-                this._memoryItem3,
-                this._memoryItem4,
-                this._memoryItem5,
-                this._memoryItem6,
-            });
-        }
-
-        //initialize drive button dictionary
-        private void InitialDriveButtonDictionary()
-        {
-            _buttonDictionary.Add(ItemInfo.TYPE_DRIVE, new List<Button>
-            {
-                this._driveItem1,
-                this._driveItem2,
-                this._driveItem3,
-                this._driveItem4,
-                this._driveItem5,
-                this._driveItem6,
-            });
-        }
-
-        //initialize card button dictionary
-        private void InitialCardButtonDictionary()
-        {
-            _buttonDictionary.Add(ItemInfo.TYPE_CARD, new List<Button>
-            {
-                this._cardItem1,
-                this._cardItem2,
-                this._cardItem3,
-                this._cardItem4,
-                this._cardItem5,
-                this._cardItem6,
-            });
-        }
-
-        //initialize set button dictionary
-        private void InitialSetButtonDictionary()
-        {
-            _buttonDictionary.Add(ItemInfo.TYPE_SET, new List<Button>
-            {
-                this._setItem1,
-                this._setItem2,
-                this._setItem3,
-                this._setItem4,
-                this._setItem5,
-                this._setItem6,
-            });
+                this.SetTabButton(type, _viewModel.GetItemImageByType(type));
+            }
         }
     }
 }
