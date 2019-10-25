@@ -24,6 +24,8 @@ namespace Commerce_system
         private const string MONEY_UNIT = "元";
         private const string DELETE_ICON_PATH = ".\\img\\icon\\delete.png";
 
+        private const int PADDING = 2;
+
         private Dictionary<string, List<Button>> _buttonDictionary = new Dictionary<string, List<Button>>();
 
         //default constructor
@@ -76,8 +78,8 @@ namespace Commerce_system
             string id = _viewModel.GetCurrentItem();
             _itemOrder.AddToOrder(id);
             this._totalPrice.Text = TOTAL_PRICE_STRING + _itemOrder.GetTotalPrice().ToString(Constants.NUMBER_BREAK_KEY_WORD) + MONEY_UNIT;
-            string[] orderRow = { "", _itemInfo.GetItemName(id), _itemInfo.GetItemTypeName(id), _itemInfo.GetItemPrice(id).ToString(Constants.NUMBER_BREAK_KEY_WORD),1.ToString(), _itemInfo.GetItemPrice(id).ToString(Constants.NUMBER_BREAK_KEY_WORD) };
-            this._orderList.Rows.Add(orderRow);
+            //string[] orderRow = { "", _itemInfo.GetItemName(id), _itemInfo.GetItemTypeName(id), _itemInfo.GetItemPrice(id).ToString(Constants.NUMBER_BREAK_KEY_WORD),1.ToString(), _itemInfo.GetItemPrice(id).ToString(Constants.NUMBER_BREAK_KEY_WORD) };
+            this._orderList.Rows.Add(this._viewModel.GetItemRowInfo(id));
             this._addToCart.Enabled = _viewModel.IsAddToCartEnable();
             this._checkOut.Enabled = _itemOrder.IsCheckOutEnable();
         }
@@ -87,26 +89,27 @@ namespace Commerce_system
         {
             this.UpdatePageIndicator();
             this.UpdatePageButtonStatus();
+            this.ClearItemInfo();
         }
 
         //update page indicator data
         private void UpdatePageIndicator()
         {
-            this._pageIndicate.Text = _viewModel.GetCurrentAndTotalPage(_itemInfo.GetTypeList()[this._itemTab.SelectedIndex]);
+            this._pageIndicate.Text = _viewModel.GetCurrentAndTotalPage(this._itemTab.SelectedTab.Name);
         }
 
         //change page button enable status
         private void UpdatePageButtonStatus()
         {
             int tabIndex = this._itemTab.SelectedIndex;
-            this._previousPage.Enabled = _viewModel.IsPreviousPageEnable(_itemInfo.GetTypeList()[this._itemTab.SelectedIndex]);
-            this._nextPage.Enabled = _viewModel.IsNextPageEnable(_itemInfo.GetTypeList()[this._itemTab.SelectedIndex]);
+            this._previousPage.Enabled = _viewModel.IsPreviousPageEnable(this._itemTab.SelectedTab.Name);
+            this._nextPage.Enabled = _viewModel.IsNextPageEnable(this._itemTab.SelectedTab.Name);
         }
 
         //change page
         private void ClickNextPage(object sender, EventArgs e)
         {
-            string type = _itemInfo.GetTypeList()[this._itemTab.SelectedIndex];
+            string type = this._itemTab.SelectedTab.Name;
             _viewModel.ChangeToNextPage(type);
             this.UpdatePageIndicator();
             this.UpdatePageButtonStatus();
@@ -117,7 +120,7 @@ namespace Commerce_system
         //change page
         private void ClickPreviousPage(object sender, EventArgs e)
         {
-            string type = _itemInfo.GetTypeList()[this._itemTab.SelectedIndex];
+            string type = this._itemTab.SelectedTab.Name;
             _viewModel.ChangeToPreviousPage(type);
             this.UpdatePageIndicator();
             this.UpdatePageButtonStatus();
@@ -208,12 +211,52 @@ namespace Commerce_system
             this._descriptionBox.Text = "";
             this._itemStock.Text = STOCK_LEFT_STRING;
             this._itemPrice.Text = ITEM_PRICE_STRING;
+            this._addToCart.Enabled = false;
+            this._viewModel.ClearCurrentClickedItem();
         }
 
         //initial item tab
         private void InitialItemTab()
         {
+            foreach (string type in this._typeInfo.GetTypeList())
+            {
+                TabPage tabPage = new TabPage();
+                tabPage.Name = type;
+                tabPage.Text = _typeInfo.GetTypeName(type);
+                tabPage.Padding = new Padding(PADDING);
+                tabPage.Margin = new Padding(PADDING);
+                List<Button> buttonList = new List<Button>();
+                for (int i = 0 ; i < MainPresentationModel.DISPLAY_ITEM_COUNT ; i++)
+                {
+                    Button button = this.CreateButton(type, i);
+                    tabPage.Controls.Add(button);
+                    buttonList.Add(button);
+                }
+                this._itemTab.Controls.Add(tabPage);
+                this._buttonDictionary.Add(type, buttonList);
+            }
+        }
 
+        //new button
+        private Button CreateButton(string type, int number)
+        {
+            const int X_BASE = 5;
+            const int Y_BASE = 4;
+            const int X_DELTA = 167;
+            const int Y_DELTA = 141;
+            const int WIDTH = 142;
+            const int HEIGHT = 127;
+            const int DIVIDER = 3;
+            const string DASH = "_";
+            Button button = new Button();
+            button.BackgroundImageLayout = ImageLayout.Stretch;
+            button.Name = type + number.ToString();
+            button.Tag = type + DASH + number.ToString();
+            button.Location = new Point(X_BASE + (X_DELTA * (number % DIVIDER)), Y_BASE + (Y_DELTA * (number / DIVIDER)));
+            button.Size = new Size(WIDTH, HEIGHT);
+            button.Padding = new Padding(PADDING);
+            button.Click += this.ClickItem;
+            return button;
         }
 
         //initial all item button

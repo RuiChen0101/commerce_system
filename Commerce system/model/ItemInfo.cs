@@ -18,7 +18,7 @@ namespace Commerce_system
         private const string PRICE_KEY = "price";
         private const string STOCK_KEY = "stock";
 
-        private const string INITILA_FILE_PATH = ".//item.ini";
+        private const string INITIAL_FILE_PATH = ".//item.ini";
 
         private Dictionary<string, List<string>> _itemList = new Dictionary<string, List<string>>();
         private List<string> _totalItemList = new List<string>();
@@ -29,7 +29,7 @@ namespace Commerce_system
         //deafult constructor
         public ItemInfo(TypeInfo typeInfo)
         {
-            this._initial = new InitialFiles(INITILA_FILE_PATH);
+            this._initial = new InitialFiles(INITIAL_FILE_PATH);
             this._typeInfo = typeInfo;
             this.InitialAllItemIdList();
         }
@@ -88,7 +88,14 @@ namespace Commerce_system
         //get all item id list by input bype
         public List<string> GetItemIdListByType(string type)
         {
-            return _itemList[type];
+            if (_itemList.ContainsKey(type))
+            {
+                return _itemList[type];
+            }
+            else
+            {
+                return new List<string>();
+            }
         }
 
         //get all id list
@@ -101,11 +108,17 @@ namespace Commerce_system
         private void InitialAllItemIdList()
         {
             this._itemList.Clear();
+            this._totalItemList.Clear();
             string[] allSections = _initial.GetSectionNames();
             foreach ( String section in allSections )
             {
                 String type = this.GetItemType(section);
+                if (!this._itemList.ContainsKey(type))
+                {
+                    this._itemList.Add(type, new List<string>());
+                }
                 this._itemList[type].Add(section);
+                this._totalItemList.Add(section);
             }
         }
     }

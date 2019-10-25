@@ -50,11 +50,11 @@
             // 
             // _itemTab
             // 
-            this._itemTab.Location = new System.Drawing.Point(5, 25);
-            this._itemTab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this._itemTab.Location = new System.Drawing.Point(4, 20);
+            this._itemTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._itemTab.Name = "_itemTab";
             this._itemTab.SelectedIndex = 0;
-            this._itemTab.Size = new System.Drawing.Size(659, 372);
+            this._itemTab.Size = new System.Drawing.Size(494, 298);
             this._itemTab.TabIndex = 0;
             this._itemTab.Selected += new System.Windows.Forms.TabControlEventHandler(this.HandleTabIndexChanged);
             // 
@@ -62,12 +62,11 @@
             // 
             this._descriptionBox.DetectUrls = false;
             this._descriptionBox.Font = new System.Drawing.Font("微軟正黑體", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._descriptionBox.Location = new System.Drawing.Point(8, 26);
-            this._descriptionBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this._descriptionBox.Location = new System.Drawing.Point(6, 21);
             this._descriptionBox.Name = "_descriptionBox";
             this._descriptionBox.ReadOnly = true;
             this._descriptionBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this._descriptionBox.Size = new System.Drawing.Size(397, 116);
+            this._descriptionBox.Size = new System.Drawing.Size(299, 94);
             this._descriptionBox.TabIndex = 1;
             this._descriptionBox.Text = "";
             // 
@@ -80,11 +79,10 @@
             this._itemGroup.Controls.Add(this._addToCart);
             this._itemGroup.Controls.Add(this._itemInfoGroup);
             this._itemGroup.Controls.Add(this._itemTab);
-            this._itemGroup.Location = new System.Drawing.Point(17, 15);
+            this._itemGroup.Location = new System.Drawing.Point(13, 12);
             this._itemGroup.Margin = new System.Windows.Forms.Padding(0);
             this._itemGroup.Name = "_itemGroup";
-            this._itemGroup.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this._itemGroup.Size = new System.Drawing.Size(681, 639);
+            this._itemGroup.Size = new System.Drawing.Size(511, 511);
             this._itemGroup.TabIndex = 2;
             this._itemGroup.TabStop = false;
             this._itemGroup.Text = "商品";
@@ -93,10 +91,10 @@
             // 
             this._nextPage.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this._nextPage.Image = global::Commerce_system.Properties.Resources.arrow_forward;
-            this._nextPage.Location = new System.Drawing.Point(257, 588);
-            this._nextPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this._nextPage.Location = new System.Drawing.Point(193, 470);
+            this._nextPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._nextPage.Name = "_nextPage";
-            this._nextPage.Size = new System.Drawing.Size(80, 38);
+            this._nextPage.Size = new System.Drawing.Size(60, 30);
             this._nextPage.TabIndex = 6;
             this._nextPage.UseVisualStyleBackColor = true;
             this._nextPage.Click += new System.EventHandler(this.ClickNextPage);
@@ -105,10 +103,10 @@
             // 
             this._previousPage.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this._previousPage.Image = global::Commerce_system.Properties.Resources.arrow_back;
-            this._previousPage.Location = new System.Drawing.Point(169, 588);
-            this._previousPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this._previousPage.Location = new System.Drawing.Point(127, 470);
+            this._previousPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._previousPage.Name = "_previousPage";
-            this._previousPage.Size = new System.Drawing.Size(80, 38);
+            this._previousPage.Size = new System.Drawing.Size(60, 30);
             this._previousPage.TabIndex = 5;
             this._previousPage.UseVisualStyleBackColor = true;
             this._previousPage.Click += new System.EventHandler(this.ClickPreviousPage);
@@ -117,9 +115,10 @@
             // 
             this._pageIndicate.AutoSize = true;
             this._pageIndicate.Font = new System.Drawing.Font("微軟正黑體", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._pageIndicate.Location = new System.Drawing.Point(103, 590);
+            this._pageIndicate.Location = new System.Drawing.Point(77, 472);
+            this._pageIndicate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this._pageIndicate.Name = "_pageIndicate";
-            this._pageIndicate.Size = new System.Drawing.Size(59, 35);
+            this._pageIndicate.Size = new System.Drawing.Size(47, 28);
             this._pageIndicate.TabIndex = 4;
             this._pageIndicate.Text = "1/1";
             // 
@@ -127,19 +126,19 @@
             // 
             this._pageLabel.AutoSize = true;
             this._pageLabel.Font = new System.Drawing.Font("微軟正黑體", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._pageLabel.Location = new System.Drawing.Point(11, 590);
+            this._pageLabel.Location = new System.Drawing.Point(8, 472);
+            this._pageLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this._pageLabel.Name = "_pageLabel";
-            this._pageLabel.Size = new System.Drawing.Size(87, 35);
+            this._pageLabel.Size = new System.Drawing.Size(68, 28);
             this._pageLabel.TabIndex = 3;
             this._pageLabel.Text = "Page:";
             // 
             // _addToCart
             // 
             this._addToCart.Image = global::Commerce_system.Properties.Resources.add_shopping_cart;
-            this._addToCart.Location = new System.Drawing.Point(548, 585);
-            this._addToCart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this._addToCart.Location = new System.Drawing.Point(411, 468);
             this._addToCart.Name = "_addToCart";
-            this._addToCart.Size = new System.Drawing.Size(117, 46);
+            this._addToCart.Size = new System.Drawing.Size(88, 37);
             this._addToCart.TabIndex = 2;
             this._addToCart.UseVisualStyleBackColor = true;
             this._addToCart.Click += new System.EventHandler(this.AddToOrderClick);
@@ -149,11 +148,9 @@
             this._itemInfoGroup.Controls.Add(this._itemStock);
             this._itemInfoGroup.Controls.Add(this._itemPrice);
             this._itemInfoGroup.Controls.Add(this._descriptionBox);
-            this._itemInfoGroup.Location = new System.Drawing.Point(12, 420);
-            this._itemInfoGroup.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this._itemInfoGroup.Location = new System.Drawing.Point(9, 336);
             this._itemInfoGroup.Name = "_itemInfoGroup";
-            this._itemInfoGroup.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this._itemInfoGroup.Size = new System.Drawing.Size(653, 158);
+            this._itemInfoGroup.Size = new System.Drawing.Size(490, 126);
             this._itemInfoGroup.TabIndex = 1;
             this._itemInfoGroup.TabStop = false;
             this._itemInfoGroup.Text = "商品介紹";
@@ -162,10 +159,9 @@
             // 
             this._itemStock.AutoSize = true;
             this._itemStock.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._itemStock.Location = new System.Drawing.Point(415, 48);
-            this._itemStock.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this._itemStock.Location = new System.Drawing.Point(311, 38);
             this._itemStock.Name = "_itemStock";
-            this._itemStock.Size = new System.Drawing.Size(115, 30);
+            this._itemStock.Size = new System.Drawing.Size(90, 24);
             this._itemStock.TabIndex = 3;
             this._itemStock.Text = "庫存數量:";
             // 
@@ -173,10 +169,9 @@
             // 
             this._itemPrice.AutoSize = true;
             this._itemPrice.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._itemPrice.Location = new System.Drawing.Point(415, 114);
-            this._itemPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this._itemPrice.Location = new System.Drawing.Point(311, 91);
             this._itemPrice.Name = "_itemPrice";
-            this._itemPrice.Size = new System.Drawing.Size(67, 30);
+            this._itemPrice.Size = new System.Drawing.Size(52, 24);
             this._itemPrice.TabIndex = 2;
             this._itemPrice.Text = "單價:";
             // 
@@ -197,13 +192,12 @@
             this._quantity,
             this._itemTotalPrice});
             this._orderList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this._orderList.Location = new System.Drawing.Point(719, 40);
-            this._orderList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this._orderList.Location = new System.Drawing.Point(539, 32);
             this._orderList.Name = "_orderList";
             this._orderList.RowHeadersVisible = false;
             this._orderList.RowTemplate.Height = 30;
             this._orderList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._orderList.Size = new System.Drawing.Size(711, 552);
+            this._orderList.Size = new System.Drawing.Size(533, 442);
             this._orderList.TabIndex = 3;
             this._orderList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClickCellContent);
             this._orderList.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.ChangeQuantity);
@@ -263,10 +257,9 @@
             // 
             this._totalPrice.AutoSize = true;
             this._totalPrice.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._totalPrice.Location = new System.Drawing.Point(715, 618);
-            this._totalPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this._totalPrice.Location = new System.Drawing.Point(536, 494);
             this._totalPrice.Name = "_totalPrice";
-            this._totalPrice.Size = new System.Drawing.Size(111, 30);
+            this._totalPrice.Size = new System.Drawing.Size(87, 24);
             this._totalPrice.TabIndex = 3;
             this._totalPrice.Text = "總價: 0元";
             // 
@@ -274,10 +267,10 @@
             // 
             this._checkOut.Enabled = false;
             this._checkOut.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._checkOut.Location = new System.Drawing.Point(1312, 612);
-            this._checkOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this._checkOut.Location = new System.Drawing.Point(984, 490);
+            this._checkOut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._checkOut.Name = "_checkOut";
-            this._checkOut.Size = new System.Drawing.Size(116, 49);
+            this._checkOut.Size = new System.Drawing.Size(87, 39);
             this._checkOut.TabIndex = 4;
             this._checkOut.Text = "訂購";
             this._checkOut.UseVisualStyleBackColor = true;
@@ -285,16 +278,16 @@
             // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1443, 669);
+            this.ClientSize = new System.Drawing.Size(1084, 542);
             this.Controls.Add(this._checkOut);
             this.Controls.Add(this._totalPrice);
             this.Controls.Add(this._orderList);
             this.Controls.Add(this._itemGroup);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MaximumSize = new System.Drawing.Size(1461, 716);
-            this.MinimumSize = new System.Drawing.Size(1461, 716);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximumSize = new System.Drawing.Size(1100, 581);
+            this.MinimumSize = new System.Drawing.Size(1100, 581);
             this.Name = "MainWindow";
             this.Text = "mainWindow";
             this._itemGroup.ResumeLayout(false);

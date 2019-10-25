@@ -8,7 +8,7 @@ namespace Commerce_system
 {
     public class TypeInfo
     {
-        private const string INITILA_FILE_PATH = ".//type.ini";
+        private const string INITIAL_FILE_PATH = ".//type.ini";
 
         private const string NAME_KEY = "name";
 
@@ -19,7 +19,7 @@ namespace Commerce_system
 
         public TypeInfo()
         {
-            this._initial = new InitialFiles(INITILA_FILE_PATH);
+            this._initial = new InitialFiles(INITIAL_FILE_PATH);
             this.InitialAllCategoryIdList();
         }
 
@@ -27,6 +27,19 @@ namespace Commerce_system
         public List<string> GetTypeList()
         {
             return this._typeList;
+        }
+
+        //get total type list
+        public List<string> GetTypeNameList()
+        {
+            return this._typeNameList;
+        }
+
+        // get type name by type id
+        public string GetTypeIdByName(string name)
+        {
+            int typeIndex = _typeNameList.FindIndex(x => x == name);
+            return _typeList[typeIndex];
         }
 
         // get type name by type id

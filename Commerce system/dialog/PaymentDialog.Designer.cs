@@ -299,7 +299,7 @@
             this._verifyCode.Size = new System.Drawing.Size(277, 26);
             this._verifyCode.TabIndex = 9;
             this._verifyCode.TextChanged += new System.EventHandler(this.CheckVerifyCodeInput);
-            this._verifyCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckCardNumberInput);
+            this._verifyCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckNumberInput);
             // 
             // _mail
             // 

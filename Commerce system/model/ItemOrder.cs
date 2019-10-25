@@ -53,9 +53,8 @@ namespace Commerce_system
         }
 
         //get item total price
-        public int GetItemQuantity(int index)
+        public int GetItemQuantity(string id)
         {
-            string id = _orderIdList.ElementAt(index).Key;
             return _orderIdList[id];
         }
 

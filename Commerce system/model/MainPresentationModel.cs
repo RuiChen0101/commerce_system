@@ -45,12 +45,25 @@ namespace Commerce_system
             return imageReferenceList;
         }
 
+        //set to null
+        public void ClearCurrentClickedItem()
+        {
+            this._currentClickedItem = null;
+        }
+
+        //get order Row
+        public string[] GetItemRowInfo(string id)
+        {
+            string[] orderRow = { "", _itemInfo.GetItemName(id), _itemInfo.GetItemTypeName(id), _itemInfo.GetItemPrice(id).ToString(Constants.NUMBER_BREAK_KEY_WORD), _itemOrder.GetItemQuantity(id).ToString(), _itemInfo.GetItemPrice(id).ToString(Constants.NUMBER_BREAK_KEY_WORD) };
+            return orderRow;
+        }
+
         //update current clicked item id
         public string UpdateCurrentItemByTag(string senderTag)
         {
             const char BREAK_CHAR = '_';
             string[] idData = senderTag.Split(BREAK_CHAR);
-            this._currentClickedItem = _idDictionary[idData[0]][int.Parse(idData[1]) - 1];
+            this._currentClickedItem = _idDictionary[idData[0]][int.Parse(idData[1])];
             return this._currentClickedItem;
         }
 
@@ -70,13 +83,13 @@ namespace Commerce_system
         //check PreviousPage button is enable
         public bool IsPreviousPageEnable(string type)
         {
-            return _currentPage[type] != 1;
+            return _currentPage[type] > 1;
         }
 
         //check NextPage button is enable
         public bool IsNextPageEnable(string type)
         {
-            return _currentPage[type] != _totalPage[type];
+            return _currentPage[type] < _totalPage[type];
         }
 
         //check NextPage button is enable
@@ -108,7 +121,7 @@ namespace Commerce_system
         //initialize item id dictionary
         private void InitialItemDictionary()
         {
-            foreach(string type in this._typeInfo.GetTypeList())
+            foreach (string type in this._typeInfo.GetTypeList())
             {
                 _idDictionary.Add(type, FillIdListLength(_itemInfo.GetItemIdListByType(type).Take(DISPLAY_ITEM_COUNT).ToList<string>()));
             }
@@ -119,7 +132,8 @@ namespace Commerce_system
         {
             foreach (string type in this._typeInfo.GetTypeList())
             {
-                _totalPage.Add(type, ((_itemInfo.GetItemIdListByType(type).Count + DISPLAY_ITEM_COUNT - 1) / DISPLAY_ITEM_COUNT));
+                int totalPageCount = (_itemInfo.GetItemIdListByType(type).Count + DISPLAY_ITEM_COUNT - 1) / DISPLAY_ITEM_COUNT;
+                _totalPage.Add(type, totalPageCount < 1 ? 1 : totalPageCount);
                 _currentPage.Add(type, 1);
             }
         }

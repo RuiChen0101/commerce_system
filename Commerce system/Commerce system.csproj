@@ -89,6 +89,7 @@
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="model\PaymentPresentationModel.cs" />
+    <Compile Include="model\ProductPresentationModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="model\MainPresentationModel.cs" />
     <EmbeddedResource Include="dialog\PaymentDialog.resx">

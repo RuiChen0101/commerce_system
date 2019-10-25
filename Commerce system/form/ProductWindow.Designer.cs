@@ -36,18 +36,18 @@
             this._itemDescription = new System.Windows.Forms.RichTextBox();
             this._openFile = new System.Windows.Forms.Button();
             this._itemImageReference = new System.Windows.Forms.TextBox();
-            this._itemCategory = new System.Windows.Forms.ComboBox();
+            this._itemType = new System.Windows.Forms.ComboBox();
             this._moneyUnitLabel = new System.Windows.Forms.Label();
             this._itemPrice = new System.Windows.Forms.TextBox();
             this._itemName = new System.Windows.Forms.TextBox();
             this._itemDescriptionLabel = new System.Windows.Forms.Label();
             this._itemImageReferenceLabel = new System.Windows.Forms.Label();
-            this._itemCategoryLabel = new System.Windows.Forms.Label();
+            this._itemTypeLabel = new System.Windows.Forms.Label();
             this._itemPriceLabel = new System.Windows.Forms.Label();
             this._itemNameLabel = new System.Windows.Forms.Label();
             this._productSave = new System.Windows.Forms.Button();
-            this._productList = new System.Windows.Forms.ListView();
             this._categoryTabPage = new System.Windows.Forms.TabPage();
+            this._productList = new System.Windows.Forms.ListBox();
             this._tab.SuspendLayout();
             this._productTabPage.SuspendLayout();
             this._productEditGroupBox.SuspendLayout();
@@ -76,9 +76,9 @@
             // 
             // _productTabPage
             // 
+            this._productTabPage.Controls.Add(this._productList);
             this._productTabPage.Controls.Add(this._createProduct);
             this._productTabPage.Controls.Add(this._productEditGroupBox);
-            this._productTabPage.Controls.Add(this._productList);
             this._productTabPage.Location = new System.Drawing.Point(4, 25);
             this._productTabPage.Name = "_productTabPage";
             this._productTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -95,19 +95,20 @@
             this._createProduct.TabIndex = 2;
             this._createProduct.Text = "新增商品";
             this._createProduct.UseVisualStyleBackColor = true;
+            this._createProduct.Click += new System.EventHandler(this.ClickCreateProduct);
             // 
             // _productEditGroupBox
             // 
             this._productEditGroupBox.Controls.Add(this._itemDescription);
             this._productEditGroupBox.Controls.Add(this._openFile);
             this._productEditGroupBox.Controls.Add(this._itemImageReference);
-            this._productEditGroupBox.Controls.Add(this._itemCategory);
+            this._productEditGroupBox.Controls.Add(this._itemType);
             this._productEditGroupBox.Controls.Add(this._moneyUnitLabel);
             this._productEditGroupBox.Controls.Add(this._itemPrice);
             this._productEditGroupBox.Controls.Add(this._itemName);
             this._productEditGroupBox.Controls.Add(this._itemDescriptionLabel);
             this._productEditGroupBox.Controls.Add(this._itemImageReferenceLabel);
-            this._productEditGroupBox.Controls.Add(this._itemCategoryLabel);
+            this._productEditGroupBox.Controls.Add(this._itemTypeLabel);
             this._productEditGroupBox.Controls.Add(this._itemPriceLabel);
             this._productEditGroupBox.Controls.Add(this._itemNameLabel);
             this._productEditGroupBox.Controls.Add(this._productSave);
@@ -134,21 +135,25 @@
             this._openFile.TabIndex = 11;
             this._openFile.Text = "瀏覽";
             this._openFile.UseVisualStyleBackColor = true;
+            this._openFile.Click += new System.EventHandler(this.ClickOpenFile);
             // 
             // _itemImageReference
             // 
+            this._itemImageReference.ImeMode = System.Windows.Forms.ImeMode.Off;
             this._itemImageReference.Location = new System.Drawing.Point(137, 164);
             this._itemImageReference.Name = "_itemImageReference";
             this._itemImageReference.Size = new System.Drawing.Size(264, 23);
             this._itemImageReference.TabIndex = 10;
             // 
-            // _itemCategory
+            // _itemType
             // 
-            this._itemCategory.FormattingEnabled = true;
-            this._itemCategory.Location = new System.Drawing.Point(409, 101);
-            this._itemCategory.Name = "_itemCategory";
-            this._itemCategory.Size = new System.Drawing.Size(121, 24);
-            this._itemCategory.TabIndex = 9;
+            this._itemType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._itemType.FormattingEnabled = true;
+            this._itemType.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this._itemType.Location = new System.Drawing.Point(409, 101);
+            this._itemType.Name = "_itemType";
+            this._itemType.Size = new System.Drawing.Size(121, 24);
+            this._itemType.TabIndex = 9;
             // 
             // _moneyUnitLabel
             // 
@@ -162,13 +167,16 @@
             // 
             // _itemPrice
             // 
+            this._itemPrice.ImeMode = System.Windows.Forms.ImeMode.Off;
             this._itemPrice.Location = new System.Drawing.Point(105, 101);
             this._itemPrice.Name = "_itemPrice";
             this._itemPrice.Size = new System.Drawing.Size(150, 23);
             this._itemPrice.TabIndex = 7;
+            this._itemPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckNumberInput);
             // 
             // _itemName
             // 
+            this._itemName.ImeMode = System.Windows.Forms.ImeMode.Off;
             this._itemName.Location = new System.Drawing.Point(118, 45);
             this._itemName.Name = "_itemName";
             this._itemName.Size = new System.Drawing.Size(334, 23);
@@ -194,15 +202,15 @@
             this._itemImageReferenceLabel.TabIndex = 4;
             this._itemImageReferenceLabel.Text = "商品圖片路徑(*)";
             // 
-            // _itemCategoryLabel
+            // _itemTypeLabel
             // 
-            this._itemCategoryLabel.AutoSize = true;
-            this._itemCategoryLabel.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._itemCategoryLabel.Location = new System.Drawing.Point(311, 102);
-            this._itemCategoryLabel.Name = "_itemCategoryLabel";
-            this._itemCategoryLabel.Size = new System.Drawing.Size(90, 20);
-            this._itemCategoryLabel.TabIndex = 3;
-            this._itemCategoryLabel.Text = "商品類別(*)";
+            this._itemTypeLabel.AutoSize = true;
+            this._itemTypeLabel.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._itemTypeLabel.Location = new System.Drawing.Point(311, 102);
+            this._itemTypeLabel.Name = "_itemTypeLabel";
+            this._itemTypeLabel.Size = new System.Drawing.Size(90, 20);
+            this._itemTypeLabel.TabIndex = 3;
+            this._itemTypeLabel.Text = "商品類別(*)";
             // 
             // _itemPriceLabel
             // 
@@ -232,15 +240,7 @@
             this._productSave.TabIndex = 0;
             this._productSave.Text = "儲存";
             this._productSave.UseVisualStyleBackColor = true;
-            // 
-            // _productList
-            // 
-            this._productList.HideSelection = false;
-            this._productList.Location = new System.Drawing.Point(6, 6);
-            this._productList.Name = "_productList";
-            this._productList.Size = new System.Drawing.Size(249, 495);
-            this._productList.TabIndex = 0;
-            this._productList.UseCompatibleStateImageBehavior = false;
+            this._productSave.Click += new System.EventHandler(this.ClickProductSave);
             // 
             // _categoryTabPage
             // 
@@ -251,6 +251,15 @@
             this._categoryTabPage.TabIndex = 1;
             this._categoryTabPage.Text = "類別管理";
             this._categoryTabPage.UseVisualStyleBackColor = true;
+            // 
+            // _productList
+            // 
+            this._productList.FormattingEnabled = true;
+            this._productList.ItemHeight = 16;
+            this._productList.Location = new System.Drawing.Point(6, 6);
+            this._productList.Name = "_productList";
+            this._productList.Size = new System.Drawing.Size(249, 500);
+            this._productList.TabIndex = 3;
             // 
             // ProductWindow
             // 
@@ -280,19 +289,19 @@
         private System.Windows.Forms.Button _createProduct;
         private System.Windows.Forms.GroupBox _productEditGroupBox;
         private System.Windows.Forms.Button _productSave;
-        private System.Windows.Forms.ListView _productList;
         private System.Windows.Forms.TabPage _categoryTabPage;
         private System.Windows.Forms.Label _itemImageReferenceLabel;
-        private System.Windows.Forms.Label _itemCategoryLabel;
+        private System.Windows.Forms.Label _itemTypeLabel;
         private System.Windows.Forms.Label _itemPriceLabel;
         private System.Windows.Forms.Label _itemNameLabel;
         private System.Windows.Forms.Label _itemDescriptionLabel;
         private System.Windows.Forms.Button _openFile;
         private System.Windows.Forms.TextBox _itemImageReference;
-        private System.Windows.Forms.ComboBox _itemCategory;
+        private System.Windows.Forms.ComboBox _itemType;
         private System.Windows.Forms.Label _moneyUnitLabel;
         private System.Windows.Forms.TextBox _itemPrice;
         private System.Windows.Forms.TextBox _itemName;
         private System.Windows.Forms.RichTextBox _itemDescription;
+        private System.Windows.Forms.ListBox _productList;
     }
 }

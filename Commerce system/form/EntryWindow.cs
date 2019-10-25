@@ -51,7 +51,7 @@ namespace Commerce_system
         private void OpenProductSystem(object sender, EventArgs e)
         {
             this._openProductManageSystem.Enabled = false;
-            ProductWindow productWindow = new ProductWindow(_itemInfo);
+            ProductWindow productWindow = new ProductWindow(_itemInfo, _typeInfo);
             productWindow.Show();
             productWindow.FormClosed += this.HandleProductSystemClose;
         }
