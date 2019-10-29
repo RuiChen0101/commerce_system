@@ -11,14 +11,22 @@ namespace Commerce_system
         public event OnStockChangeEventHandler _stockChangeEvent;
         public delegate void OnStockChangeEventHandler();
 
+        public event OnItemDataUpdateEventHandler _itemDataUpdateEvent;
+        public delegate void OnItemDataUpdateEventHandler();
+
+        public event OnItemCreateEventHandler _itemCreateEvent;
+        public delegate void OnItemCreateEventHandler();
+
         private const string NAME_KEY = "name";
-        private const string CATEGORY_KEY = "category";
+        private const string TYPE_KEY = "type";
         private const string IMAGE_KEY = "imgref";
         private const string DESCRIPTION_KEY = "desc";
         private const string PRICE_KEY = "price";
         private const string STOCK_KEY = "stock";
 
         private const string INITIAL_FILE_PATH = ".//item.ini";
+
+        private string[] _keyList = { NAME_KEY, TYPE_KEY, IMAGE_KEY, DESCRIPTION_KEY, PRICE_KEY };
 
         private Dictionary<string, List<string>> _itemList = new Dictionary<string, List<string>>();
         private List<string> _totalItemList = new List<string>();
@@ -43,7 +51,7 @@ namespace Commerce_system
         //get item type
         public string GetItemType(string id)
         {
-            return id != null ? _initial.ReadInitial(id, CATEGORY_KEY) : "";
+            return id != null ? _initial.ReadInitial(id, TYPE_KEY) : "";
         }
 
         //get item image reference
@@ -85,6 +93,29 @@ namespace Commerce_system
             _stockChangeEvent();
         }
 
+        //update item
+        public void UpdateItem(string id, string[] data)
+        {
+            for (int i = 0; i < data.Length; i++)
+            {
+                _initial.WriteInitial(id, _keyList[i], data[i]);
+            }
+            _itemDataUpdateEvent();
+        }
+
+        //new item
+        public void CreateItem(string[] data)
+        {
+            string id = this.GetIdVacancy();
+            for (int i = 0; i < data.Length; i++)
+            {
+                _initial.WriteInitial(id, _keyList[i], data[i]);
+            }
+            _initial.WriteInitial(id, STOCK_KEY, 0.ToString());
+            this.InitialAllItemIdList();
+            _itemCreateEvent();
+        }
+
         //get all item id list by input bype
         public List<string> GetItemIdListByType(string type)
         {
@@ -102,6 +133,22 @@ namespace Commerce_system
         public List<string> GetTotalIdList()
         {
             return this._totalItemList;
+        }
+
+        //get vacancy
+        private string GetIdVacancy()
+        {
+            const string ITEM = "item";
+            string id = "";
+            for (int i = 0; i <= _totalItemList.Capacity; i++)
+            {
+                id = ITEM + i.ToString();
+                if (!_totalItemList.Contains(id))
+                {
+                    break;
+                }
+            }
+            return id;
         }
 
         //retrive and classify exist item from ini

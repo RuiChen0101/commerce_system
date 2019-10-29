@@ -41,6 +41,8 @@ namespace Commerce_system
             this.InitialAllItemButton();
             this.HandleTabIndexChanged(null, null);
             _itemInfo._stockChangeEvent += this.UpdateStockEvent;
+            _itemInfo._itemCreateEvent += this.HandleItemCreateEvent;
+            _itemInfo._itemDataUpdateEvent += this.HandleItemDataUpdateEvent;
         }
 
         //setting item button
@@ -78,7 +80,6 @@ namespace Commerce_system
             string id = _viewModel.GetCurrentItem();
             _itemOrder.AddToOrder(id);
             this._totalPrice.Text = TOTAL_PRICE_STRING + _itemOrder.GetTotalPrice().ToString(Constants.NUMBER_BREAK_KEY_WORD) + MONEY_UNIT;
-            //string[] orderRow = { "", _itemInfo.GetItemName(id), _itemInfo.GetItemTypeName(id), _itemInfo.GetItemPrice(id).ToString(Constants.NUMBER_BREAK_KEY_WORD),1.ToString(), _itemInfo.GetItemPrice(id).ToString(Constants.NUMBER_BREAK_KEY_WORD) };
             this._orderList.Rows.Add(this._viewModel.GetItemRowInfo(id));
             this._addToCart.Enabled = _viewModel.IsAddToCartEnable();
             this._checkOut.Enabled = _itemOrder.IsCheckOutEnable();
@@ -173,6 +174,40 @@ namespace Commerce_system
         {
             this._itemStock.Text = STOCK_LEFT_STRING + _itemInfo.GetItemStock(_viewModel.GetCurrentItem()).ToString();
             this._addToCart.Enabled = _viewModel.IsAddToCartEnable();
+        }
+
+        //item create event
+        private void HandleItemCreateEvent()
+        {
+            _viewModel.HandleItemCreateEvent();
+            this.InitialAllItemButton();
+            this.UpdatePageIndicator();
+            this.UpdatePageButtonStatus();
+        }
+
+        //item update event
+        private void HandleItemDataUpdateEvent()
+        {
+            const string RETURN_CHAR = "\n";
+            string id = _viewModel.GetCurrentItem();
+            _itemOrder.HandleItemUpdateEvent();
+            this.InitialAllItemButton();
+            this.UpdateOrderList();
+            this._descriptionBox.Text = _itemInfo.GetItemName(id) + RETURN_CHAR + _itemInfo.GetItemDescription(id);
+            this._itemPrice.Text = ITEM_PRICE_STRING + _itemInfo.GetItemPrice(id).ToString(Constants.NUMBER_BREAK_KEY_WORD) + MONEY_UNIT;
+            this._itemStock.Text = STOCK_LEFT_STRING + _itemInfo.GetItemStock(id).ToString();
+            this._totalPrice.Text = TOTAL_PRICE_STRING + _itemOrder.GetTotalPrice().ToString(Constants.NUMBER_BREAK_KEY_WORD) + MONEY_UNIT;
+            this._addToCart.Enabled = _viewModel.IsAddToCartEnable();
+        }
+
+        //update order list
+        private void UpdateOrderList()
+        {
+            this._orderList.Rows.Clear();
+            foreach (string id in _itemOrder.GetOrderIdList())
+            {
+                this._orderList.Rows.Add(this._viewModel.GetItemRowInfo(id));
+            }
         }
 
         //start checkout

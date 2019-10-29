@@ -189,15 +189,15 @@
             <Smell>
               <Id>1</Id>
               <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>69 目前物件 Commerce_system.MainWindow，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemInfo，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Commerce_system.ItemInfo.GetItemName(string) 以及 Commerce_system.ItemInfo.GetItemDescription(string)</HashCode>
+              <HashCode>71 目前物件 Commerce_system.MainWindow，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemInfo，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Commerce_system.ItemInfo.GetItemName(string) 以及 Commerce_system.ItemInfo.GetItemDescription(string)</HashCode>
               <Severity>Warning</Severity>
               <Weight>1</Weight>
               <Project>Commerce system</Project>
-              <File>E:\files\C++\wpc\commerce_system\Commerce system\form\MainWindow.cs</File>
-              <Line>69</Line>
-              <StartLine>68</StartLine>
+              <File>D:\files\C++\windows program course\commerce_system\Commerce system\form\MainWindow.cs</File>
+              <Line>71</Line>
+              <StartLine>70</StartLine>
               <StartCol>0</StartCol>
-              <EndLine>69</EndLine>
+              <EndLine>71</EndLine>
               <EndCol>0</EndCol>
               <Comment>目前物件 Commerce_system.MainWindow，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemInfo，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Commerce_system.ItemInfo.GetItemName(string) 以及 Commerce_system.ItemInfo.GetItemDescription(string)</Comment>
               <Auto>false</Auto>
@@ -205,75 +205,43 @@
             <Smell>
               <Id>2</Id>
               <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>225 目前物件 Commerce_system.MainWindow，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.TypeInfo，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Commerce_system.TypeInfo.GetTypeList() 以及 Commerce_system.TypeInfo.GetTypeName(string)</HashCode>
+              <HashCode>196 目前物件 Commerce_system.MainWindow，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemInfo，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Commerce_system.ItemInfo.GetItemName(string) 以及 Commerce_system.ItemInfo.GetItemDescription(string)</HashCode>
               <Severity>Warning</Severity>
               <Weight>1</Weight>
               <Project>Commerce system</Project>
-              <File>E:\files\C++\wpc\commerce_system\Commerce system\form\MainWindow.cs</File>
-              <Line>225</Line>
-              <StartLine>224</StartLine>
+              <File>D:\files\C++\windows program course\commerce_system\Commerce system\form\MainWindow.cs</File>
+              <Line>196</Line>
+              <StartLine>195</StartLine>
               <StartCol>0</StartCol>
-              <EndLine>225</EndLine>
+              <EndLine>196</EndLine>
               <EndCol>0</EndCol>
-              <Comment>目前物件 Commerce_system.MainWindow，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.TypeInfo，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Commerce_system.TypeInfo.GetTypeList() 以及 Commerce_system.TypeInfo.GetTypeName(string)</Comment>
+              <Comment>目前物件 Commerce_system.MainWindow，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemInfo，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Commerce_system.ItemInfo.GetItemName(string) 以及 Commerce_system.ItemInfo.GetItemDescription(string)</Comment>
               <Auto>false</Auto>
             </Smell>
             <Smell>
               <Id>3</Id>
               <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>56 目前物件 Commerce_system.MainPresentationModel，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemInfo，使用物件方法或屬性次數：4次，使用到的方法或屬性為以下：Commerce_system.ItemInfo.GetItemName(string) 以及 Commerce_system.ItemInfo.GetItemTypeName(string) 以及 Commerce_system.ItemInfo.GetItemPrice(string) 以及 Commerce_system.ItemInfo.GetItemPrice(string)</HashCode>
-              <Severity>Red</Severity>
+              <HashCode>260 目前物件 Commerce_system.MainWindow，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.TypeInfo，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Commerce_system.TypeInfo.GetTypeList() 以及 Commerce_system.TypeInfo.GetTypeName(string)</HashCode>
+              <Severity>Warning</Severity>
               <Weight>1</Weight>
               <Project>Commerce system</Project>
-              <File>E:\files\C++\wpc\commerce_system\Commerce system\model\MainPresentationModel.cs</File>
-              <Line>56</Line>
-              <StartLine>56</StartLine>
-              <StartCol>21</StartCol>
-              <EndLine>56</EndLine>
-              <EndCol>279</EndCol>
-              <Comment>目前物件 Commerce_system.MainPresentationModel，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemInfo，使用物件方法或屬性次數：4次，使用到的方法或屬性為以下：Commerce_system.ItemInfo.GetItemName(string) 以及 Commerce_system.ItemInfo.GetItemTypeName(string) 以及 Commerce_system.ItemInfo.GetItemPrice(string) 以及 Commerce_system.ItemInfo.GetItemPrice(string)</Comment>
+              <File>D:\files\C++\windows program course\commerce_system\Commerce system\form\MainWindow.cs</File>
+              <Line>260</Line>
+              <StartLine>259</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>260</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>目前物件 Commerce_system.MainWindow，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.TypeInfo，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Commerce_system.TypeInfo.GetTypeList() 以及 Commerce_system.TypeInfo.GetTypeName(string)</Comment>
               <Auto>false</Auto>
             </Smell>
             <Smell>
               <Id>4</Id>
               <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>58 目前物件 Commerce_system.MainPresentationModel，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemInfo，使用物件方法或屬性次數：4次，使用到的方法或屬性為以下：Commerce_system.ItemInfo.GetItemName(string) 以及 Commerce_system.ItemInfo.GetItemTypeName(string) 以及 Commerce_system.ItemInfo.GetItemPrice(string) 以及 Commerce_system.ItemInfo.GetItemPrice(string)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>Commerce system</Project>
-              <File>E:\files\C++\wpc\commerce_system\Commerce system\model\MainPresentationModel.cs</File>
-              <Line>58</Line>
-              <StartLine>57</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>58</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>目前物件 Commerce_system.MainPresentationModel，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemInfo，使用物件方法或屬性次數：4次，使用到的方法或屬性為以下：Commerce_system.ItemInfo.GetItemName(string) 以及 Commerce_system.ItemInfo.GetItemTypeName(string) 以及 Commerce_system.ItemInfo.GetItemPrice(string) 以及 Commerce_system.ItemInfo.GetItemPrice(string)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>5</Id>
-              <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>135 目前物件 Commerce_system.MainPresentationModel，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemInfo，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Commerce_system.ItemInfo.GetItemIdListByType(string) 以及 Commerce_system.ItemInfo.GetItemIdListByType(string)</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>Commerce system</Project>
-              <File>E:\files\C++\wpc\commerce_system\Commerce system\model\MainPresentationModel.cs</File>
-              <Line>135</Line>
-              <StartLine>135</StartLine>
-              <StartCol>37</StartCol>
-              <EndLine>135</EndLine>
-              <EndCol>76</EndCol>
-              <Comment>目前物件 Commerce_system.MainPresentationModel，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemInfo，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Commerce_system.ItemInfo.GetItemIdListByType(string) 以及 Commerce_system.ItemInfo.GetItemIdListByType(string)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>6</Id>
-              <SmellType>Feature Envy(依戀情節)</SmellType>
               <HashCode>40 目前物件 Commerce_system.ItemOrder，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemInfo，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Commerce_system.ItemInfo.GetItemStock(string) 以及 Commerce_system.ItemInfo.GetItemStock(string)</HashCode>
               <Severity>Warning</Severity>
               <Weight>1</Weight>
               <Project>Commerce system</Project>
-              <File>E:\files\C++\wpc\commerce_system\Commerce system\model\ItemOrder.cs</File>
+              <File>D:\files\C++\windows program course\commerce_system\Commerce system\model\ItemOrder.cs</File>
               <Line>40</Line>
               <StartLine>40</StartLine>
               <StartCol>23</StartCol>
@@ -283,19 +251,99 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>7</Id>
+              <Id>5</Id>
               <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>32 目前物件 Commerce_system.InventoryWindow，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemInfo，使用物件方法或屬性次數：4次，使用到的方法或屬性為以下：Commerce_system.ItemInfo.GetItemName(string) 以及 Commerce_system.ItemInfo.GetItemTypeName(string) 以及 Commerce_system.ItemInfo.GetItemPrice(string) 以及 Commerce_system.ItemInfo.GetItemStock(string)</HashCode>
+              <HashCode>34 目前物件 Commerce_system.InventoryWindow，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemInfo，使用物件方法或屬性次數：4次，使用到的方法或屬性為以下：Commerce_system.ItemInfo.GetItemName(string) 以及 Commerce_system.ItemInfo.GetItemTypeName(string) 以及 Commerce_system.ItemInfo.GetItemPrice(string) 以及 Commerce_system.ItemInfo.GetItemStock(string)</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>Commerce system</Project>
-              <File>E:\files\C++\wpc\commerce_system\Commerce system\form\InventoryWindow.cs</File>
-              <Line>32</Line>
-              <StartLine>32</StartLine>
+              <File>D:\files\C++\windows program course\commerce_system\Commerce system\form\InventoryWindow.cs</File>
+              <Line>34</Line>
+              <StartLine>34</StartLine>
               <StartCol>25</StartCol>
-              <EndLine>32</EndLine>
+              <EndLine>34</EndLine>
               <EndCol>208</EndCol>
               <Comment>目前物件 Commerce_system.InventoryWindow，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemInfo，使用物件方法或屬性次數：4次，使用到的方法或屬性為以下：Commerce_system.ItemInfo.GetItemName(string) 以及 Commerce_system.ItemInfo.GetItemTypeName(string) 以及 Commerce_system.ItemInfo.GetItemPrice(string) 以及 Commerce_system.ItemInfo.GetItemStock(string)</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>6</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>57 目前物件 Commerce_system.MainPresentationModel，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemInfo，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：Commerce_system.ItemInfo.GetItemName(string) 以及 Commerce_system.ItemInfo.GetItemTypeName(string) 以及 Commerce_system.ItemInfo.GetItemPrice(string)</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>Commerce system</Project>
+              <File>D:\files\C++\windows program course\commerce_system\Commerce system\model\MainPresentationModel.cs</File>
+              <Line>57</Line>
+              <StartLine>57</StartLine>
+              <StartCol>21</StartCol>
+              <EndLine>57</EndLine>
+              <EndCol>289</EndCol>
+              <Comment>目前物件 Commerce_system.MainPresentationModel，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemInfo，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：Commerce_system.ItemInfo.GetItemName(string) 以及 Commerce_system.ItemInfo.GetItemTypeName(string) 以及 Commerce_system.ItemInfo.GetItemPrice(string)</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>7</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>57 目前物件 Commerce_system.MainPresentationModel，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemOrder，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Commerce_system.ItemOrder.GetItemQuantity(string) 以及 Commerce_system.ItemOrder.GetItemTotalPriceById(string)</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>Commerce system</Project>
+              <File>D:\files\C++\windows program course\commerce_system\Commerce system\model\MainPresentationModel.cs</File>
+              <Line>57</Line>
+              <StartLine>57</StartLine>
+              <StartCol>21</StartCol>
+              <EndLine>57</EndLine>
+              <EndCol>289</EndCol>
+              <Comment>目前物件 Commerce_system.MainPresentationModel，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemOrder，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Commerce_system.ItemOrder.GetItemQuantity(string) 以及 Commerce_system.ItemOrder.GetItemTotalPriceById(string)</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>8</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>59 目前物件 Commerce_system.MainPresentationModel，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemInfo，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：Commerce_system.ItemInfo.GetItemName(string) 以及 Commerce_system.ItemInfo.GetItemTypeName(string) 以及 Commerce_system.ItemInfo.GetItemPrice(string)</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>Commerce system</Project>
+              <File>D:\files\C++\windows program course\commerce_system\Commerce system\model\MainPresentationModel.cs</File>
+              <Line>59</Line>
+              <StartLine>58</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>59</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>目前物件 Commerce_system.MainPresentationModel，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemInfo，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：Commerce_system.ItemInfo.GetItemName(string) 以及 Commerce_system.ItemInfo.GetItemTypeName(string) 以及 Commerce_system.ItemInfo.GetItemPrice(string)</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>9</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>59 目前物件 Commerce_system.MainPresentationModel，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemOrder，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Commerce_system.ItemOrder.GetItemQuantity(string) 以及 Commerce_system.ItemOrder.GetItemTotalPriceById(string)</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>Commerce system</Project>
+              <File>D:\files\C++\windows program course\commerce_system\Commerce system\model\MainPresentationModel.cs</File>
+              <Line>59</Line>
+              <StartLine>58</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>59</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>目前物件 Commerce_system.MainPresentationModel，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemOrder，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Commerce_system.ItemOrder.GetItemQuantity(string) 以及 Commerce_system.ItemOrder.GetItemTotalPriceById(string)</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>10</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>152 目前物件 Commerce_system.MainPresentationModel，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemInfo，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Commerce_system.ItemInfo.GetItemIdListByType(string) 以及 Commerce_system.ItemInfo.GetItemIdListByType(string)</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>Commerce system</Project>
+              <File>D:\files\C++\windows program course\commerce_system\Commerce system\model\MainPresentationModel.cs</File>
+              <Line>152</Line>
+              <StartLine>152</StartLine>
+              <StartCol>37</StartCol>
+              <EndLine>152</EndLine>
+              <EndCol>76</EndCol>
+              <Comment>目前物件 Commerce_system.MainPresentationModel，使用物件的方法或屬性次數：0次，Envy到對象物件 Commerce_system.ItemInfo，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：Commerce_system.ItemInfo.GetItemIdListByType(string) 以及 Commerce_system.ItemInfo.GetItemIdListByType(string)</Comment>
               <Auto>false</Auto>
             </Smell>
           </Reviews>
@@ -445,7 +493,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>2977</ProductionLoc>
+          <ProductionLoc>3335</ProductionLoc>
           <TestLoc>1503</TestLoc>
         </CodeReview>
       </Data>

@@ -22,6 +22,8 @@ namespace Commerce_system
             this._totalIdList = _itemInfo.GetTotalIdList();
             this.SetUpInventoryList();
             _itemInfo._stockChangeEvent += this.UpdateStockEvent;
+            _itemInfo._itemDataUpdateEvent += this.UpdateStockEvent;
+            _itemInfo._itemCreateEvent += this.UpdateStockEvent;
         }
 
         //Initial Inventory List

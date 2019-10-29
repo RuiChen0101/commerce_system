@@ -52,6 +52,12 @@ namespace Commerce_system
             return _itemInfo.GetItemPrice(id) * _orderIdList[id];
         }
 
+        //get item total price by id
+        public int GetItemTotalPriceById(string id)
+        {
+            return _itemInfo.GetItemPrice(id) * _orderIdList[id];
+        }
+
         //get item total price
         public int GetItemQuantity(string id)
         {
@@ -85,6 +91,18 @@ namespace Commerce_system
         public int GetTotalPrice()
         {
             return _totalPrice;
+        }
+
+        //get order id list
+        public List<string> GetOrderIdList()
+        {
+            return _orderIdList.Keys.ToList();
+        }
+
+        //item update
+        public void HandleItemUpdateEvent()
+        {
+            this.UpdateTotalPrice();
         }
 
         //return total price

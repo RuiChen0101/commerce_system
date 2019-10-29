@@ -25,6 +25,7 @@ namespace Commerce_system
             this._typeInfo = typeInfo;
             this.InitialItemDictionary();
             this.InitialPageData();
+            this.InitialCurrentPage();
         }
 
         //reutrn item image list
@@ -54,7 +55,7 @@ namespace Commerce_system
         //get order Row
         public string[] GetItemRowInfo(string id)
         {
-            string[] orderRow = { "", _itemInfo.GetItemName(id), _itemInfo.GetItemTypeName(id), _itemInfo.GetItemPrice(id).ToString(Constants.NUMBER_BREAK_KEY_WORD), _itemOrder.GetItemQuantity(id).ToString(), _itemInfo.GetItemPrice(id).ToString(Constants.NUMBER_BREAK_KEY_WORD) };
+            string[] orderRow = { "", _itemInfo.GetItemName(id), _itemInfo.GetItemTypeName(id), _itemInfo.GetItemPrice(id).ToString(Constants.NUMBER_BREAK_KEY_WORD), _itemOrder.GetItemQuantity(id).ToString(), _itemOrder.GetItemTotalPriceById(id).ToString(Constants.NUMBER_BREAK_KEY_WORD) };
             return orderRow;
         }
 
@@ -118,6 +119,22 @@ namespace Commerce_system
             }
         }
 
+        // handle item create event
+        public void HandleItemCreateEvent()
+        {
+            this.InitialPageData();
+            this.UpdateItemDictionary();
+        }
+
+        //update item id dictionary
+        private void UpdateItemDictionary()
+        {
+            foreach (string type in this._typeInfo.GetTypeList())
+            {
+                _idDictionary[type] = FillIdListLength(_itemInfo.GetItemIdListByType(type).Skip((_currentPage[type] - 1) * DISPLAY_ITEM_COUNT).Take(DISPLAY_ITEM_COUNT).ToList<string>());
+            }
+        }
+
         //initialize item id dictionary
         private void InitialItemDictionary()
         {
@@ -134,6 +151,14 @@ namespace Commerce_system
             {
                 int totalPageCount = (_itemInfo.GetItemIdListByType(type).Count + DISPLAY_ITEM_COUNT - 1) / DISPLAY_ITEM_COUNT;
                 _totalPage.Add(type, totalPageCount < 1 ? 1 : totalPageCount);
+            }
+        }
+
+        //initial current Page
+        private void InitialCurrentPage()
+        {
+            foreach (string type in this._typeInfo.GetTypeList())
+            {
                 _currentPage.Add(type, 1);
             }
         }
