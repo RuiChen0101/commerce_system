@@ -79,6 +79,7 @@ namespace Commerce_system
         {
             this.ClearForm();
             this._createProduct.Enabled = false;
+            this._itemType.Enabled = true;
             this._productSave.Text = CREATE_BUTTON_STRING;
             this._productEditGroupBox.Text = CREATE_MODE_STRING;
             _viewModel.SetEditIndex(ProductPresentationModel.CREATE_INDEX);
@@ -120,6 +121,7 @@ namespace Commerce_system
             _viewModel.SetEditIndex(this._productList.SelectedIndex);
             string id = _itemInfo.GetTotalIdList()[this._productList.SelectedIndex];
             this.UpdateForm(id);
+            this._itemType.Enabled = false;
             this._productSave.Enabled = false;
         }
 

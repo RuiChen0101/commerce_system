@@ -80,7 +80,11 @@ namespace Commerce_system
         {
             const char BREAK_CHAR = '\\';
             string fileName = inputFilePath.Split(BREAK_CHAR).Last();
-            File.Copy(inputFilePath, Constants.IMAGE_FILE_PATH + fileName, true);
+            string destination = Constants.IMAGE_FILE_PATH + fileName;
+            if (!File.Exists(destination))
+            {
+                File.Copy(inputFilePath, destination);
+            }
             return fileName;
         }
         

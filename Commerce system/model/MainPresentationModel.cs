@@ -150,7 +150,14 @@ namespace Commerce_system
             foreach (string type in this._typeInfo.GetTypeList())
             {
                 int totalPageCount = (_itemInfo.GetItemIdListByType(type).Count + DISPLAY_ITEM_COUNT - 1) / DISPLAY_ITEM_COUNT;
-                _totalPage.Add(type, totalPageCount < 1 ? 1 : totalPageCount);
+                if (!_totalPage.ContainsKey(type))
+                {
+                    _totalPage.Add(type, totalPageCount < 1 ? 1 : totalPageCount);
+                }
+                else
+                {
+                    _totalPage[type] = totalPageCount;
+                }
             }
         }
 
