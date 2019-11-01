@@ -100,6 +100,7 @@ namespace Commerce_system
             {
                 _initial.WriteInitial(id, _keyList[i], data[i]);
             }
+            this.InitialAllItemIdList();
             _itemDataUpdateEvent();
         }
 

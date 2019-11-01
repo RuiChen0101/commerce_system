@@ -41,8 +41,8 @@ namespace Commerce_system
             this.InitialAllItemButton();
             this.HandleTabIndexChanged(null, null);
             _itemInfo._stockChangeEvent += this.UpdateStockEvent;
-            _itemInfo._itemCreateEvent += this.HandleItemCreateEvent;
-            _itemInfo._itemDataUpdateEvent += this.HandleItemDataUpdateEvent;
+            _itemInfo._itemCreateEvent += this.HandleItemUpdateEvent;
+            _itemInfo._itemDataUpdateEvent += this.HandleItemUpdateEvent;
         }
 
         //setting item button
@@ -177,27 +177,15 @@ namespace Commerce_system
         }
 
         //item create event
-        private void HandleItemCreateEvent()
+        private void HandleItemUpdateEvent()
         {
-            _viewModel.HandleItemCreateEvent();
+            _viewModel.HandleItemUpdateEvent();
+            _itemOrder.HandleItemUpdateEvent();
             this.InitialAllItemButton();
             this.UpdatePageIndicator();
             this.UpdatePageButtonStatus();
-        }
-
-        //item update event
-        private void HandleItemDataUpdateEvent()
-        {
-            const string RETURN_CHAR = "\n";
-            string id = _viewModel.GetCurrentItem();
-            _itemOrder.HandleItemUpdateEvent();
-            this.InitialAllItemButton();
             this.UpdateOrderList();
-            this._descriptionBox.Text = _itemInfo.GetItemName(id) + RETURN_CHAR + _itemInfo.GetItemDescription(id);
-            this._itemPrice.Text = ITEM_PRICE_STRING + _itemInfo.GetItemPrice(id).ToString(Constants.NUMBER_BREAK_KEY_WORD) + MONEY_UNIT;
-            this._itemStock.Text = STOCK_LEFT_STRING + _itemInfo.GetItemStock(id).ToString();
-            this._totalPrice.Text = TOTAL_PRICE_STRING + _itemOrder.GetTotalPrice().ToString(Constants.NUMBER_BREAK_KEY_WORD) + MONEY_UNIT;
-            this._addToCart.Enabled = _viewModel.IsAddToCartEnable();
+            this.ClearItemInfo();
         }
 
         //update order list

@@ -120,7 +120,7 @@ namespace Commerce_system
         }
 
         // handle item create event
-        public void HandleItemCreateEvent()
+        public void HandleItemUpdateEvent()
         {
             this.InitialPageData();
             this.UpdateItemDictionary();
