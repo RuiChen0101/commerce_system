@@ -126,12 +126,27 @@ namespace Commerce_system
             this.UpdateItemDictionary();
         }
 
+        // handle item create event
+        public void HandleTypeUpdateEvent()
+        {
+            this.UpdateCurrentPage();
+            this.InitialPageData();
+            this.UpdateItemDictionary();
+        }
+
         //update item id dictionary
         private void UpdateItemDictionary()
         {
             foreach (string type in this._typeInfo.GetTypeList())
             {
-                _idDictionary[type] = FillIdListLength(_itemInfo.GetItemIdListByType(type).Skip((_currentPage[type] - 1) * DISPLAY_ITEM_COUNT).Take(DISPLAY_ITEM_COUNT).ToList<string>());
+                if (_idDictionary.ContainsKey(type))
+                {
+                    _idDictionary[type] = FillIdListLength(_itemInfo.GetItemIdListByType(type).Skip((_currentPage[type] - 1) * DISPLAY_ITEM_COUNT).Take(DISPLAY_ITEM_COUNT).ToList<string>());
+                }
+                else
+                {
+                    _idDictionary.Add(type, FillIdListLength(_itemInfo.GetItemIdListByType(type).Take(DISPLAY_ITEM_COUNT).ToList<string>()));
+                }
             }
         }
 
@@ -147,6 +162,7 @@ namespace Commerce_system
         //initial page data
         private void InitialPageData()
         {
+            _totalPage.Clear();
             foreach (string type in this._typeInfo.GetTypeList())
             {
                 int totalPageCount = (_itemInfo.GetItemIdListByType(type).Count + DISPLAY_ITEM_COUNT - 1) / DISPLAY_ITEM_COUNT;
@@ -157,6 +173,18 @@ namespace Commerce_system
                 else
                 {
                     _totalPage[type] = totalPageCount;
+                }
+            }
+        }
+
+        //update current Page
+        private void UpdateCurrentPage()
+        {
+            foreach (string type in this._typeInfo.GetTypeList())
+            {
+                if (!_currentPage.ContainsKey(type))
+                {
+                    _currentPage.Add(type, 1);
                 }
             }
         }

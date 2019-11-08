@@ -43,6 +43,7 @@ namespace Commerce_system
             _itemInfo._stockChangeEvent += this.UpdateStockEvent;
             _itemInfo._itemCreateEvent += this.HandleItemUpdateEvent;
             _itemInfo._itemDataUpdateEvent += this.HandleItemUpdateEvent;
+            _typeInfo._typesUpdateEvent += this.HandleTypeUpdateEvent;
         }
 
         //setting item button
@@ -188,6 +189,22 @@ namespace Commerce_system
             this.ClearItemInfo();
         }
 
+        //handle type update
+        private void HandleTypeUpdateEvent()
+        {
+            this._itemTab.Selected -= this.HandleTabIndexChanged;
+            int index = _itemTab.SelectedIndex;
+            _viewModel.HandleTypeUpdateEvent();
+            this.InitialItemTab();
+            this.InitialAllItemButton();
+            this.UpdatePageIndicator();
+            this.UpdatePageButtonStatus();
+            this.UpdateOrderList();
+            this.ClearItemInfo();
+            this._itemTab.Selected += this.HandleTabIndexChanged;
+            _itemTab.SelectedIndex = index;
+        }
+
         //update order list
         private void UpdateOrderList()
         {
@@ -241,23 +258,31 @@ namespace Commerce_system
         //initial item tab
         private void InitialItemTab()
         {
+            this._itemTab.Controls.Clear();
+            this._buttonDictionary.Clear();
             foreach (string type in this._typeInfo.GetTypeList())
             {
-                TabPage tabPage = new TabPage();
-                tabPage.Name = type;
-                tabPage.Text = _typeInfo.GetTypeName(type);
-                tabPage.Padding = new Padding(PADDING);
-                tabPage.Margin = new Padding(PADDING);
-                List<Button> buttonList = new List<Button>();
-                for (int i = 0 ; i < MainPresentationModel.DISPLAY_ITEM_COUNT ; i++)
-                {
-                    Button button = this.CreateButton(type, i);
-                    tabPage.Controls.Add(button);
-                    buttonList.Add(button);
-                }
-                this._itemTab.Controls.Add(tabPage);
-                this._buttonDictionary.Add(type, buttonList);
+                this.CreateNewTab(type);
             }
+        }
+
+        //create New Tab
+        private void CreateNewTab(string type)
+        {
+            TabPage tabPage = new TabPage();
+            tabPage.Name = type;
+            tabPage.Text = _typeInfo.GetTypeName(type);
+            tabPage.Padding = new Padding(PADDING);
+            tabPage.Margin = new Padding(PADDING);
+            List<Button> buttonList = new List<Button>();
+            for (int i = 0; i < MainPresentationModel.DISPLAY_ITEM_COUNT; i++)
+            {
+                Button button = this.CreateButton(type, i);
+                tabPage.Controls.Add(button);
+                buttonList.Add(button);
+            }
+            this._itemTab.Controls.Add(tabPage);
+            this._buttonDictionary.Add(type, buttonList);
         }
 
         //new button

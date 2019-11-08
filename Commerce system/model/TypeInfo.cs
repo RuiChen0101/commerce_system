@@ -8,12 +8,17 @@ namespace Commerce_system
 {
     public class TypeInfo
     {
+        public event OnTypeUpdateEventHandler _typesUpdateEvent;
+        public delegate void OnTypeUpdateEventHandler();
+
         private const string INITIAL_FILE_PATH = ".//type.ini";
 
         private const string NAME_KEY = "name";
 
         private List<string> _typeList = new List<string>();
         private List<string> _typeNameList = new List<string>();
+
+        private string[] _keyList = { NAME_KEY };
 
         private InitialFiles _initial;
 
@@ -49,6 +54,29 @@ namespace Commerce_system
             return _typeNameList[typeIndex];
         }
 
+        //update type info
+        public void UpdateType(string id, string[] data)
+        {
+            for (int i = 0; i < data.Length; i++)
+            {
+                _initial.WriteInitial(id, _keyList[i], data[i]);
+            }
+            this.InitialAllCategoryIdList();
+            _typesUpdateEvent();
+        }
+
+        //create new type
+        public void CreateType(string[] data)
+        {
+            string id = this.GetIdVacancy();
+            for (int i = 0; i < data.Length; i++)
+            {
+                _initial.WriteInitial(id, _keyList[i], data[i]);
+            }
+            this.InitialAllCategoryIdList();
+            _typesUpdateEvent();
+        }
+
         //initial all category list
         private void InitialAllCategoryIdList()
         {
@@ -60,6 +88,23 @@ namespace Commerce_system
                 this._typeList.Add(section);
                 this._typeNameList.Add(this._initial.ReadInitial(section, NAME_KEY));
             }
+        }
+
+        //get vacancy
+        private string GetIdVacancy()
+        {
+            const string ITEM = "cat";
+            const string ZERO_FORMAT = "00";
+            string id = "";
+            for (int i = 0; i <= _typeList.Capacity; i++)
+            {
+                id = ITEM + i.ToString(ZERO_FORMAT);
+                if (!_typeList.Contains(id))
+                {
+                    break;
+                }
+            }
+            return id;
         }
     }
 }

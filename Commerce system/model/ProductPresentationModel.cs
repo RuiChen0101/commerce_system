@@ -11,12 +11,14 @@ namespace Commerce_system
     {
         public const int CREATE_INDEX = -1;
 
-        private string _name = "";
-        private string _type = "";
-        private string _price = "";
-        private string _image = "";
-        private string _description = "";
-        private int _editIndex = CREATE_INDEX;
+        private string _itemName = "";
+        private string _itemType = "";
+        private string _itemPrice = "";
+        private string _itemImage = "";
+        private string _itemDescription = "";
+        private string _typeName = "";
+        private int _itemEditIndex = CREATE_INDEX;
+        private int _typeEditIndex = CREATE_INDEX;
 
         private ItemInfo _itemInfo;
         private TypeInfo _typeInfo;
@@ -34,45 +36,63 @@ namespace Commerce_system
         }
 
         //IsSaveEnable
-        public bool IsSaveEnable()
+        public bool IsItemSaveEnable()
         {
-            return _name != "" && _type != "" && _price != "" && _image != "" && _description != "";
+            return _itemName != "" && _itemType != "" && _itemPrice != "" && _itemImage != "" && _itemDescription != "";
         }
-        
+
+        //IsSaveEnable
+        public bool IsTypeSaveEnable()
+        {
+            return _typeName != "" && _typeEditIndex == CREATE_INDEX;
+        }
+
         //update index
-        public void SetEditIndex(int index)
+        public void SetTypeEditIndex(int index)
         {
-            _editIndex = index;
+            _typeEditIndex = index;
+        }
+
+        //update index
+        public void SetItemEditIndex(int index)
+        {
+            _itemEditIndex = index;
         }
 
         //update data
-        public void SetFieldName(string name)
+        public void SetItemFieldName(string name)
         {
-            _name = name;
+            _itemName = name;
         }
 
         //update data
-        public void SetFieldType(string type)
+        public void SetItemFieldType(string type)
         {
-            _type = type;
+            _itemType = type;
         }
 
         //update data
-        public void SetFieldPrice(string price)
+        public void SetItemFieldPrice(string price)
         {
-            _price = price;
+            _itemPrice = price;
         }
 
         //update data
-        public void SetFieldImage(string image)
+        public void SetItemFieldImage(string image)
         {
-            _image = image;
+            _itemImage = image;
         }
 
         //update data
-        public void SetFieldDescription(string description)
+        public void SetItemFieldDescription(string description)
         {
-            _description = description;
+            _itemDescription = description;
+        }
+
+        //update data
+        public void SetTypeFieldName(string name)
+        {
+            _typeName = name;
         }
 
         //HandelFileOpen
@@ -88,18 +108,34 @@ namespace Commerce_system
             return fileName;
         }
         
-        //start save
-        public void StartSave()
+        //start item save
+        public void StartItemSave()
         {
-            string[] data = { _name, _typeInfo.GetTypeIdByName(_type), _image, _description, _price };
-            if (_editIndex != CREATE_INDEX)
+            string[] data = { _itemName, _typeInfo.GetTypeIdByName(_itemType), _itemImage, _itemDescription, _itemPrice };
+            if (_itemEditIndex != CREATE_INDEX)
             {
-                string id = _itemInfo.GetTotalIdList()[_editIndex];
+                string id = _itemInfo.GetTotalIdList()[_itemEditIndex];
                 _itemInfo.UpdateItem(id, data);
             }
             else
             {
                 _itemInfo.CreateItem(data);
+            }
+        }
+
+        //start type save
+        public void StartTypeSave()
+        {
+            string[] data = { _typeName };
+            Console.WriteLine(_typeEditIndex);
+            if (_typeEditIndex != CREATE_INDEX)
+            {
+                string id = _typeInfo.GetTypeList()[_typeEditIndex];
+                _typeInfo.UpdateType(id, data);
+            }
+            else
+            {
+                _typeInfo.CreateType(data);
             }
         }
     }
