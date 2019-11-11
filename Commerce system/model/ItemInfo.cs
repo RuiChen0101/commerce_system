@@ -35,9 +35,9 @@ namespace Commerce_system
         private TypeInfo _typeInfo;
 
         //deafult constructor
-        public ItemInfo(TypeInfo typeInfo)
+        public ItemInfo(TypeInfo typeInfo, string filePath = INITIAL_FILE_PATH)
         {
-            this._initial = new InitialFiles(INITIAL_FILE_PATH);
+            this._initial = new InitialFiles(filePath);
             this._typeInfo = typeInfo;
             this.InitialAllItemIdList();
         }
@@ -45,7 +45,7 @@ namespace Commerce_system
         //get item name
         public string GetItemName(string id)
         {
-            return _initial.ReadInitial(id, NAME_KEY);
+            return id != null ? _initial.ReadInitial(id, NAME_KEY) : "";
         }
 
         //get item type
@@ -69,20 +69,34 @@ namespace Commerce_system
         //get item price
         public int GetItemPrice(string id)
         {
-            return id != null ? int.Parse(_initial.ReadInitial(id, PRICE_KEY)) : 0;
+            if(id == null)
+            {
+                return -1;
+            }
+            string result = _initial.ReadInitial(id, PRICE_KEY);
+            return result != "null" ? int.Parse(result) : -1;
         }
 
         //get item stock
         public int GetItemStock(string id)
         {
-            return id != null ? int.Parse(_initial.ReadInitial(id, STOCK_KEY)) : 0;
+            if (id == null)
+            {
+                return -1;
+            }
+            string result = _initial.ReadInitial(id, STOCK_KEY);
+            return result != "null" ? int.Parse(result) : -1;
         }
 
         //get item type name by translate type string
         public string GetItemTypeName(string id)
         {
+            if (id == null)
+            {
+                return "";
+            }
             string type = this.GetItemType(id);
-            return this._typeInfo.GetTypeName(type);
+            return type != "null" ? this._typeInfo.GetTypeName(type) : type;
         }
 
         //set stock

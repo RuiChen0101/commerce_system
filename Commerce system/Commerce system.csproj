@@ -120,6 +120,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="testItem.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="type.ini">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

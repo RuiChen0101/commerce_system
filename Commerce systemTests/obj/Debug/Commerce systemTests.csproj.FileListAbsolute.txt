@@ -1,0 +1,63 @@
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\zh-Hant\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\zh-Hant\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\zh-Hant\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\icon\add_shopping_cart.png
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\icon\arrow_back.png
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\icon\arrow_forward.png
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\icon\delete.png
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\icon\delivery-truck.bmp
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\item\ADATA 16G DDR4-2666.jpg
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\item\ADATA 4G DDR4-2666.jpg
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\item\ADATA 8G DDR4-3600.jpg
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\item\ADATA Ultimate SU650 240G.jpg
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\item\AMD R9 3900X.jpg
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\item\AMD Radeon Pro WX9100.jpg
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\item\ASRock Z390 Phantom Gaming 6.jpg
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\item\ASUS DUAL-RTX2080Ti-A11G.jpg
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\item\ASUS PRIME A320M-K.jpeg
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\item\ASUS PRIME H370M-PLUS.jpg
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\item\ASUS PRIME X299 DELUXE II.jpg
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\item\ASUS PRIME X299-A.jpg
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\item\ASUS PRIME X399-A.jpg
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\item\ASUS VC66-740U2TA.jpg
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\item\CORSAIR MP510 240G.jpg
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\item\GIGABYTE AORUS GTX1080Ti Waterforce.png
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\item\GIGABYTE RX570 Gaming 4G.jpg
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\item\GIGABYTE RX590 Gaming 8G.png
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\item\Intel i3-8100.jpg
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\item\Intel i7-8700.jpg
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\item\Intel i9-9900X.jpg
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\item\LEADTEK Quadro GV100.jpg
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\item\LEADTEK Quadro RTX8000.jpg
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\item\MICRON 8G DDR4-3200 LT.jpg
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\item\MICRON Crucia MX500 250G.jpg
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\item\MSI Cubi N 8GL.jpg
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\item\MSI Infinite A 9SD.jpg
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\item\MSI MEG X399 Creation.jpg
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\item\MSI RTX2070 GAMING 8G.png
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\item\MSI Z390-A PRO.jpg
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\item\UMAX 4G DDR4-2400.jpg
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\item\UMAX 4G DDR4-2666.jpg
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\img\item\X399 AORUS PRO.png
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\type.ini
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\item.ini
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\Commerce systemTests.dll
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\Commerce systemTests.pdb
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\Commerce system.exe
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\DataGridViewNumericUpDownElements.dll
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\Commerce system.pdb
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\Commerce system.exe.config
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\DataGridViewNumericUpDownElements.pdb
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\obj\Debug\Commerce systemTests.csprojAssemblyReference.cache
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\obj\Debug\Commerce systemTests.csproj.CoreCompileInputs.cache
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\obj\Debug\Commerce systemTests.csproj.CopyComplete
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\obj\Debug\Commerce systemTests.dll
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\obj\Debug\Commerce systemTests.pdb
+C:\Users\1321\Desktop\commerce_system\Commerce systemTests\bin\Debug\testItem.ini
