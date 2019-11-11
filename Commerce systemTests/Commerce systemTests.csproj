@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="model\InitialFilesTests.cs" />
     <Compile Include="model\ItemInfoTests.cs" />
+    <Compile Include="model\ItemOrderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

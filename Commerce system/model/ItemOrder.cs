@@ -22,46 +22,68 @@ namespace Commerce_system
         //store ordered id and update total price
         public void AddToOrder(string itemId)
         {
-            _orderIdList.Add(itemId,1);
-            _totalPrice += _itemInfo.GetItemPrice(itemId);
+            if (_itemInfo.IsIdExist(itemId))
+            {
+                _orderIdList.Add(itemId, 1);
+                _totalPrice += _itemInfo.GetItemPrice(itemId);
+            }
         }
 
         //delete record
         public void DeleteFromOrder(int index)
         {
-            string id = _orderIdList.ElementAt(index).Key;
-            _totalPrice -= _itemInfo.GetItemPrice(id) * _orderIdList[id];
-            _orderIdList.Remove(id);
+            if (_orderIdList.Count > index && index >= 0)
+            {
+                string id = _orderIdList.ElementAt(index).Key;
+                _totalPrice -= _itemInfo.GetItemPrice(id) * _orderIdList[id];
+                _orderIdList.Remove(id);
+            }
         }
 
         //update record quantity
         public int UpdateQuantity(int index, int quantity)
         {
-            string id = _orderIdList.ElementAt(index).Key;
-            quantity = _itemInfo.GetItemStock(id) >= quantity ? quantity : _itemInfo.GetItemStock(id);
-            int quantityDelta = quantity - _orderIdList[id];
-            _totalPrice += (_itemInfo.GetItemPrice(id) * quantityDelta);
-            _orderIdList[id] = quantity;
-            return quantity;
+            if (_orderIdList.Count > index && index >= 0)
+            {
+                string id = _orderIdList.ElementAt(index).Key;
+                quantity = _itemInfo.GetItemStock(id) >= quantity ? quantity : _itemInfo.GetItemStock(id);
+                int quantityDelta = quantity - _orderIdList[id];
+                _totalPrice += (_itemInfo.GetItemPrice(id) * quantityDelta);
+                _orderIdList[id] = quantity;
+                return quantity;
+            }
+            return 0;
         }
 
         //get item total price
         public int GetItemTotalPrice(int index)
         {
-            string id = _orderIdList.ElementAt(index).Key;
-            return _itemInfo.GetItemPrice(id) * _orderIdList[id];
+            if (_orderIdList.Count > index && index >= 0)
+            {
+                string id = _orderIdList.ElementAt(index).Key;
+                return _itemInfo.GetItemPrice(id) * _orderIdList[id];
+            }
+            return 0;
         }
 
         //get item total price by id
         public int GetItemTotalPriceById(string id)
         {
-            return _itemInfo.GetItemPrice(id) * _orderIdList[id];
+            if (_orderIdList.ContainsKey(id))
+            {
+                return _itemInfo.GetItemPrice(id) * _orderIdList[id];
+            }
+            return 0;
         }
 
         //get item total price
         public int GetItemQuantity(string id)
         {
-            return _orderIdList[id];
+            if (_orderIdList.ContainsKey(id))
+            {
+                return _orderIdList[id];
+            }
+            return 0;
         }
 
         //check item already in order

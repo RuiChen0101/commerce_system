@@ -24,6 +24,8 @@ namespace Commerce_system
         private const string PRICE_KEY = "price";
         private const string STOCK_KEY = "stock";
 
+        private const string NULL = "null";
+
         private const string INITIAL_FILE_PATH = ".//item.ini";
 
         private string[] _keyList = { NAME_KEY, TYPE_KEY, IMAGE_KEY, DESCRIPTION_KEY, PRICE_KEY };
@@ -69,12 +71,12 @@ namespace Commerce_system
         //get item price
         public int GetItemPrice(string id)
         {
-            if(id == null)
+            if (id == null)
             {
                 return -1;
             }
             string result = _initial.ReadInitial(id, PRICE_KEY);
-            return result != "null" ? int.Parse(result) : -1;
+            return result != NULL ? int.Parse(result) : -1;
         }
 
         //get item stock
@@ -85,7 +87,7 @@ namespace Commerce_system
                 return -1;
             }
             string result = _initial.ReadInitial(id, STOCK_KEY);
-            return result != "null" ? int.Parse(result) : -1;
+            return result != NULL ? int.Parse(result) : -1;
         }
 
         //get item type name by translate type string
@@ -96,7 +98,7 @@ namespace Commerce_system
                 return "";
             }
             string type = this.GetItemType(id);
-            return type != "null" ? this._typeInfo.GetTypeName(type) : type;
+            return type != NULL ? this._typeInfo.GetTypeName(type) : type;
         }
 
         //set stock
@@ -148,6 +150,12 @@ namespace Commerce_system
         public List<string> GetTotalIdList()
         {
             return this._totalItemList;
+        }
+
+        //id exist
+        public bool IsIdExist(string id)
+        {
+            return this._totalItemList.Contains(id);
         }
 
         //get vacancy

@@ -142,6 +142,7 @@ namespace Commerce_system.Tests
             int quantity = _itemInfo.GetItemStock("item0");
             int delta1 = 5;
             int delta2 = -3;
+            _itemInfo._stockChangeEvent += this.EventTriggerTest;
             _itemInfo.WriteBackStockQuantity("item0", delta1);
             quantity += delta1;
             Assert.AreEqual(quantity, _itemInfo.GetItemStock("item0"));
@@ -155,28 +156,61 @@ namespace Commerce_system.Tests
         [TestMethod()]
         public void UpdateItemTest()
         {
-            Assert.Fail();
+            string id = "item0";
+            string[] data = { "testName","cat99","testInage.jpg","desp","999" };
+            int initStock = _itemInfo.GetItemStock(id);
+            _itemInfo._itemDataUpdateEvent += this.EventTriggerTest;
+            _itemInfo.UpdateItem(id, data);
+            Assert.AreEqual(data[0], _itemInfo.GetItemName(id));
+            Assert.AreEqual(data[1], _itemInfo.GetItemType(id));
+            Assert.AreEqual(data[2], _itemInfo.GetItemImageReference(id));
+            Assert.AreEqual(data[3], _itemInfo.GetItemDescription(id));
+            Assert.AreEqual(int.Parse(data[4]), _itemInfo.GetItemPrice(id));
+            Assert.AreEqual(initStock, _itemInfo.GetItemStock(id));
         }
 
         //ut
         [TestMethod()]
         public void CreateItemTest()
         {
-            Assert.Fail();
+            int initIdLength = _itemInfo.GetTotalIdList().Count;
+            string[] data = { "testName", "cat99", "testInage.jpg", "desp", "999" };
+            string id = "item6";
+            _itemInfo._itemCreateEvent += this.EventTriggerTest;
+            _itemInfo.CreateItem(data);
+            Assert.AreEqual(initIdLength + 1, _itemInfo.GetTotalIdList().Count);
+            Assert.AreEqual(data[0], _itemInfo.GetItemName(id));
+            Assert.AreEqual(data[1], _itemInfo.GetItemType(id));
+            Assert.AreEqual(data[2], _itemInfo.GetItemImageReference(id));
+            Assert.AreEqual(data[3], _itemInfo.GetItemDescription(id));
+            Assert.AreEqual(int.Parse(data[4]), _itemInfo.GetItemPrice(id));
+            Assert.AreEqual(0, _itemInfo.GetItemStock(id));
         }
 
         //ut
         [TestMethod()]
         public void GetItemIdListByTypeTest()
         {
-            Assert.Fail();
+            Assert.AreEqual("item0", _itemInfo.GetItemIdListByType("cat00")[0]);
+            Assert.AreEqual(0, _itemInfo.GetItemIdListByType("notExistCat").Count);
         }
 
         //ut
         [TestMethod()]
         public void GetTotalIdListTest()
         {
-            Assert.Fail();
+            string[] idList = { "item0", "item1", "item2", "item3", "item4", "item5" };
+            Assert.AreEqual(idList.Length,_itemInfo.GetTotalIdList().Count);
+            foreach(string id in idList)
+            {
+                Assert.IsTrue(_itemInfo.GetTotalIdList().Contains(id));
+            }
+        }
+
+        //event trigger
+        public void EventTriggerTest()
+        {
+            Assert.IsTrue(true);
         }
     }
 }
